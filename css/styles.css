@@ -1796,15 +1796,394 @@ input[type="range"] {
   line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-  .form-grid-2 {
+/* ==========================================================================
+   ESTILOS AVANZADOS DE BIOLOGÍA, METABOLISMO Y ANATOMÍA HUMANA
+   ========================================================================== */
+
+/* Monitor cardíaco y pulso en navegación */
+.heartbeat-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  background: var(--color-brand-subtle);
+  border: 1px solid var(--color-brand-border);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-brand-dark);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-brand);
+  box-shadow: 0 0 0 0 rgba(15, 118, 110, 0.7);
+  animation: pulse-ring 1.8s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(15, 118, 110, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(15, 118, 110, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(15, 118, 110, 0); }
+}
+
+.ecg-line-svg {
+  width: 50px;
+  height: 14px;
+  stroke: var(--color-brand);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: ecg-flow 2s linear infinite;
+}
+
+@keyframes ecg-flow {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* Galería de los 6 Órganos Metabólicos */
+.organ-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.organ-gallery-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  position: relative;
+  transition: all var(--transition-normal);
+  overflow: hidden;
+}
+
+.organ-gallery-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-brand);
+  box-shadow: var(--shadow-md);
+}
+
+.organ-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.organ-icon-art {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-brand-subtle);
+  color: var(--color-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.organ-gallery-card:hover .organ-icon-art {
+  transform: scale(1.1);
+  background: #ccfbf1;
+}
+
+.organ-gallery-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--text-primary);
+}
+
+.organ-metric-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-subtle);
+  color: var(--text-secondary);
+  margin-top: 0.85rem;
+}
+
+/* Sección de la Célula y Mitocondria */
+.cellular-section {
+  background: #ffffff;
+  padding: 5rem 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.cellular-box {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+  margin-top: 2rem;
+}
+
+.cellular-toggle-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.cell-toggle-btn {
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-medium);
+  background: #ffffff;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.cell-toggle-btn.active {
+  background: var(--color-brand);
+  color: #ffffff;
+  border-color: var(--color-brand);
+  box-shadow: var(--shadow-sm);
+}
+
+.cell-toggle-btn.active-alert {
+  background: var(--color-accent);
+  color: #ffffff;
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.cellular-diagram-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.cell-canvas-wrap {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: var(--shadow-xs);
+}
+
+/* Compartimentos de Bioimpedancia */
+.bioimpedance-section {
+  background: var(--bg-page);
+  padding: 5rem 0;
+}
+
+.compartment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.compartment-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.compartment-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--color-brand);
+}
+
+.compartment-percent {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  line-height: 1;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.compartment-fill-indicator {
+  height: 8px;
+  border-radius: var(--radius-full);
+  margin: 0.75rem 0;
+}
+
+.fill-visceral { background: #ea580c; }
+.fill-subcutaneous { background: #f59e0b; }
+.fill-muscle { background: #0f766e; }
+.fill-water { background: #0284c7; }
+
+@media (max-width: 992px) {
+  .cellular-diagram-grid {
     grid-template-columns: 1fr;
   }
-  .faq-grid {
-    grid-template-columns: 1fr;
-  }
-  .enrollment-card {
-    padding: 1.5rem;
+  .compartment-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media (max-width: 600px) {
+  .compartment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animaciones bioquímicas sutiles */
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes energy-glow {
+  0%, 100% { filter: drop-shadow(0 0 2px rgba(15, 118, 110, 0.4)); }
+  50% { filter: drop-shadow(0 0 8px rgba(15, 118, 110, 0.8)); }
+}
+
+@keyframes atp-spark {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; filter: drop-shadow(0 0 6px #f59e0b); }
+  100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+@keyframes vessel-pulse {
+  0%, 100% { stroke-width: 2.5; stroke: #0f766e; }
+  50% { stroke-width: 4; stroke: #14b8a6; }
+}
+
+.floating-molecule {
+  animation: float-subtle 4s ease-in-out infinite;
+}
+
+.atp-active-icon {
+  animation: atp-spark 2.2s infinite ease-in-out;
+}
+
+.pulsing-vessel {
+  animation: vessel-pulse 2s infinite ease-in-out;
+}
+
+/* Fichas de órganos con efecto interactivo */
+.organ-gallery-card .organ-badge-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.organ-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-brand);
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+.organ-action-link:hover {
+  text-decoration: underline;
+}
+
+.cell-status-callout {
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.cell-status-syndrome {
+  background: #fff7ed;
+  border-left: 4px solid #ea580c;
+  color: #7c2d12;
+}
+
+.cell-status-healthy {
+  background: #f0fdfa;
+  border-left: 4px solid #0f766e;
+  color: #134e4a;
+}
+
+/* Marcadores metabólicos flotantes del Hero */
+.hero-metabolic-floater {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: var(--shadow-sm);
+  pointer-events: none;
+  z-index: 10;
+  animation: float-subtle 4s ease-in-out infinite;
+}
+
+.floater-top-left {
+  top: 15%;
+  left: -15px;
+  color: var(--color-brand-dark);
+  border-left: 3px solid var(--color-brand);
+}
+
+.floater-bottom-left {
+  bottom: 25%;
+  left: -10px;
+  color: #c2410c;
+  border-left: 3px solid #ea580c;
+  animation-delay: -1.5s;
+}
+
+.floater-top-right {
+  top: 22%;
+  right: -10px;
+  color: #0369a1;
+  border-left: 3px solid #0284c7;
+  animation-delay: -2s;
+}
+
+.floater-bottom-right {
+  bottom: 18%;
+  right: -15px;
+  color: #15803d;
+  border-left: 3px solid #16a34a;
+  animation-delay: -3s;
+}
+
+@media (max-width: 640px) {
+  .hero-metabolic-floater {
+    display: none;
+  }
+}
+
+
+
 

@@ -7,6 +7,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initOrganExplorer();
+  initCellSimulator();
   initArmComparator();
   initAtpCalculator();
   initEnrollmentForm();
@@ -48,7 +49,7 @@ function initNavigation() {
 }
 
 /* ==========================================================================
-   2. EXPLORADOR ANATÓMICO Y METABÓLICO DEL HERO
+   2. EXPLORADOR ANATÓMICO Y METABÓLICO DEL HERO (6 ÓRGANOS)
    ========================================================================== */
 const ORGAN_DATA = {
   brain: {
@@ -64,15 +65,20 @@ const ORGAN_DATA = {
   liver: {
     num: '3',
     name: 'Hígado: Aclaramiento de Grasa y Lípidos',
-    desc: 'Al regular los carbohidratos refinados, el hígado reduce la síntesis de triglicéridos y descongestiona la grasa acumulada (hígado graso).'
+    desc: 'Al regular los carbohidratos refinados, el hígado reduce la síntesis de triglicéridos y descongestiona la grasa acumulada (esteatosis o hígado graso).'
+  },
+  pancreas: {
+    num: '4',
+    name: 'Páncreas: Secreción Equilibrada de Insulina',
+    desc: 'Evita la sobrecarga de las células beta del páncreas produciendo insulina en pulsos estables, previniendo la fatiga celular y la diabetes.'
   },
   waist: {
-    num: '4',
+    num: '5',
     name: 'Cintura: Reducción de Grasa Visceral Profunda',
     desc: 'La grasa abdominal es la más peligrosa metabólicamente. El programa prioriza su reducción sostenida, comprobada mediante bioimpedancia clínica.'
   },
   muscle: {
-    num: '5',
+    num: '6',
     name: 'Músculos: Sensibilidad a la Insulina y Energía',
     desc: 'El ejercicio estructurado activa los receptores GLUT4 en los músculos para absorber la glucosa como energía pura, evitando que se convierta en grasa.'
   }
@@ -105,6 +111,181 @@ function initOrganExplorer() {
         displayBox.style.opacity = '1';
       }, 150);
     });
+  });
+}
+
+/* ==========================================================================
+   2.1 SIMULADOR CELULAR Y MITOCONDRIAL (AMPK & ATP)
+   ========================================================================== */
+function initCellSimulator() {
+  const btnSyndrome = document.getElementById('btnCellSyndrome');
+  const btnMaster = document.getElementById('btnCellMaster');
+
+  const glut4Gate = document.getElementById('glut4Gate');
+  const glut4Text = document.getElementById('glut4Text');
+  const ampkCircle = document.getElementById('ampkCircle');
+  const ampkText = document.getElementById('ampkText');
+  const mitoOuter = document.getElementById('mitoOuter');
+  const mitoCrestas = document.getElementById('mitoCrestas');
+  const mitoTitle = document.getElementById('mitoTitle');
+  const krebsCircle = document.getElementById('krebsCircle');
+  const krebsText = document.getElementById('krebsText');
+  const atpSpark = document.getElementById('atpSpark');
+  const atpOutputLabel = document.getElementById('atpOutputLabel');
+  const lipidDroplet = document.getElementById('lipidDroplet');
+  const lipidLabel = document.getElementById('lipidLabel');
+
+  const badge = document.getElementById('cellStateIndicatorBadge');
+  const title = document.getElementById('cellStateTitle');
+  const desc = document.getElementById('cellStateDesc');
+  const calloutBox = document.getElementById('cellCalloutBox');
+  const calloutTitle = document.getElementById('cellCalloutTitle');
+  const calloutText = document.getElementById('cellCalloutText');
+  const metricAmpk = document.getElementById('metricAmpk');
+  const metricMito = document.getElementById('metricMito');
+
+  if (!btnSyndrome || !btnMaster) return;
+
+  btnSyndrome.addEventListener('click', () => {
+    btnSyndrome.className = 'cell-toggle-btn active-alert';
+    btnMaster.className = 'cell-toggle-btn';
+
+    // SVG updates
+    if (glut4Gate) glut4Gate.setAttribute('fill', '#ea580c');
+    if (glut4Text) {
+      glut4Text.textContent = 'GLUT4 (Bloqueado)';
+      glut4Text.setAttribute('fill', '#ea580c');
+    }
+    if (ampkCircle) {
+      ampkCircle.setAttribute('fill', '#ffedd5');
+      ampkCircle.setAttribute('stroke', '#ea580c');
+    }
+    if (ampkText) {
+      ampkText.textContent = 'AMPK OFF';
+      ampkText.setAttribute('fill', '#c2410c');
+    }
+    if (mitoOuter) {
+      mitoOuter.setAttribute('fill', '#fff7ed');
+      mitoOuter.setAttribute('stroke', '#ea580c');
+    }
+    if (mitoCrestas) mitoCrestas.setAttribute('stroke', '#f97316');
+    if (mitoTitle) {
+      mitoTitle.textContent = 'MITOCONDRIA (Estrés)';
+      mitoTitle.setAttribute('fill', '#ea580c');
+    }
+    if (krebsCircle) {
+      krebsCircle.setAttribute('stroke', '#ea580c');
+      krebsCircle.setAttribute('fill', '#ffedd5');
+    }
+    if (krebsText) {
+      krebsText.textContent = 'Quema Reducida';
+      krebsText.setAttribute('fill', '#c2410c');
+    }
+    if (atpSpark) {
+      atpSpark.setAttribute('fill', '#fef08a');
+      atpSpark.setAttribute('stroke', '#eab308');
+      atpSpark.classList.remove('atp-active-icon');
+    }
+    if (atpOutputLabel) atpOutputLabel.textContent = 'Baja Energía (Fatiga)';
+    if (lipidDroplet) {
+      lipidDroplet.setAttribute('opacity', '1');
+      lipidDroplet.setAttribute('rx', '25');
+      lipidDroplet.setAttribute('ry', '20');
+    }
+    if (lipidLabel) {
+      lipidLabel.textContent = 'Grasa Bloqueada';
+      lipidLabel.setAttribute('fill', '#c2410c');
+    }
+
+    // Text updates
+    if (badge) {
+      badge.className = 'badge badge-accent';
+      badge.textContent = 'Estado 1: Sobrecarga Celular y Resistencia';
+    }
+    if (title) title.textContent = 'Célula con Síndrome Metabólico';
+    if (desc) desc.textContent = 'Cuando consumimos calorías en exceso o carbohidratos refinados continuamente, las compuertas de glucosa (GLUT4) se vuelven insensibles a la insulina. El azúcar no entra eficientemente al músculo, se desvía para formar grasa abdominal y las mitocondrias sufren estrés oxidativo, provocando cansancio crónico y picos de glucosa.';
+    if (calloutBox) calloutBox.className = 'cell-status-callout cell-status-syndrome';
+    if (calloutTitle) calloutTitle.textContent = 'Consecuencia Biológica:';
+    if (calloutText) calloutText.textContent = 'Sensor AMPK apagado. La grasa no entra a quemarse en las mitocondrias, el azúcar en sangre permanece elevado y el cuerpo acumula grasa visceral en la cintura.';
+    if (metricAmpk) {
+      metricAmpk.textContent = 'Inactiva / Baja';
+      metricAmpk.style.color = '#ea580c';
+    }
+    if (metricMito) {
+      metricMito.textContent = 'Estrés Oxidativo';
+      metricMito.style.color = '#ea580c';
+    }
+  });
+
+  btnMaster.addEventListener('click', () => {
+    btnMaster.className = 'cell-toggle-btn active';
+    btnSyndrome.className = 'cell-toggle-btn';
+
+    // SVG updates
+    if (glut4Gate) glut4Gate.setAttribute('fill', '#0f766e');
+    if (glut4Text) {
+      glut4Text.textContent = 'GLUT4 (Activo & Abierto)';
+      glut4Text.setAttribute('fill', '#0f766e');
+    }
+    if (ampkCircle) {
+      ampkCircle.setAttribute('fill', '#ccfbf1');
+      ampkCircle.setAttribute('stroke', '#0f766e');
+    }
+    if (ampkText) {
+      ampkText.textContent = 'AMPK ON';
+      ampkText.setAttribute('fill', '#0f766e');
+    }
+    if (mitoOuter) {
+      mitoOuter.setAttribute('fill', '#f0fdfa');
+      mitoOuter.setAttribute('stroke', '#0f766e');
+    }
+    if (mitoCrestas) mitoCrestas.setAttribute('stroke', '#14b8a6');
+    if (mitoTitle) {
+      mitoTitle.textContent = 'MITOCONDRIA (Alta Eficiencia)';
+      mitoTitle.setAttribute('fill', '#0f766e');
+    }
+    if (krebsCircle) {
+      krebsCircle.setAttribute('stroke', '#0f766e');
+      krebsCircle.setAttribute('fill', '#ccfbf1');
+    }
+    if (krebsText) {
+      krebsText.textContent = 'Beta-Oxidación Rápida';
+      krebsText.setAttribute('fill', '#0f766e');
+    }
+    if (atpSpark) {
+      atpSpark.setAttribute('fill', '#fde047');
+      atpSpark.setAttribute('stroke', '#ca8a04');
+      atpSpark.classList.add('atp-active-icon');
+    }
+    if (atpOutputLabel) atpOutputLabel.textContent = 'Alta Producción de ATP';
+    if (lipidDroplet) {
+      lipidDroplet.setAttribute('opacity', '0.45');
+      lipidDroplet.setAttribute('rx', '15');
+      lipidDroplet.setAttribute('ry', '12');
+    }
+    if (lipidLabel) {
+      lipidLabel.textContent = 'Grasa en Quema';
+      lipidLabel.setAttribute('fill', '#0f766e');
+    }
+
+    // Text updates
+    if (badge) {
+      badge.className = 'badge badge-brand';
+      badge.textContent = 'Estado 2: Fisiología Optimizada "Cuerpo Maestro"';
+    }
+    if (title) title.textContent = 'Célula con Sensibilidad y Quema de Grasa';
+    if (desc) desc.textContent = 'El estímulo del ejercicio guiado y el plan nutricional activan la enzima AMPK (el sensor maestro de energía celular). Las compuertas GLUT4 se abren sin esfuerzo, la glucosa se utiliza para nutrir el músculo y las mitocondrias multiplican su capacidad de quemar los depósitos de grasa como combustible limpio.';
+    if (calloutBox) calloutBox.className = 'cell-status-callout cell-status-healthy';
+    if (calloutTitle) calloutTitle.textContent = 'Beneficio Celular en el Paciente:';
+    if (calloutText) calloutText.textContent = 'Activación de AMPK y sirtuinas. La grasa acumulada se moviliza hacia las mitocondrias, el azúcar en sangre se estabiliza y experimentas mayor vitalidad y energía sostenida.';
+    if (metricAmpk) {
+      metricAmpk.textContent = 'Alta / Encendida';
+      metricAmpk.style.color = '#0f766e';
+    }
+    if (metricMito) {
+      metricMito.textContent = 'Beta-Oxidación Óptima';
+      metricMito.style.color = '#0f766e';
+    }
   });
 }
 
