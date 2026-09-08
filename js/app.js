@@ -458,40 +458,45 @@ function initAtpCalculator() {
 }
 
 /* ==========================================================================
-   5. FORMULARIO DE INSCRIPCIÓN DE PACIENTES
+   5. INTEGRACIÓN Y GESTIÓN DE GOOGLE FORMS
    ========================================================================== */
 function initEnrollmentForm() {
-  const form = document.getElementById('patientEnrollmentForm');
-  const successBox = document.getElementById('enrollmentSuccess');
+  const iframe = document.getElementById('officialFormsIframe');
+  const directLink = document.getElementById('directFormsLink');
+  const inputUrl = document.getElementById('inputGoogleFormsUrl');
+  const btnUpdate = document.getElementById('btnUpdateFormsUrl');
 
-  if (!form || !successBox) return;
+  if (!iframe || !directLink) return;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  // Cargar URL personalizada previa de localStorage si existe
+  const savedUrl = localStorage.getItem('cuerpo_maestro_google_forms_url');
+  if (savedUrl) {
+    iframe.src = savedUrl.includes('embedded=true') ? savedUrl : `${savedUrl}?embedded=true`;
+    directLink.href = savedUrl;
+    if (inputUrl) inputUrl.value = savedUrl;
+  }
 
-    const name = document.getElementById('patientName').value.trim();
-    const phone = document.getElementById('patientPhone').value.trim();
+  if (btnUpdate && inputUrl) {
+    btnUpdate.addEventListener('click', () => {
+      const newUrl = inputUrl.value.trim();
+      if (!newUrl) return;
 
-    const patientData = {
-      name: name,
-      age: document.getElementById('patientAge').value,
-      sex: document.getElementById('patientSex').value,
-      canton: document.getElementById('patientCanton').value,
-      phone: phone,
-      email: document.getElementById('patientEmail').value,
-      date: new Date().toISOString()
-    };
+      const embedUrl = newUrl.includes('embedded=true') 
+        ? newUrl 
+        : (newUrl.includes('?') ? `${newUrl}&embedded=true` : `${newUrl}?embedded=true`);
+      
+      iframe.src = embedUrl;
+      directLink.href = newUrl;
+      localStorage.setItem('cuerpo_maestro_google_forms_url', newUrl);
 
-    try {
-      const existing = JSON.parse(localStorage.getItem('cuerpo_maestro_inscritos') || '[]');
-      existing.push(patientData);
-      localStorage.setItem('cuerpo_maestro_inscritos', JSON.stringify(existing));
-    } catch (err) {
-      console.log('Almacenamiento local:', err);
-    }
-
-    form.style.display = 'none';
-    successBox.classList.add('show');
-    successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  });
+      btnUpdate.textContent = '¡Formulario Conectado!';
+      btnUpdate.style.backgroundColor = '#0f766e';
+      btnUpdate.style.color = '#ffffff';
+      setTimeout(() => {
+        btnUpdate.textContent = 'Vincular Formulario';
+        btnUpdate.style.backgroundColor = '';
+        btnUpdate.style.color = '';
+      }, 2500);
+    });
+  }
 }
