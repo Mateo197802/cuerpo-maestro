@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Cuerpo Maestro | Universidad Yachay Tech - UTPL - ALFA Hospital</title>
+  <meta name="description" content="Eficacia comparativa del protocolo integral 'Cuerpo Maestro' frente a protocolos dietéticos diferenciados sobre la homeostasis metabólica y composición corporal en adultos con síndrome metabólico de Imbabura, Ecuador.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       BARRA INSTITUCIONAL SUPERIOR
+       ========================================================================== -->
+  <header class="top-banner">
+    <div class="container top-banner-inner">
+      <div class="institutional-tags">
+        <div class="institutional-tag">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <strong>Universidad Yachay Tech</strong> <span>(Patrocinador & Órgano Ejecutor)</span>
+        </div>
+        <div class="institutional-tag">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          <strong>UTPL</strong> &amp; <strong>ALFA Hospital</strong> <span>(Centros Colaboradores)</span>
+        </div>
+      </div>
+      <div>
+        <span class="badge badge-navy">Proyecto PII 2026 (PII26-12)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       BARRA DE NAVEGACIÓN PRINCIPAL
+       ========================================================================== -->
+  <nav class="site-header">
+    <div class="container header-inner">
+      <div class="brand-wrapper">
+        <div class="brand-emblem">CM</div>
+        <div class="brand-title-group">
+          <h4>Cuerpo Maestro</h4>
+          <small>Investigación Metabólica &amp; Clínica</small>
+        </div>
+      </div>
+
+      <div class="main-nav">
+        <a href="#hero" class="nav-link active">Resumen</a>
+        <a href="#paradigma" class="nav-link">Problema &amp; Paradigma</a>
+        <a href="#brazos" class="nav-link">Brazos de Estudio</a>
+        <a href="#evaluador" class="nav-link">Evaluador ATP III</a>
+        <a href="#variables" class="nav-link">Variables</a>
+        <a href="#cronograma" class="nav-link">Cronograma</a>
+        <a href="#equipo" class="nav-link">Equipo &amp; Ética</a>
+      </div>
+
+      <div class="header-actions">
+        <button class="btn btn-outline btn-sm btn-open-github-modal">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Ver en GitHub Pages
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       HERO: TÍTULO OFICIAL Y METADATOS CLAVE
+       ========================================================================== -->
+  <section id="hero" class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-meta-bar">
+            <span class="badge badge-brand">Estudio Longitudinal Prospectivo Cuasi-Experimental</span>
+            <span class="badge badge-neutral">4 Grupos Paralelos</span>
+            <span class="badge badge-accent">Urcuquí e Ibarra, Imbabura (2026-2027)</span>
+          </div>
+
+          <h1 class="hero-title">
+            Eficacia comparativa del protocolo integral <span class="hero-highlight">"Cuerpo Maestro"</span> frente a protocolos dietéticos diferenciados sobre la homeostasis metabólica y la composición corporal
+          </h1>
+
+          <p class="hero-subtitle">
+            Evaluación clínica pre-post intervención en 80 adultos de 18 a 60 años con síndrome metabólico en la provincia de Imbabura, Ecuador. Protocolo aprobado bajo financiamiento interno de investigación Yachay Tech (código PII26-12), contrastando restricción calórica, modulación de macronutrientes y alimentación restringida en el tiempo frente a un grupo control estructurado.
+          </p>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="#brazos" class="btn btn-primary">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Explorar Brazos de Intervención
+            </a>
+            <a href="#evaluador" class="btn btn-outline">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              Evaluador Clínico ATP III / Lancet 2025
+            </a>
+          </div>
+        </div>
+
+        <!-- Tira de Indicadores Clave -->
+        <div class="hero-metrics-strip">
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">Financiamiento</span>
+              <svg class="icon icon-sm" style="color: var(--color-brand);" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="metric-value">12.499,98 <small style="font-size: 0.9rem; font-weight: 500;">USD</small></div>
+            <div class="metric-desc">Fondo de Investigación Interno PII 2026 (Yachay Tech)</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">Muestra Analítica</span>
+              <svg class="icon icon-sm" style="color: var(--color-navy);" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="metric-value">80 <small style="font-size: 0.9rem; font-weight: 500;">sujetos</small></div>
+            <div class="metric-desc">20 participantes por brazo (Potencia 80%, f=0.25, α=0.05)</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">Periodo Activo</span>
+              <svg class="icon icon-sm" style="color: var(--color-accent);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="metric-value">6 <small style="font-size: 0.9rem; font-weight: 500;">meses</small></div>
+            <div class="metric-desc">Intervención activa T0 a T1 (15 meses totales de ejecución)</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <span class="metric-label">Desenlace Primario</span>
+              <svg class="icon icon-sm" style="color: var(--color-brand);" viewBox="0 0 24 24"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+            </div>
+            <div class="metric-value" style="font-size: 1.35rem;">% Grasa Corporal</div>
+            <div class="metric-desc">Medición estandarizada mediante bioimpedancia eléctrica</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PROBLEMA Y NUEVO PARADIGMA LANCET 2025 / ADA 2026
+       ========================================================================== */
+  -->
+  <section id="paradigma">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Marco Fisiopatológico &amp; Epidemiológico</span>
+        <h2>La Brecha de Evidencia y la Evolución en la Definición de Obesidad</h2>
+        <p class="section-description">
+          El síndrome metabólico comprende adiposidad central, hipertensión arterial, dislipidemia aterogénica e hiperglucemia, constituyendo el mayor promotor de riesgo cardiovascular y diabetes tipo 2 en América Latina y Ecuador.
+        </p>
+      </div>
+
+      <div class="paradigm-grid">
+        <div class="card-clinical card-primary-accent">
+          <div class="card-icon-wrap icon-brand-theme">
+            <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Carga Epidemiológica en Ecuador</h3>
+          <p>
+            Las encuestas nacionales <strong>ENSANUT-ECU</strong> y <strong>STEPS Ecuador</strong> (MSP) revelan una elevada prevalencia de factores cardiometabólicos en la población andina. La inflamación crónica de bajo grado y la disfunción del tejido adiposo visceral generan resistencia a la insulina y pérdida progresiva de la flexibilidad metabólica muscular y hepática.
+          </p>
+        </div>
+
+        <div class="card-clinical card-warm-accent">
+          <div class="card-icon-wrap icon-warm-theme">
+            <svg class="icon icon-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3>Consenso The Lancet 2025</h3>
+          <p>
+            La Comisión de <em>The Lancet Diabetes &amp; Endocrinology 2025</em> desaconseja utilizar el IMC como único indicador individual de salud, estableciendo la distinción crítica entre <strong>obesidad clínica</strong> y <strong>obesidad preclínica</strong> mediante la confirmación objetiva de exceso de adiposidad a través de bioimpedancia y circunferencia abdominal.
+          </p>
+        </div>
+
+        <div class="card-clinical card-navy-accent">
+          <div class="card-icon-wrap icon-navy-theme">
+            <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>Estándares ADA 2026</h3>
+          <p>
+            Los <em>Standards of Care in Overweight and Obesity—2026</em> de la American Diabetes Association estipulan la complementación forzosa del IMC con relación cintura/talla y bioimpedancia eléctrica de grado clínico, fundamentando la validez diagnóstica del presente protocolo experimental.
+          </p>
+        </div>
+      </div>
+
+      <!-- Aclaración Operativa Transversal -->
+      <div class="callout-box" style="margin-top: 2rem;">
+        <h5>Aclaración Operativa del Protocolo "Cuerpo Maestro"</h5>
+        <p>
+          En este ensayo, <strong>"Cuerpo Maestro" no compite como un brazo aislado</strong>, sino que constituye el <em>componente estructural común</em> (educación nutricional integral, intervención conductual y actividad física guiada) que se aplica de manera transversal a los tres brazos activos. El estudio compara qué combinación de estrategia dietética asociada a "Cuerpo Maestro" produce la mayor optimización metabólica frente a un control sin dichos componentes.
+        </p>
+      </div>
+
+      <!-- Hipótesis del Estudio -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+        <div style="background: #ffffff; padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+          <span class="badge badge-brand" style="margin-bottom: 0.5rem;">Hipótesis Alternativa (H1)</span>
+          <p style="font-size: 0.9rem; margin-top: 0.25rem;">
+            Al menos una de las estrategias de intervención combinada con "Cuerpo Maestro" producirá una reducción significativamente mayor en la adiposidad corporal y una mejoría superior en los parámetros metabólicos entre T0 y T1 frente al grupo control (\(\alpha = 0,05\)).
+          </p>
+        </div>
+        <div style="background: #ffffff; padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+          <span class="badge badge-neutral" style="margin-bottom: 0.5rem;">Hipótesis Nula (H0)</span>
+          <p style="font-size: 0.9rem; margin-top: 0.25rem;">
+            No existirán diferencias estadísticamente significativas entre los cuatro grupos paralelos en los cambios de composición corporal ni en los biomarcadores metabólicos entre la evaluación basal (T0) y los seis meses (T1).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       COMPARADOR INTERACTIVO DE LOS 4 BRAZOS DE INTERVENCIÓN
+       ========================================================================== -->
+  <section id="brazos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Diseño Experimental</span>
+        <h2>Comparador Interactivo de los Cuatro Brazos de Estudio</h2>
+        <p class="section-description">
+          Seleccione cada grupo para inspeccionar su prescripción energética, distribución de macronutrientes, temporalidad de la ingesta y vías metabólicas celulares involucradas.
+        </p>
+      </div>
+
+      <div class="comparator-container">
+        <!-- Banner Transversal Común -->
+        <div class="transversal-banner">
+          <div>
+            <span class="transversal-badge">Pilar Transversal Común</span>
+            <span style="font-weight: 700; margin-left: 0.75rem; font-size: 1rem;">Componentes Estructurales de "Cuerpo Maestro" (G1, G2, G3)</span>
+          </div>
+          <div class="transversal-pillars">
+            <div class="pillar-item">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              <span>Actividad Física Supervisada</span>
+            </div>
+            <div class="pillar-item">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              <span>Educación Nutricional Continua</span>
+            </div>
+            <div class="pillar-item">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span>Acompañamiento Conductual</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pestañas de Selección de Brazos -->
+        <div class="arm-selector-tabs">
+          <button class="arm-tab-btn active" data-arm="g1">
+            <span class="arm-tab-code">Brazo G1 (Activo)</span>
+            <span class="arm-tab-title">Restricción Calórica (-20%)</span>
+          </button>
+          <button class="arm-tab-btn" data-arm="g2">
+            <span class="arm-tab-code">Brazo G2 (Activo)</span>
+            <span class="arm-tab-title">Modulación Macronutrientes</span>
+          </button>
+          <button class="arm-tab-btn" data-arm="g3">
+            <span class="arm-tab-code">Brazo G3 (Activo)</span>
+            <span class="arm-tab-title">Alimentación Restringida (TRF 16:8)</span>
+          </button>
+          <button class="arm-tab-btn" data-arm="g4">
+            <span class="arm-tab-code">Brazo G4 (Control)</span>
+            <span class="arm-tab-title">Control Hábitos Habituales</span>
+          </button>
+        </div>
+
+        <!-- Panel de Despliegue de Datos del Brazo -->
+        <div class="arm-display-panel">
+          <div class="arm-details-grid">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                <span id="armCode" class="badge badge-brand">Grupo 1 (Intervención Activa)</span>
+                <span id="armBadge" class="badge badge-accent">Déficit Energético Cuantitativo</span>
+              </div>
+
+              <h3 id="armTitle" style="font-size: 1.45rem; margin-bottom: 1rem;">Cuerpo Maestro + Restricción Calórica (-20%)</h3>
+
+              <div id="transversalStatus" class="callout-box">
+                <h5>Pilar Transversal "Cuerpo Maestro" Activo</h5>
+                <p>Este grupo recibe de forma protocolizada los 3 componentes comunes: <strong>Educación Nutricional</strong> continua, <strong>Acompañamiento Conductual</strong> (modelo transteórico) y <strong>Actividad Física Supervisada</strong> (prescripción de fuerza + aeróbica).</p>
+              </div>
+
+              <h4 style="font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.5rem;">Mecanismos Moleculares y Fisiológicos Implicados:</h4>
+              <ul id="armMechanismsList" class="mechanisms-list">
+                <li>Activación de sensores energéticos AMPK y elevación en relación NAD+/NADH.</li>
+                <li>Estimulación de desacetilasas SIRT1 y SIRT3 favoreciendo la biogénesis mitocondrial.</li>
+                <li>Lipólisis sostenida y movilización de triglicéridos ectópicos intrahepáticos.</li>
+                <li>Riesgo monitorizado: posible adaptación metabólica y compensación del gasto basal a largo plazo.</li>
+              </ul>
+            </div>
+
+            <!-- Ficha Paramétrica y Distribución -->
+            <div class="arm-protocol-card">
+              <h4 style="font-size: 1rem; border-bottom: 1px solid var(--border-medium); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                Prescripción Dietética del Brazo
+              </h4>
+
+              <div style="margin-bottom: 1rem;">
+                <small style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; font-weight: 700;">Régimen Calórico</small>
+                <div id="armCaloric" style="font-weight: 700; color: var(--text-primary); font-size: 0.95rem;">Déficit calórico continuo moderado (-20%)</div>
+              </div>
+
+              <div style="margin-bottom: 1.25rem;">
+                <small style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; font-weight: 700;">Ventana Diaria de Ingesta</small>
+                <div id="armWindow" style="font-weight: 600; color: var(--text-primary); font-size: 0.9rem;">Ad libitum con déficit cuantitativo (~20% bajo el gasto energético total)</div>
+              </div>
+
+              <div style="margin-bottom: 1rem;">
+                <small style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; font-weight: 700;">Composición Macronutricional Estimada</small>
+                <div id="armMacrosText" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                  Distribución equilibrada tradicional con déficit calórico del 20%
+                </div>
+              </div>
+
+              <!-- Barras de Macronutrientes -->
+              <div class="nutrient-bar-group">
+                <div class="nutrient-bar-label">
+                  <span id="textProtein">20% Proteína</span>
+                  <span>Proteínas</span>
+                </div>
+                <div class="nutrient-progress">
+                  <div id="barProtein" class="nutrient-fill fill-protein" style="width: 20%;"></div>
+                </div>
+
+                <div class="nutrient-bar-label">
+                  <span id="textCarb">55% Carbohidratos</span>
+                  <span>Carbohidratos</span>
+                </div>
+                <div class="nutrient-progress">
+                  <div id="barCarb" class="nutrient-fill fill-carb" style="width: 55%;"></div>
+                </div>
+
+                <div class="nutrient-bar-label">
+                  <span id="textFat">25% Grasas</span>
+                  <span>Grasas Saludables</span>
+                </div>
+                <div class="nutrient-progress">
+                  <div id="barFat" class="nutrient-fill fill-fat" style="width: 25%;"></div>
+                </div>
+              </div>
+
+              <div style="font-size: 0.78rem; color: var(--text-muted); text-align: right; margin-top: 0.5rem;">
+                Muestra asignada: <strong>20 participantes</strong> (n=80 total)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       EVALUADOR CLÍNICO ATP III Y LANCET 2025 (HERRAMIENTA INTERACTIVA)
+       ========================================================================== -->
+  <section id="evaluador">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Herramienta Interactiva de Tamizaje</span>
+        <h2>Evaluador Clínico: Criterios ATP III y Fenotipado Lancet 2025</h2>
+        <p class="section-description">
+          Ajuste las variables biométricas de un sujeto para verificar en tiempo real si cumple con el criterio de inclusión de Síndrome Metabólico (al menos 3 de 5 componentes ATP III) y clasificar su estadificación de adiposidad clínica.
+        </p>
+      </div>
+
+      <div class="evaluator-grid">
+        <!-- Controles de Entrada -->
+        <div class="evaluator-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 0;">Parámetros del Participante</h3>
+            <span class="badge badge-neutral">Valores Basales T0</span>
+          </div>
+
+          <!-- Selector de Sexo -->
+          <label style="font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 0.5rem;">
+            Sexo Biológico (determina umbrales de perímetro y HDL)
+          </label>
+          <div class="sex-toggle-group">
+            <button class="sex-btn active" data-sex="male">Masculino</button>
+            <button class="sex-btn" data-sex="female">Femenino</button>
+          </div>
+
+          <!-- 1. Perímetro Abdominal -->
+          <div class="evaluator-form-group">
+            <div class="form-label-row">
+              <label for="inputWaist">1. Circunferencia Abdominal (cm)</label>
+              <span id="waistThresholdLabel" class="criterion-threshold">Umbral ATP III: ≥ 102 cm</span>
+            </div>
+            <div class="input-slider-wrap">
+              <input type="range" id="sliderWaist" min="60" max="150" value="105">
+              <input type="number" id="inputWaist" class="input-number" min="60" max="150" value="105">
+            </div>
+          </div>
+
+          <!-- 2. Triglicéridos -->
+          <div class="evaluator-form-group">
+            <div class="form-label-row">
+              <label for="inputTG">2. Triglicéridos Séricos (mg/dL)</label>
+              <span class="criterion-threshold">Umbral ATP III: ≥ 150 mg/dL</span>
+            </div>
+            <div class="input-slider-wrap">
+              <input type="range" id="sliderTG" min="60" max="400" value="180">
+              <input type="number" id="inputTG" class="input-number" min="60" max="400" value="180">
+            </div>
+          </div>
+
+          <!-- 3. Colesterol HDL -->
+          <div class="evaluator-form-group">
+            <div class="form-label-row">
+              <label for="inputHDL">3. Colesterol HDL (mg/dL)</label>
+              <span id="hdlThresholdLabel" class="criterion-threshold">Umbral ATP III: &lt; 40 mg/dL</span>
+            </div>
+            <div class="input-slider-wrap">
+              <input type="range" id="sliderHDL" min="15" max="90" value="34">
+              <input type="number" id="inputHDL" class="input-number" min="15" max="90" value="34">
+            </div>
+          </div>
+
+          <!-- 4. Presión Arterial -->
+          <div class="evaluator-form-group">
+            <div class="form-label-row">
+              <label for="inputSys">4. Presión Sistólica / Diastólica (mmHg)</label>
+              <span class="criterion-threshold">Umbral ATP III: ≥ 130 / ≥ 85 mmHg</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="input-slider-wrap">
+                <input type="range" id="sliderSys" min="90" max="190" value="135">
+                <input type="number" id="inputSys" class="input-number" min="90" max="190" value="135">
+              </div>
+              <div class="input-slider-wrap">
+                <input type="range" id="sliderDia" min="50" max="120" value="88">
+                <input type="number" id="inputDia" class="input-number" min="50" max="120" value="88">
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Glucosa en Ayunas -->
+          <div class="evaluator-form-group">
+            <div class="form-label-row">
+              <label for="inputGlucose">5. Glucosa Sérica en Ayunas (mg/dL)</label>
+              <span class="criterion-threshold">Umbral ATP III: ≥ 100 mg/dL</span>
+            </div>
+            <div class="input-slider-wrap">
+              <input type="range" id="sliderGlucose" min="60" max="220" value="108">
+              <input type="number" id="inputGlucose" class="input-number" min="60" max="220" value="108">
+            </div>
+          </div>
+
+          <!-- Complemento Lancet / Bioimpedancia -->
+          <div class="evaluator-form-group">
+            <div class="form-label-row">
+              <label for="inputFatPct">Porcentaje de Grasa Corporal (%) - Bioimpedancia</label>
+              <span class="criterion-threshold">Criterio Lancet 2025 / ADA 2026</span>
+            </div>
+            <div class="input-slider-wrap">
+              <input type="range" id="sliderFatPct" min="10" max="55" value="31">
+              <input type="number" id="inputFatPct" class="input-number" min="10" max="55" value="31">
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel Diagnóstico Dinámico -->
+        <div class="diagnostic-status-box">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span class="badge badge-brand">Estado de Elegibilidad</span>
+            <span id="lancetStagingBadge" class="badge badge-accent">Lancet 2025: Obesidad Clínica</span>
+          </div>
+
+          <div class="status-counter-ring">
+            <div id="criteriaCounter" class="counter-number alert">5 / 5</div>
+            <div id="criteriaCountText" class="counter-label">Criterios diagnósticos confirmados (≥ 3)</div>
+          </div>
+
+          <h4 style="font-size: 0.95rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
+            Desglose de Componentes ATP III:
+          </h4>
+
+          <ul class="criteria-checklist">
+            <li class="criteria-check-item">
+              <span>Obesidad Abdominal (Perímetro)</span>
+              <span id="checkWaist" class="check-indicator met">✓</span>
+            </li>
+            <li class="criteria-check-item">
+              <span>Triglicéridos Elevados (≥150 mg/dL)</span>
+              <span id="checkTG" class="check-indicator met">✓</span>
+            </li>
+            <li class="criteria-check-item">
+              <span>Colesterol HDL Reducido</span>
+              <span id="checkHDL" class="check-indicator met">✓</span>
+            </li>
+            <li class="criteria-check-item">
+              <span>Presión Arterial Elevada (≥130 / 85)</span>
+              <span id="checkBP" class="check-indicator met">✓</span>
+            </li>
+            <li class="criteria-check-item">
+              <span>Glucosa en Ayunas Alterada (≥100 mg/dL)</span>
+              <span id="checkGlucose" class="check-indicator met">✓</span>
+            </li>
+          </ul>
+
+          <div id="eligibilityVerdict" class="badge badge-accent" style="width: 100%; justify-content: center; padding: 0.5rem 1rem; font-size: 0.85rem; margin-bottom: 0.75rem;">
+            Cumple criterios de inclusión
+          </div>
+
+          <div id="verdictDetail" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; background: var(--bg-subtle); padding: 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <strong>Apto para el protocolo:</strong> El sujeto califica con diagnóstico clínico positivo para Síndrome Metabólico de acuerdo a NCEP-ATP III armonizado [2,3]. Puede ingresar a uno de los 4 brazos de estudio en T0.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       OPERACIONALIZACIÓN DE VARIABLES Y PLAN DE ANÁLISIS
+       ========================================================================== -->
+  <section id="variables">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Matriz Metodológica (Anexo C)</span>
+        <h2>Cuadro de Operacionalización de Variables &amp; Análisis Estadístico</h2>
+        <p class="section-description">
+          Consulte la operacionalización de todas las dimensiones del ensayo clínico. Utilice los filtros temáticos o el campo de búsqueda rápida para explorar escalas, unidades e indicadores.
+        </p>
+      </div>
+
+      <!-- Filtros Dinámicos -->
+      <div class="table-filter-bar">
+        <div class="filter-pills">
+          <button class="filter-pill active" data-filter="all">Todas las Variables</button>
+          <button class="filter-pill" data-filter="Antropometría">Antropometría &amp; Grasa</button>
+          <button class="filter-pill" data-filter="Metabolismo">Metabolismo &amp; Glucídico</button>
+          <button class="filter-pill" data-filter="Cardiovascular">Cardiovascular</button>
+          <button class="filter-pill" data-filter="Seguridad">Función Hepática / Renal</button>
+          <button class="filter-pill" data-filter="Conductual">Calidad de Vida SF-36</button>
+        </div>
+
+        <input type="text" id="variableSearch" class="table-search-input" placeholder="Buscar variable o indicador...">
+      </div>
+
+      <!-- Tabla Operacionalizada -->
+      <div class="table-responsive">
+        <table class="clinical-table">
+          <thead>
+            <tr>
+              <th>Variable de Estudio</th>
+              <th>Definición Operativa</th>
+              <th>Indicador / Unidades</th>
+              <th>Escala</th>
+              <th>Tipo Metodológico</th>
+            </tr>
+          </thead>
+          <tbody id="variablesTableBody">
+            <!-- Renderizado dinámico vía app.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Plan de Análisis Estadístico -->
+      <div class="ethics-safeguards-grid" style="margin-top: 2.5rem;">
+        <div class="safeguard-card">
+          <h4>Intención de Tratar (ITT)</h4>
+          <p>
+            Análisis primario bajo el principio ITT con imputación múltiple para pérdidas de seguimiento. Se desarrollará un análisis secundario de sensibilidad por protocolo (PP).
+          </p>
+        </div>
+
+        <div class="safeguard-card">
+          <h4>Ajuste por Covariables (ANCOVA)</h4>
+          <p>
+            Modelos lineales generales y ANCOVA controlando edad, sexo biológico, nivel basal (T0) y porcentaje de adherencia conductual para mitigar posibles factores de confusión.
+          </p>
+        </div>
+
+        <div class="safeguard-card">
+          <h4>Control de Falsos Positivos (FDR)</h4>
+          <p>
+            El desenlace primario (% grasa) se contrasta con \(\alpha = 0,05\). Los múltiples desenlaces secundarios aplican la corrección de Benjamini-Hochberg para controlar la tasa de falsos descubrimientos.
+          </p>
+        </div>
+
+        <div class="safeguard-card">
+          <h4>Software y Verificación</h4>
+          <p>
+            Procesamiento analítico en <strong>SPSS v25+</strong> y <strong>R v4.3+</strong> con reporte explícito de tamaño de efecto (\(\eta^2\), \(d\) de Cohen) e intervalos de confianza del 95%.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CRONOGRAMA GANTT INTERACTIVO (15 MESES)
+       ========================================================================== -->
+  <section id="cronograma">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Plan de Ejecución Temporal (Anexo A)</span>
+        <h2>Cronograma de Trabajo por Objetivos Específicos</h2>
+        <p class="section-description">
+          15 meses totales de ejecución (Inicio: 01/04/2026 - Fin: 01/07/2027), distribuidos entre fases preparatorias, 6 meses de intervención activa y análisis/difusión científica.
+        </p>
+      </div>
+
+      <div class="gantt-wrapper">
+        <div class="gantt-controls">
+          <div class="filter-pills">
+            <button class="filter-pill active gantt-filter-btn" data-oe="all">Todas las Actividades</button>
+            <button class="filter-pill gantt-filter-btn" data-oe="oe1">OE1: Composición Corporal</button>
+            <button class="filter-pill gantt-filter-btn" data-oe="oe2">OE2: Impacto Metabólico</button>
+            <button class="filter-pill gantt-filter-btn" data-oe="oe3">OE3: Eficacia &amp; Difusión</button>
+          </div>
+
+          <div class="gantt-legend">
+            <div class="legend-item"><div class="legend-color bar-oe1"></div><span>OE1 (Antropometría)</span></div>
+            <div class="legend-item"><div class="legend-color bar-oe2"></div><span>OE2 (Laboratorio/Metabolismo)</span></div>
+            <div class="legend-item"><div class="legend-color bar-oe3"></div><span>OE3 (Análisis &amp; Cierre)</span></div>
+          </div>
+        </div>
+
+        <div class="gantt-grid">
+          <!-- Encabezado de Meses -->
+          <div class="gantt-header-row">
+            <div style="text-align: left; padding-left: 0.5rem;">Actividad Operativa</div>
+            <div>M1</div><div>M2</div><div>M3</div><div>M4</div><div>M5</div>
+            <div>M6</div><div>M7</div><div>M8</div><div>M9</div><div>M10</div>
+            <div>M11</div><div>M12</div><div>M13</div><div>M14</div><div>M15</div>
+          </div>
+
+          <!-- OE1: Composición Corporal -->
+          <div class="gantt-activity-row" data-oe="oe1">
+            <div class="gantt-activity-title">1.1 Gestión, contrataciones y habilitación</div>
+            <div class="gantt-bar-cell" style="grid-column: 2 / span 2;"><div class="gantt-bar bar-oe1" style="left:0; width:100%;"></div></div>
+          </div>
+
+          <div class="gantt-activity-row" data-oe="oe1">
+            <div class="gantt-activity-title">1.2 Reclutamiento, difusión y tamizaje</div>
+            <div class="gantt-bar-cell" style="grid-column: 3 / span 2;"><div class="gantt-bar bar-oe1" style="left:0; width:100%;"></div></div>
+          </div>
+
+          <div class="gantt-activity-row" data-oe="oe1">
+            <div class="gantt-activity-title">1.3 Evaluación basal T0 (Antropometría &amp; Bioimpedancia)</div>
+            <div class="gantt-bar-cell" style="grid-column: 4 / span 1;"><div class="gantt-bar bar-oe1" style="left:0; width:100%;"></div></div>
+          </div>
+
+          <div class="gantt-activity-row" data-oe="oe1">
+            <div class="gantt-activity-title">1.4 Intervención activa de 6 meses y monitoreo</div>
+            <div class="gantt-bar-cell" style="grid-column: 5 / span 6;"><div class="gantt-bar bar-oe1" style="left:0; width:100%;"></div></div>
+          </div>
+
+          <!-- OE2: Impacto Metabólico -->
+          <div class="gantt-activity-row" data-oe="oe2">
+            <div class="gantt-activity-title">2.1 Laboratorio basal T0 (Sangre venosa 10 mL)</div>
+            <div class="gantt-bar-cell" style="grid-column: 4 / span 1;"><div class="gantt-bar bar-oe2" style="left:0; width:100%;"></div></div>
+          </div>
+
+          <div class="gantt-activity-row" data-oe="oe2">
+            <div class="gantt-activity-title">2.2 Seguimiento clínico-nutricional y refuerzo</div>
+            <div class="gantt-bar-cell" style="grid-column: 5 / span 6;"><div class="gantt-bar bar-oe2" style="left:0; width:100%;"></div></div>
+          </div>
+
+          <div class="gantt-activity-row" data-oe="oe2">
+            <div class="gantt-activity-title">2.3 Laboratorio final T1 y evaluación post-intervención</div>
+            <div class="gantt-bar-cell" style="grid-column: 11 / span 1;"><div class="gantt-bar bar-oe2" style="left:0; width:100%;"></div></div>
+          </div>
+
+          <div class="gantt-activity-row" data-oe="oe2">
+            <div class="gantt-activity-title">2.4 Consolidación y control de calidad base bioquímica</div>
+            <div class="gantt-bar-cell" style="grid-column: 11 / span 2;"><div class="gantt-bar bar-oe2" style="left:0; width:100%;"></div></div>
+          </div>
+
+          <!-- OE3: Eficacia Comparativa -->
+          <div class="gantt-activity-row" data-oe="oe3">
+            <div class="gantt-activity-title">3.1 Depuración y análisis estadístico inferencial</div>
+            <div class="gantt-bar-cell" style="grid-column: 12 / span 2;"><div class="gantt-bar bar-oe3" style="left:0; width:100%;"></div></div>
+          </div>
+
+          <div class="gantt-activity-row" data-oe="oe3">
+            <div class="gantt-activity-title">3.2 Análisis de adherencia y calidad de vida (SF-36)</div>
+            <div class="gantt-bar-cell" style="grid-column: 12 / span 2;"><div class="gantt-bar bar-oe3" style="left:0; width:100%;"></div></div>
+          </div>
+
+          <div class="gantt-activity-row" data-oe="oe3">
+            <div class="gantt-activity-title">3.3 Interpretación y reporte técnico de resultados</div>
+            <div class="gantt-bar-cell" style="grid-column: 13 / span 2;"><div class="gantt-bar bar-oe3" style="left:0; width:100%;"></div></div>
+          </div>
+
+          <div class="gantt-activity-row" data-oe="oe3">
+            <div class="gantt-activity-title">3.4 Manuscrito científico, difusión y cierre al MSP</div>
+            <div class="gantt-bar-cell" style="grid-column: 14 / span 2;"><div class="gantt-bar bar-oe3" style="left:0; width:100%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       EQUIPO DE INVESTIGACIÓN Y GOBERNANZA ÉTICA
+       ========================================================================== -->
+  <section id="equipo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Personal Científico &amp; Colaboraciones</span>
+        <h2>Equipo de Investigación Multidisciplinario</h2>
+        <p class="section-description">
+          Investigadores principales, asociados y colaboradores clínicos de Yachay Tech, la Universidad Técnica Particular de Loja (UTPL) y ALFA Hospital.
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">PN</div>
+          <span class="team-role">Investigador Principal</span>
+          <div class="team-name">Paulo Roberto Navas Boada</div>
+          <div class="team-inst">Escuela de Ciencias Biológicas e Ingeniería, Yachay Tech</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">CT</div>
+          <span class="team-role">Co-Investigador</span>
+          <div class="team-name">Christian Andrés Tirado Espín</div>
+          <div class="team-inst">Universidad Yachay Tech</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">JC</div>
+          <span class="team-role">Co-Investigador</span>
+          <div class="team-name">Jonathan David Cruz Varela</div>
+          <div class="team-inst">Universidad Yachay Tech</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">HH</div>
+          <span class="team-role">Co-Investigador</span>
+          <div class="team-name">Henry José Herrera Palacios</div>
+          <div class="team-inst">Universidad Yachay Tech</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">GO</div>
+          <span class="team-role">Colaborador Clínico Externo</span>
+          <div class="team-name">German Andrés Onofre Vega</div>
+          <div class="team-inst">ALFA Hospital</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">HT</div>
+          <span class="team-role">Colaborador Externo</span>
+          <div class="team-name">Hernán Rodrigo Torres Agila</div>
+          <div class="team-inst">Universidad Técnica Particular de Loja (UTPL)</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">SA</div>
+          <span class="team-role">Colaborador Clínico Externo</span>
+          <div class="team-name">Santiago David Albuja Játiva</div>
+          <div class="team-inst">ALFA Hospital</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">JS</div>
+          <span class="team-role">Dirección Institucional</span>
+          <div class="team-name">Dr. Juan Pablo Saucedo</div>
+          <div class="team-inst">Director de Investigación, Yachay Tech</div>
+        </div>
+      </div>
+
+      <!-- Asistentes de Investigación -->
+      <div style="margin-top: 1.5rem; background: var(--bg-subtle); padding: 1.25rem 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+        <h4 style="font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--text-primary);">Asistentes de Investigación (Yachay Tech):</h4>
+        <p style="font-size: 0.85rem; color: var(--text-secondary);">
+          Isaac Mateo Gavilanes Chávez &bull; Arianna Rafaela Castillo Guevara &bull; Ethan Aaron Guevara López &bull; Yehudhah Kennedy Rodriguez Moran.
+        </p>
+      </div>
+
+      <!-- Marco de Bioética y Mitigación de Conflicto de Interés -->
+      <div class="ethics-banner">
+        <span class="badge badge-accent" style="margin-bottom: 0.75rem;">Gobernanza Bioética &amp; Rigor Metodológico</span>
+        <h3 style="font-size: 1.4rem;">Mitigación de Conflicto de Interés y Salvaguardas</h3>
+        <p style="margin-top: 0.5rem; font-size: 0.95rem;">
+          Dado el potencial de registro de propiedad intelectual y transferencia tecnológica del programa integral <em>"Cuerpo Maestro"</em>, el equipo investigador declaró transparentemente dicho interés y formalizó cuatro salvaguardas estrictas de control:
+        </p>
+
+        <div class="ethics-safeguards-grid">
+          <div class="safeguard-card">
+            <h4>1. Evaluadores Ciegos</h4>
+            <p>Las tomas antropométricas, bioimpedancia, presión arterial y laboratorio son ejecutadas por personal rigurosamente ciego a la asignación de grupo.</p>
+          </div>
+
+          <div class="safeguard-card">
+            <h4>2. Registro Público Previo</h4>
+            <p>El protocolo analítico se registra en repositorios públicos antes de iniciar el reclutamiento para evitar sesgos de reporte selectivo.</p>
+          </div>
+
+          <div class="safeguard-card">
+            <h4>3. Compromiso de Publicación</h4>
+            <p>Publicación transparente de todos los desenlaces obtenidos, sean positivos, neutros o negativos frente a la hipótesis.</p>
+          </div>
+
+          <div class="safeguard-card">
+            <h4>4. Supervisión Estadística Externa</h4>
+            <p>La depuración y modelación econométrica/estadística es auditada por co-investigadores independientes sin interés comercial en la patente.</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; font-size: 0.8125rem; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+          Conducción ética conforme a: <strong>Declaración de Helsinki (2024)</strong> &bull; <strong>Pautas CIOMS (2023)</strong> &bull; <strong>Reglamento MSP Ecuador (2024)</strong> &bull; Aprobación CEISH institucional.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MODAL: GUÍA DE DESPLIEGUE EN GITHUB PAGES
+       ========================================================================== -->
+  <div id="githubModal" class="modal-overlay">
+    <div class="modal-window">
+      <button id="closeGithubModal" class="modal-close-btn" aria-label="Cerrar modal">
+        <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <span class="badge badge-brand" style="margin-bottom: 0.75rem;">Guía de Publicación</span>
+      <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Cómo Visualizar esta Web en GitHub Pages</h3>
+      <p style="font-size: 0.9rem; margin-bottom: 1.25rem;">
+        Esta plataforma web está completamente construida sin dependencias complejas, lista para ser alojada de forma gratuita en GitHub Pages con tu dominio público institucional o personal:
+      </p>
+
+      <div style="margin-bottom: 1rem;">
+        <strong style="font-size: 0.85rem; text-transform: uppercase; color: var(--color-brand); display: block; margin-bottom: 0.25rem;">
+          Paso 1: Crear el repositorio en GitHub
+        </strong>
+        <p style="font-size: 0.85rem;">Crea un nuevo repositorio público en <a href="https://github.com/new" target="_blank" rel="noopener">github.com/new</a> (por ejemplo: <code>cuerpo-maestro-metabolismo</code>).</p>
+      </div>
+
+      <div style="margin-bottom: 1rem;">
+        <strong style="font-size: 0.85rem; text-transform: uppercase; color: var(--color-brand); display: block; margin-bottom: 0.25rem;">
+          Paso 2: Ejecutar los comandos en tu terminal
+        </strong>
+        <div class="code-block">
+          <button class="copy-btn">Copiar</button>
+          <code>git init
+git add .
+git commit -m "Publicación de plataforma Cuerpo Maestro Yachay Tech"
+git branch -M main
+git remote add origin https://github.com/&lt;TU-USUARIO&gt;/cuerpo-maestro-metabolismo.git
+git push -u origin main</code>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 1rem;">
+        <strong style="font-size: 0.85rem; text-transform: uppercase; color: var(--color-brand); display: block; margin-bottom: 0.25rem;">
+          Paso 3: Activar GitHub Pages
+        </strong>
+        <p style="font-size: 0.85rem;">
+          En tu repositorio en GitHub, ve a <strong>Settings</strong> &rarr; <strong>Pages</strong> &rarr; En <em>Branch</em> selecciona <code>main</code> y la carpeta <code>/ (root)</code> &rarr; Clic en <strong>Save</strong>.
+        </p>
+      </div>
+
+      <div class="callout-box" style="margin-bottom: 0;">
+        <h5>Tu URL Final en la Web:</h5>
+        <p style="font-family: var(--font-mono); font-size: 0.95rem; font-weight: 700; color: var(--color-brand);">
+          https://&lt;TU-USUARIO&gt;.github.io/cuerpo-maestro-metabolismo/
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       PIE DE PÁGINA INSTITUCIONAL
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Universidad Yachay Tech</h4>
+          <p>
+            Dirección de Investigación &bull; Escuela de Ciencias Biológicas e Ingeniería &bull; Proyecto PII26-12. Hacienda San José s/n, Proyecto Yachay, Urcuquí, Imbabura, Ecuador.
+          </p>
+          <div style="margin-top: 1rem; font-size: 0.8125rem; color: #64748b;">
+            Contacto: <a href="mailto:pnavas@yachaytech.edu.ec" style="color: #94a3b8;">pnavas@yachaytech.edu.ec</a> | <a href="mailto:research_calls@yachaytech.edu.ec" style="color: #94a3b8;">research_calls@yachaytech.edu.ec</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navegación Rápida</h5>
+          <ul class="footer-links">
+            <li><a href="#hero">Resumen del Estudio</a></li>
+            <li><a href="#paradigma">Marco Lancet 2025</a></li>
+            <li><a href="#brazos">Brazos Experimentales</a></li>
+            <li><a href="#evaluador">Calculadora ATP III</a></li>
+            <li><a href="#variables">Matriz de Variables</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Gobernanza &amp; Código</h5>
+          <ul class="footer-links">
+            <li><a href="#equipo">Comité de Ética &amp; Ciegos</a></li>
+            <li><a href="#cronograma">Gantt de 15 Meses</a></li>
+            <li><a href="#" class="btn-open-github-modal">Despliegue GitHub Pages</a></li>
+            <li><a href="https://www.yachaytech.edu.ec" target="_blank" rel="noopener">Portal Yachay Tech</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026-2027 Universidad de Investigación de Tecnología Experimental Yachay (Yachay Tech). Todos los derechos reservados.
+        </div>
+        <div>
+          Formulario Oficial de Investigación MSP / CEISH &bull; Imbabura, Ecuador
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
