@@ -52,7 +52,7 @@ git push -u origin main
 4. En **Branch**, selecciona `main` y la carpeta `/ (root)`.
 5. Haz clic en **Save**.
 
-En 1-2 minutos, GitHub te proporcionará el enlace público directo:
+Enlace público directo:
 ```
-https://<TU_USUARIO_GITHUB>.github.io/cuerpo-maestro/
+https://mateo197802.github.io/cuerpo-maestro/
 ```
