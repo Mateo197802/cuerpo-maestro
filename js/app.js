@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initAtpCalculator();
   initVariablesTable();
   initGanttFilter();
-  initGithubModal();
 });
 
 /* ==========================================================================
@@ -444,46 +443,4 @@ function initGanttFilter() {
   });
 }
 
-/* ==========================================================================
-   6. MODAL GUÍA DE PUBLICACIÓN EN GITHUB PAGES
-   ========================================================================== */
-function initGithubModal() {
-  const modalOverlay = document.getElementById('githubModal');
-  const openBtns = document.querySelectorAll('.btn-open-github-modal');
-  const closeBtn = document.getElementById('closeGithubModal');
-  const copyBtns = document.querySelectorAll('.copy-btn');
 
-  openBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      modalOverlay.classList.add('open');
-    });
-  });
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      modalOverlay.classList.remove('open');
-    });
-  }
-
-  modalOverlay.addEventListener('click', (e) => {
-    if (e.target === modalOverlay) {
-      modalOverlay.classList.remove('open');
-    }
-  });
-
-  copyBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const codeBlock = btn.closest('.code-block').querySelector('code');
-      navigator.clipboard.writeText(codeBlock.innerText).then(() => {
-        const originalText = btn.textContent;
-        btn.textContent = '¡Copiado!';
-        btn.style.backgroundColor = '#0f766e';
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.style.backgroundColor = '';
-        }, 2000);
-      });
-    });
-  });
-}
