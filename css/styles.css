@@ -809,57 +809,124 @@ section {
 .body-canvas-wrap {
   position: relative;
   width: 100%;
-  min-height: 380px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Pines interactivos sobre los órganos */
+/* Contenedor del Cuerpo Humano Realista 3D */
+.realistic-body-container {
+  position: relative;
+  width: 100%;
+  max-width: 290px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 35%, rgba(47, 140, 149, 0.18) 0%, rgba(18, 15, 13, 0.96) 78%);
+  border: 1px solid rgba(232, 183, 94, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), inset 0 0 25px rgba(0, 0, 0, 0.8);
+}
+
+.realistic-body-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: contrast(1.08) brightness(1.02);
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.body-vignette-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 45%, transparent 58%, rgba(18, 15, 13, 0.65) 100%);
+  pointer-events: none;
+}
+
+/* Pines interactivos sobre los órganos con anclaje porcentual exacto */
 .organ-hotspot {
   position: absolute;
-  width: 1.5rem;
-  height: 1.5rem;
+  transform: translate(-50%, -50%);
+  width: 1.65rem;
+  height: 1.65rem;
   border-radius: 50%;
   background: var(--mit-gold);
   color: #120f0d;
   border: 2px solid #120f0d;
-  box-shadow: 0 0 0 2px rgba(232, 183, 94, 0.5);
+  box-shadow: 0 0 0 2px rgba(232, 183, 94, 0.65), 0 4px 10px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.75rem;
   font-weight: 800;
   cursor: pointer;
-  transition: all var(--transition-fast);
-  z-index: 10;
+  transition: all var(--transition-normal);
+  z-index: 15;
+  padding: 0;
+  line-height: 1;
 }
 
 .organ-hotspot::after {
   content: '';
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inset: -3px;
   border-radius: 50%;
   border: 2px solid var(--mit-gold);
-  animation: pulse-hotspot 2s infinite;
+  animation: pulse-hotspot 2.2s infinite;
 }
 
 .organ-hotspot:hover, .organ-hotspot.active {
-  transform: scale(1.25);
-  background: var(--mit-terracotta-bright);
-  color: #ffffff;
-  box-shadow: 0 0 0 4px rgba(228, 86, 42, 0.4);
+  transform: translate(-50%, -50%) scale(1.22);
+  background: #ff5722 !important;
+  color: #ffffff !important;
+  border-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(255, 87, 34, 0.55), 0 6px 16px rgba(0, 0, 0, 0.7);
 }
 
 .organ-hotspot.active::after {
-  border-color: var(--mit-terracotta-bright);
+  border-color: #ff5722;
 }
 
 @keyframes pulse-hotspot {
   0% { transform: scale(1); opacity: 0.9; }
   70% { transform: scale(2.2); opacity: 0; }
   100% { transform: scale(2.2); opacity: 0; }
+}
+
+.hotspot-tooltip-pill {
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(18, 15, 13, 0.94);
+  color: #f2c76d;
+  border: 1px solid rgba(232, 183, 94, 0.45);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0.85;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.organ-hotspot:hover .hotspot-tooltip-pill,
+.organ-hotspot.active .hotspot-tooltip-pill {
+  opacity: 1;
+  background: rgba(255, 87, 34, 0.92);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Reposicionar etiquetas para que no se desborden de la pantalla */
+.organ-hotspot[data-organ="heart"] .hotspot-tooltip-pill,
+.organ-hotspot[data-organ="muscle"] .hotspot-tooltip-pill {
+  left: auto;
+  right: calc(100% + 8px);
 }
 
 /* Tarjeta informativa dinámica del órgano seleccionado */
@@ -872,6 +939,16 @@ section {
   margin-top: 1rem;
   min-height: 85px;
   transition: all var(--transition-fast);
+}
+
+.organ-display-thumb {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 1px solid rgba(232, 183, 94, 0.4);
+  flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
 }
 
 .organ-info-title {
@@ -889,6 +966,24 @@ section {
   color: rgba(236, 215, 179, 0.85);
   margin-top: 0.35rem;
   line-height: 1.55;
+}
+
+/* Miniaturas Médicas Realistas en las Tarjetas de Órganos (Sección II) */
+.organ-realistic-thumb {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 1px solid rgba(181, 72, 36, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.organ-gallery-card:hover .organ-realistic-thumb {
+  transform: scale(1.06);
+  border-color: var(--mit-terracotta);
+  box-shadow: 0 6px 16px rgba(181, 72, 36, 0.28);
 }
 
 /* Animación de flujo sanguíneo/metabólico en SVG */

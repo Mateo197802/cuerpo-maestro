@@ -56,32 +56,38 @@ const ORGAN_DATA = {
   brain: {
     num: '1',
     name: 'Cerebro: Ritmos Circadianos y Control del Estrés',
-    desc: 'El descanso nocturno y el orden de las comidas regulan las hormonas leptina y grelina, reduciendo la ansiedad por dulces y estabilizando el cortisol.'
+    desc: 'El descanso nocturno y el orden de las comidas regulan las hormonas leptina y grelina, reduciendo la ansiedad por dulces y estabilizando el cortisol.',
+    img: 'assets/organ_brain.jpg'
   },
   heart: {
     num: '2',
     name: 'Corazón y Vasos: Presión Arterial Estable',
-    desc: 'La reducción de sodio y la actividad física guiada estimulan el óxido nítrico en las arterias, relajando los vasos y reduciendo la presión arterial.'
+    desc: 'La reducción de sodio y la actividad física guiada estimulan el óxido nítrico en las arterias, relajando los vasos y reduciendo la presión arterial.',
+    img: 'assets/organ_heart.jpg'
   },
   liver: {
     num: '3',
     name: 'Hígado: Aclaramiento de Grasa y Lípidos',
-    desc: 'Al regular los carbohidratos refinados, el hígado reduce la síntesis de triglicéridos y descongestiona la grasa acumulada (esteatosis o hígado graso).'
+    desc: 'Al regular los carbohidratos refinados, el hígado reduce la síntesis de triglicéridos y descongestiona la grasa acumulada (esteatosis o hígado graso).',
+    img: 'assets/organ_liver.jpg'
   },
   pancreas: {
     num: '4',
     name: 'Páncreas: Secreción Equilibrada de Insulina',
-    desc: 'Evita la sobrecarga de las células beta del páncreas produciendo insulina en pulsos estables, previniendo la fatiga celular y la diabetes.'
+    desc: 'Evita la sobrecarga de las células beta del páncreas produciendo insulina en pulsos estables, previniendo la fatiga celular y la diabetes.',
+    img: 'assets/organ_pancreas.jpg'
   },
   waist: {
     num: '5',
     name: 'Cintura: Reducción de Grasa Visceral Profunda',
-    desc: 'La grasa abdominal es la más peligrosa metabólicamente. El programa prioriza su reducción sostenida, comprobada mediante bioimpedancia clínica.'
+    desc: 'La grasa abdominal es la más peligrosa metabólicamente. El programa prioriza su reducción sostenida, comprobada mediante bioimpedancia clínica.',
+    img: 'assets/organ_visceral_fat.jpg'
   },
   muscle: {
     num: '6',
     name: 'Músculos: Sensibilidad a la Insulina y Energía',
-    desc: 'El ejercicio estructurado activa los receptores GLUT4 en los músculos para absorber la glucosa como energía pura, evitando que se convierta en grasa.'
+    desc: 'El ejercicio estructurado activa los receptores GLUT4 en los músculos para absorber la glucosa como energía pura, evitando que se convierta en grasa.',
+    img: 'assets/organ_muscle.jpg'
   }
 };
 
@@ -89,28 +95,57 @@ function initOrganExplorer() {
   const hotspots = document.querySelectorAll('.organ-hotspot');
   const titleEl = document.getElementById('organTitle');
   const descEl = document.getElementById('organDesc');
+  const thumbEl = document.getElementById('organThumbImg');
   const displayBox = document.getElementById('organInfoDisplay');
+  const galleryCards = document.querySelectorAll('.organ-gallery-card[data-organ]');
 
-  if (!hotspots.length || !titleEl || !descEl) return;
+  function selectOrgan(organKey) {
+    const data = ORGAN_DATA[organKey];
+    if (!data) return;
+
+    hotspots.forEach(p => {
+      if (p.getAttribute('data-organ') === organKey) {
+        p.classList.add('active');
+      } else {
+        p.classList.remove('active');
+      }
+    });
+
+    if (displayBox) {
+      displayBox.style.opacity = '0.3';
+      setTimeout(() => {
+        if (titleEl) {
+          titleEl.innerHTML = `
+            <svg class="icon icon-sm" style="color: var(--mit-gold);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            ${data.num}. ${data.name}
+          `;
+        }
+        if (descEl) descEl.textContent = data.desc;
+        if (thumbEl) {
+          thumbEl.src = data.img;
+          thumbEl.alt = data.name;
+        }
+        displayBox.style.opacity = '1';
+      }, 120);
+    }
+  }
 
   hotspots.forEach(pin => {
     pin.addEventListener('click', () => {
-      hotspots.forEach(p => p.classList.remove('active'));
-      pin.classList.add('active');
-
       const organKey = pin.getAttribute('data-organ');
-      const data = ORGAN_DATA[organKey];
-      if (!data) return;
+      selectOrgan(organKey);
+    });
+  });
 
-      displayBox.style.opacity = '0';
-      setTimeout(() => {
-        titleEl.innerHTML = `
-          <svg class="icon icon-sm" style="color: var(--color-brand);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          ${data.num}. ${data.name}
-        `;
-        descEl.textContent = data.desc;
-        displayBox.style.opacity = '1';
-      }, 150);
+  // Permitir interacción bidireccional desde las tarjetas de Sección II
+  galleryCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const organKey = card.getAttribute('data-organ');
+      selectOrgan(organKey);
+      const heroModel = document.querySelector('.body-interactive-card');
+      if (heroModel && window.innerWidth < 992) {
+        heroModel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     });
   });
 }

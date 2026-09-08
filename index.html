@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Programa Clínico Cuerpo Maestro | Convocatoria para Pacientes - Yachay Tech</title>
   <meta name="description" content="Inscripción al programa clínico y nutricional gratuito 'Cuerpo Maestro' para adultos de 18 a 60 años con síndrome metabólico en Urcuquí e Ibarra, Imbabura. Evaluaciones médicas, bioimpedancia y acompañamiento durante 6 meses.">
-  <link rel="stylesheet" href="css/styles.css?v=5.0">
+  <link rel="stylesheet" href="css/styles.css?v=6.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -147,90 +147,64 @@
             <small style="color: var(--text-muted); font-size: 0.75rem;">Haz clic en los puntos</small>
           </div>
 
-          <!-- Gráfico SVG del Cuerpo Humano y Órganos Metabólicos -->
-          <div class="body-canvas-wrap" style="position: relative; display: flex; justify-content: center; padding: 1rem 0;">
-            <svg viewBox="0 0 320 440" style="width: 260px; height: 380px;">
-              <!-- Fondo de halo suave -->
-              <defs>
-                <radialGradient id="bodyGlow" cx="50%" cy="45%" r="50%">
-                  <stop offset="0%" stop-color="#ccfbf1" stop-opacity="0.35"/>
-                  <stop offset="100%" stop-color="#f8fafc" stop-opacity="0"/>
-                </radialGradient>
-              </defs>
-              <ellipse cx="160" cy="200" rx="120" ry="180" fill="url(#bodyGlow)"/>
+          <!-- Gráfico Visual Realista del Cuerpo Humano y Órganos Metabólicos -->
+          <div class="body-canvas-wrap" style="position: relative; display: flex; justify-content: center; padding: 0.5rem 0;">
+            <div class="realistic-body-container">
+              <!-- Imagen Médica 3D Realista de Anatomía Humana -->
+              <img src="assets/human_body_anatomy.jpg" 
+                   alt="Anatomía Humana 3D Realista con Órganos Metabólicos" 
+                   class="realistic-body-img">
 
-              <!-- Silueta del Cuerpo Humano -->
-              <path d="M160,25 C145,25 138,40 138,55 C138,70 148,82 155,85 C140,92 120,105 110,135 C100,165 92,205 92,235 C92,245 98,250 105,248 C112,245 118,220 122,195 C125,230 128,275 130,310 C132,345 134,420 142,420 C150,420 152,350 155,305 C158,300 162,300 165,305 C168,350 170,420 178,420 C186,420 188,345 190,310 C192,275 195,230 198,195 C202,220 208,245 215,248 C222,250 228,245 228,235 C228,205 220,165 210,135 C200,105 180,92 165,85 C172,82 182,70 182,55 C182,40 175,25 160,25 Z"
-                    fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+              <!-- Viñeta suave de integración atmosférica -->
+              <div class="body-vignette-overlay"></div>
 
-              <!-- Flujo circulatorio -->
-              <path d="M160,130 L160,220 L145,310 M160,220 L175,310"
-                    fill="none" stroke="#99f6e4" stroke-width="2" opacity="0.7"/>
+              <!-- Hotspots Interactivos Superpuestos con Anclaje Anatómico Preciso -->
+              <button class="organ-hotspot active" data-organ="brain" style="top: 8.5%; left: 50%;" title="1. Cerebro e Hipotálamo" aria-label="1. Cerebro">
+                <span class="hotspot-num">1</span>
+                <span class="hotspot-tooltip-pill">Cerebro</span>
+              </button>
 
-              <!-- 1. Cerebro -->
-              <circle cx="160" cy="55" r="16" fill="#e0f2fe" stroke="#38bdf8" stroke-width="1.5"/>
-              <path d="M152,50 Q160,42 168,50 Q160,65 152,50" fill="none" stroke="#0284c7" stroke-width="1.5"/>
-              <text x="186" y="58" font-size="9" font-family="sans-serif" font-weight="600" fill="#0284c7">Cerebro</text>
+              <button class="organ-hotspot" data-organ="heart" style="top: 27.5%; left: 51.5%;" title="2. Corazón y Vasos Sanguíneos" aria-label="2. Corazón">
+                <span class="hotspot-num">2</span>
+                <span class="hotspot-tooltip-pill">Corazón</span>
+              </button>
 
-              <!-- 2. Corazón -->
-              <path d="M166,130 C166,120 180,120 180,132 C180,142 166,150 166,150 C166,150 152,142 152,132 C152,120 166,120 166,130 Z"
-                    fill="#ffe4e6" stroke="#f43f5e" stroke-width="1.5"/>
-              <text x="190" y="138" font-size="9" font-family="sans-serif" font-weight="600" fill="#e11d48">Coraz&oacute;n</text>
+              <button class="organ-hotspot" data-organ="liver" style="top: 34.5%; left: 45%;" title="3. Hígado Metabólico" aria-label="3. Hígado">
+                <span class="hotspot-num">3</span>
+                <span class="hotspot-tooltip-pill">Hígado</span>
+              </button>
 
-              <!-- 3. Hígado -->
-              <path d="M135,160 C145,155 162,158 165,165 C165,178 145,185 135,182 C128,180 128,165 135,160 Z"
-                    fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
-              <text x="64" y="175" font-size="9" font-family="sans-serif" font-weight="600" fill="#d97706">H&iacute;gado</text>
+              <button class="organ-hotspot" data-organ="pancreas" style="top: 38.5%; left: 51%;" title="4. Páncreas Endocrino" aria-label="4. Páncreas">
+                <span class="hotspot-num">4</span>
+                <span class="hotspot-tooltip-pill">Páncreas</span>
+              </button>
 
-              <!-- 4. Páncreas -->
-              <ellipse cx="162" cy="195" rx="14" ry="5" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
-              <text x="184" y="200" font-size="9" font-family="sans-serif" font-weight="600" fill="#a16207">P&aacute;ncreas</text>
+              <button class="organ-hotspot" data-organ="waist" style="top: 45.5%; left: 50%;" title="5. Cintura y Grasa Visceral" aria-label="5. Cintura y Grasa Visceral">
+                <span class="hotspot-num">5</span>
+                <span class="hotspot-tooltip-pill">Grasa Visceral</span>
+              </button>
 
-              <!-- 5. Grasa Visceral -->
-              <ellipse cx="160" cy="225" rx="36" ry="18" fill="none" stroke="#c2410c" stroke-width="2" stroke-dasharray="4,4"/>
-              <text x="68" y="230" font-size="9" font-family="sans-serif" font-weight="600" fill="#c2410c">Cintura</text>
-
-              <!-- 6. Músculos -->
-              <rect x="136" y="325" width="12" height="45" rx="5" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.5"/>
-              <rect x="172" y="325" width="12" height="45" rx="5" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.5"/>
-              <text x="192" y="350" font-size="9" font-family="sans-serif" font-weight="600" fill="#0f766e">M&uacute;sculo</text>
-
-              <!-- Indicadores animados en los órganos clave -->
-              <circle cx="160" cy="55" r="20" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.5" class="floating-molecule"/>
-              <circle cx="166" cy="130" r="16" fill="none" stroke="#f43f5e" stroke-width="1" opacity="0.4" class="floating-molecule" style="animation-delay: -1s;"/>
-              <circle cx="160" cy="225" r="40" fill="none" stroke="#ea580c" stroke-width="1" opacity="0.3" class="floating-molecule" style="animation-delay: -2s;"/>
-            </svg>
-
-            <!-- Hotspots Interactivos Superpuestos -->
-            <button class="organ-hotspot active" data-organ="brain" style="top: 12%; left: 50%; transform: translateX(-50%);" title="Cerebro">
-              1
-            </button>
-            <button class="organ-hotspot" data-organ="heart" style="top: 30%; left: 53%;" title="Corazón">
-              2
-            </button>
-            <button class="organ-hotspot" data-organ="liver" style="top: 38%; left: 40%;" title="Hígado">
-              3
-            </button>
-            <button class="organ-hotspot" data-organ="pancreas" style="top: 46%; left: 53%;" title="Páncreas">
-              4
-            </button>
-            <button class="organ-hotspot" data-organ="waist" style="top: 53%; left: 50%; transform: translateX(-50%);" title="Cintura">
-              5
-            </button>
-            <button class="organ-hotspot" data-organ="muscle" style="top: 78%; left: 55%;" title="Músculos">
-              6
-            </button>
+              <button class="organ-hotspot" data-organ="muscle" style="top: 61.5%; left: 57%;" title="6. Músculos Esqueléticos" aria-label="6. Músculo">
+                <span class="hotspot-num">6</span>
+                <span class="hotspot-tooltip-pill">Músculo</span>
+              </button>
+            </div>
           </div>
 
-          <!-- Cuadro de texto interactivo con el órgano seleccionado -->
+          <!-- Cuadro de texto interactivo con el órgano seleccionado y miniatura médica -->
           <div id="organInfoDisplay" class="organ-info-display">
-            <div id="organTitle" class="organ-info-title">
-              <svg class="icon icon-sm" style="color: var(--color-brand);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              1. Cerebro: Ritmos Circadianos y Control de Estrés
+            <div style="display: flex; gap: 0.85rem; align-items: center;">
+              <img id="organThumbImg" src="assets/organ_brain.jpg" alt="Cerebro e Hipotálamo" class="organ-display-thumb">
+              <div style="flex: 1;">
+                <div id="organTitle" class="organ-info-title">
+                  <svg class="icon icon-sm" style="color: var(--mit-gold);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  1. Cerebro: Ritmos Circadianos y Control de Estrés
+                </div>
+                <p id="organDesc" class="organ-info-desc">
+                  El descanso adecuado y el horario de comidas regulan las hormonas del hambre (leptina y grelina), disminuyen el cortisol y reducen los antojos de azúcar.
+                </p>
+              </div>
             </div>
-            <p id="organDesc" class="organ-info-desc">
-              El descanso adecuado y el horario de comidas regulan las hormonas del hambre (leptina y grelina), disminuyen el cortisol y reducen los antojos de azúcar.
-            </p>
           </div>
         </div>
       </div>
@@ -405,16 +379,14 @@
 
       <div class="organ-gallery-grid">
         <!-- 1. Cerebro -->
-        <div class="organ-gallery-card" data-index="01">
+        <div class="organ-gallery-card" data-index="01" data-organ="brain">
           <span class="organ-badge-tag">Sistema Neuroendocrino</span>
           <div class="organ-card-top">
             <div>
               <h3>1. Cerebro e Hipot&aacute;lamo</h3>
               <div style="font-size: 0.85rem; color: var(--text-muted);">Control central del apetito y ritmos biol&oacute;gicos</div>
             </div>
-            <div class="organ-icon-art">
-              <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"/></svg>
-            </div>
+            <img src="assets/organ_brain.jpg" alt="Cerebro e Hipotálamo 3D Realista" class="organ-realistic-thumb">
           </div>
           <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
             Regula las hormonas del hambre (grelina) y de saciedad (leptina), junto con el cortisol (hormona del estr&eacute;s). El protocolo sincroniza tus ritmos circadianos para eliminar los impulsos ansiosos por comer de noche.
@@ -426,16 +398,14 @@
         </div>
 
         <!-- 2. Corazón y Arterias -->
-        <div class="organ-gallery-card" data-index="02">
+        <div class="organ-gallery-card" data-index="02" data-organ="heart">
           <span class="organ-badge-tag">Sistema Cardiovascular</span>
           <div class="organ-card-top">
             <div>
               <h3>2. Coraz&oacute;n y Vasos Sangu&iacute;neos</h3>
               <div style="font-size: 0.85rem; color: var(--text-muted);">Presi&oacute;n arterial y elasticidad vascular</div>
             </div>
-            <div class="organ-icon-art" style="background: #ffe4e6; color: #e11d48;">
-              <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 7.65l.77.78L12 21.23l7.65-8.22.77-.78a5.4 5.4 0 0 0 0-7.65z"/></svg>
-            </div>
+            <img src="assets/organ_heart.jpg" alt="Corazón y Sistema Vascular 3D Realista" class="organ-realistic-thumb">
           </div>
           <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
             La rigidez arterial provocada por la hiperglucemia se combate estimulando el &oacute;xido n&iacute;trico endotelial con ejercicio dosificado, reduciendo progresivamente la presi&oacute;n sist&oacute;lica y diast&oacute;lica.
@@ -447,16 +417,14 @@
         </div>
 
         <!-- 3. Hígado -->
-        <div class="organ-gallery-card" data-index="03">
+        <div class="organ-gallery-card" data-index="03" data-organ="liver">
           <span class="organ-badge-tag">Centro Metab&oacute;lico Principal</span>
           <div class="organ-card-top">
             <div>
               <h3>3. H&iacute;gado Metab&oacute;lico</h3>
               <div style="font-size: 0.85rem; color: var(--text-muted);">Depuraci&oacute;n de triglic&eacute;ridos y glucosa</div>
             </div>
-            <div class="organ-icon-art" style="background: #fef3c7; color: #d97706;">
-              <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M4 14c0 4 3 6 8 6s8-2 8-6-4-10-8-10-8 6-8 10z"/><circle cx="12" cy="13" r="2"/></svg>
-            </div>
+            <img src="assets/organ_liver.jpg" alt="Hígado Metabólico 3D Realista" class="organ-realistic-thumb">
           </div>
           <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
             El exceso de az&uacute;cares se almacena en el h&iacute;gado como grasa (esteatosis hep&aacute;tica). Con pautas diet&eacute;ticas espec&iacute;ficas, el h&iacute;gado vac&iacute;a sus dep&oacute;sitos grasos y disminuye la producci&oacute;n descontrolada de triglic&eacute;ridos.
@@ -468,16 +436,14 @@
         </div>
 
         <!-- 4. Páncreas -->
-        <div class="organ-gallery-card" data-index="04">
+        <div class="organ-gallery-card" data-index="04" data-organ="pancreas">
           <span class="organ-badge-tag">Gl&aacute;ndula Endocrina</span>
           <div class="organ-card-top">
             <div>
               <h3>4. P&aacute;ncreas Endocrino</h3>
               <div style="font-size: 0.85rem; color: var(--text-muted);">Reserva y secreci&oacute;n saludable de insulina</div>
             </div>
-            <div class="organ-icon-art" style="background: #fef9c3; color: #ca8a04;">
-              <svg class="icon icon-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-            </div>
+            <img src="assets/organ_pancreas.jpg" alt="Páncreas Endocrino 3D Realista" class="organ-realistic-thumb">
           </div>
           <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
             En el s&iacute;ndrome metab&oacute;lico, el p&aacute;ncreas produce insulina sin parar para compensar la resistencia celular hasta agotarse. Nuestro protocolo alivia esta carga, preservando la vitalidad de las c&eacute;lulas beta.
@@ -489,16 +455,14 @@
         </div>
 
         <!-- 5. Tejido Adiposo Visceral -->
-        <div class="organ-gallery-card" data-index="05">
+        <div class="organ-gallery-card" data-index="05" data-organ="waist">
           <span class="organ-badge-tag">Tejido Graso Profundo</span>
           <div class="organ-card-top">
             <div>
               <h3>5. Grasa Visceral Abdominal</h3>
               <div style="font-size: 0.85rem; color: var(--text-muted);">Reducci&oacute;n de inflamaci&oacute;n sist&eacute;mica</div>
             </div>
-            <div class="organ-icon-art" style="background: #ffedd5; color: #ea580c;">
-              <svg class="icon icon-lg" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="6"/><circle cx="12" cy="12" r="3"/></svg>
-            </div>
+            <img src="assets/organ_visceral_fat.jpg" alt="Grasa Visceral Abdominal 3D Realista" class="organ-realistic-thumb">
           </div>
           <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
             A diferencia de la grasa bajo la piel, la grasa visceral que rodea tus intestinos secreta toxinas e inflamaci&oacute;n constante (TNF-alfa e IL-6). El programa acelera su reducci&oacute;n comprobada por bioimpedancia.
@@ -510,16 +474,14 @@
         </div>
 
         <!-- 6. Músculo Esquelético -->
-        <div class="organ-gallery-card" data-index="06">
+        <div class="organ-gallery-card" data-index="06" data-organ="muscle">
           <span class="organ-badge-tag">Motor Metab&oacute;lico Activo</span>
           <div class="organ-card-top">
             <div>
               <h3>6. M&uacute;sculo Esquel&eacute;tico</h3>
               <div style="font-size: 0.85rem; color: var(--text-muted);">Captaci&oacute;n de glucosa y quema cal&oacute;rica</div>
             </div>
-            <div class="organ-icon-art" style="background: #ccfbf1; color: #0f766e;">
-              <svg class="icon icon-lg" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            </div>
+            <img src="assets/organ_muscle.jpg" alt="Músculo Esquelético y Receptores GLUT4 3D Realista" class="organ-realistic-thumb">
           </div>
           <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
             Tus m&uacute;sculos son el mayor consumidor de glucosa del cuerpo. Con las sesiones guiadas, abrimos las compuertas celulares (GLUT4) para que el m&uacute;sculo use el az&uacute;car como combustible sin acumularlo como grasa.
@@ -1635,6 +1597,6 @@
     </div>
   </footer>
 
-  <script src="js/app.js?v=5.0"></script>
+  <script src="js/app.js?v=6.0"></script>
 </body>
 </html>
