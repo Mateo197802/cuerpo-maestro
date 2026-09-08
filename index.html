@@ -38,38 +38,30 @@
   <nav class="site-header">
     <div class="container header-inner">
       <div class="brand-wrapper">
-        <div class="brand-emblem">CM</div>
+        <div class="brand-emblem">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
         <div class="brand-title-group">
           <h4>Cuerpo Maestro</h4>
-          <small>Salud Metabólica &bull; Imbabura</small>
+          <small>Salud Metab&oacute;lica &bull; Imbabura</small>
         </div>
       </div>
 
       <div class="main-nav">
         <a href="#hero" class="nav-link active">Inicio</a>
-        <a href="#beneficios" class="nav-link">Qué Incluye</a>
-        <a href="#organos" class="nav-link">Órganos Clave</a>
-        <a href="#celula" class="nav-link">Célula &amp; Energía</a>
-        <a href="#transformacion" class="nav-link">En 6 Meses</a>
-        <a href="#bioimpedancia" class="nav-link">Bioimpedancia</a>
+        <a href="#beneficios" class="nav-link">Beneficios</a>
+        <a href="#organos" class="nav-link">&Oacute;rganos</a>
+        <a href="#celula" class="nav-link">C&eacute;lula</a>
         <a href="#planes" class="nav-link">Planes</a>
-        <a href="#evaluador" class="nav-link">¿Califico?</a>
-        <a href="#pasos" class="nav-link">Cómo Participar</a>
+        <a href="#evaluador" class="nav-link">&iquest;Califico?</a>
         <a href="#equipo" class="nav-link">Equipo</a>
         <a href="#faq" class="nav-link">FAQ</a>
       </div>
 
-      <div class="header-actions" style="display: flex; align-items: center; gap: 0.75rem;">
-        <div class="heartbeat-live-badge" title="Fisiología y Monitoreo Continuo">
-          <span class="pulse-dot"></span>
-          <svg class="ecg-line-svg" viewBox="0 0 50 14">
-            <polyline points="0,7 15,7 18,1 21,13 24,5 27,9 30,7 50,7"/>
-          </svg>
-          <span>Fisiología Activa</span>
-        </div>
-        <a href="#inscripcion" class="btn btn-primary btn-sm">
-          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
-          Inscribirme al Estudio
+      <div class="header-actions">
+        <a href="#inscripcion" class="btn btn-primary btn-sm" style="gap: 0.4rem;">
+          <span class="pulse-dot" style="width: 6px; height: 6px;"></span>
+          Inscribirme
         </a>
       </div>
     </div>
@@ -133,76 +125,76 @@
           </div>
 
           <!-- Gráfico SVG del Cuerpo Humano y Órganos Metabólicos -->
-          <div class="body-canvas-wrap" style="position: relative;">
-            <!-- Biomarcadores metabólicos flotantes -->
-            <div class="hero-metabolic-floater floater-top-left">
-              <span class="pulse-dot" style="width: 6px; height: 6px;"></span>
-              <span>ATP: +38% Energía</span>
-            </div>
-            <div class="hero-metabolic-floater floater-top-right">
-              <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-              <span>Arterias: Óxido Nítrico</span>
-            </div>
-            <div class="hero-metabolic-floater floater-bottom-left">
-              <span class="pulse-dot" style="width: 6px; height: 6px; background: #ea580c;"></span>
-              <span>Grasa Visceral: -25%</span>
-            </div>
-            <div class="hero-metabolic-floater floater-bottom-right">
-              <svg class="icon icon-xs" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>GLUT4: Glucosa Activa</span>
-            </div>
+          <div class="body-canvas-wrap" style="position: relative; display: flex; justify-content: center; padding: 1rem 0;">
+            <svg viewBox="0 0 320 440" style="width: 260px; height: 380px;">
+              <!-- Fondo de halo suave -->
+              <defs>
+                <radialGradient id="bodyGlow" cx="50%" cy="45%" r="50%">
+                  <stop offset="0%" stop-color="#ccfbf1" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#f8fafc" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <ellipse cx="160" cy="200" rx="120" ry="180" fill="url(#bodyGlow)"/>
 
-            <svg viewBox="0 0 320 440" style="width: 100%; max-width: 300px; height: 380px;">
-              <!-- Silueta del Cuerpo Humano en tonos clínicos sutiles -->
+              <!-- Silueta del Cuerpo Humano -->
               <path d="M160,25 C145,25 138,40 138,55 C138,70 148,82 155,85 C140,92 120,105 110,135 C100,165 92,205 92,235 C92,245 98,250 105,248 C112,245 118,220 122,195 C125,230 128,275 130,310 C132,345 134,420 142,420 C150,420 152,350 155,305 C158,300 162,300 165,305 C168,350 170,420 178,420 C186,420 188,345 190,310 C192,275 195,230 198,195 C202,220 208,245 215,248 C222,250 228,245 228,235 C228,205 220,165 210,135 C200,105 180,92 165,85 C172,82 182,70 182,55 C182,40 175,25 160,25 Z"
                     fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
 
-              <!-- Líneas de flujo circulatorio y energético -->
+              <!-- Flujo circulatorio -->
               <path d="M160,130 L160,220 L145,310 M160,220 L175,310"
-                    fill="none" stroke="#99f6e4" stroke-width="2.5" class="flow-line"/>
+                    fill="none" stroke="#99f6e4" stroke-width="2" opacity="0.7"/>
 
-              <!-- Órganos Representados Esquemáticamente -->
               <!-- 1. Cerebro -->
               <circle cx="160" cy="55" r="16" fill="#e0f2fe" stroke="#38bdf8" stroke-width="1.5"/>
               <path d="M152,50 Q160,42 168,50 Q160,65 152,50" fill="none" stroke="#0284c7" stroke-width="1.5"/>
+              <text x="186" y="58" font-size="9" font-family="sans-serif" font-weight="600" fill="#0284c7">Cerebro</text>
 
-              <!-- 2. Corazón y Arterias -->
+              <!-- 2. Corazón -->
               <path d="M166,130 C166,120 180,120 180,132 C180,142 166,150 166,150 C166,150 152,142 152,132 C152,120 166,120 166,130 Z"
                     fill="#ffe4e6" stroke="#f43f5e" stroke-width="1.5"/>
+              <text x="190" y="138" font-size="9" font-family="sans-serif" font-weight="600" fill="#e11d48">Coraz&oacute;n</text>
 
-              <!-- 3. Hígado Metabólico -->
+              <!-- 3. Hígado -->
               <path d="M135,160 C145,155 162,158 165,165 C165,178 145,185 135,182 C128,180 128,165 135,160 Z"
                     fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+              <text x="64" y="175" font-size="9" font-family="sans-serif" font-weight="600" fill="#d97706">H&iacute;gado</text>
 
               <!-- 4. Páncreas -->
-              <ellipse cx="162" cy="188" rx="14" ry="5" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
+              <ellipse cx="162" cy="195" rx="14" ry="5" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
+              <text x="184" y="200" font-size="9" font-family="sans-serif" font-weight="600" fill="#a16207">P&aacute;ncreas</text>
 
-              <!-- 5. Grasa Visceral y Cintura Abdominal -->
+              <!-- 5. Grasa Visceral -->
               <ellipse cx="160" cy="225" rx="36" ry="18" fill="none" stroke="#c2410c" stroke-width="2" stroke-dasharray="4,4"/>
-              <path d="M132,225 Q160,240 188,225" fill="none" stroke="#ea580c" stroke-width="2"/>
+              <text x="68" y="230" font-size="9" font-family="sans-serif" font-weight="600" fill="#c2410c">Cintura</text>
 
-              <!-- 6. Músculo Esquelético Activo (Piernas/Muslos) -->
+              <!-- 6. Músculos -->
               <rect x="136" y="325" width="12" height="45" rx="5" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.5"/>
               <rect x="172" y="325" width="12" height="45" rx="5" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.5"/>
+              <text x="192" y="350" font-size="9" font-family="sans-serif" font-weight="600" fill="#0f766e">M&uacute;sculo</text>
+
+              <!-- Indicadores animados en los órganos clave -->
+              <circle cx="160" cy="55" r="20" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.5" class="floating-molecule"/>
+              <circle cx="166" cy="130" r="16" fill="none" stroke="#f43f5e" stroke-width="1" opacity="0.4" class="floating-molecule" style="animation-delay: -1s;"/>
+              <circle cx="160" cy="225" r="40" fill="none" stroke="#ea580c" stroke-width="1" opacity="0.3" class="floating-molecule" style="animation-delay: -2s;"/>
             </svg>
 
             <!-- Hotspots Interactivos Superpuestos -->
-            <button class="organ-hotspot active" data-organ="brain" style="top: 13%; left: 47%;" title="Cerebro y Sueño">
+            <button class="organ-hotspot active" data-organ="brain" style="top: 12%; left: 50%; transform: translateX(-50%);" title="Cerebro">
               1
             </button>
-            <button class="organ-hotspot" data-organ="heart" style="top: 30%; left: 52%;" title="Corazón y Presión">
+            <button class="organ-hotspot" data-organ="heart" style="top: 30%; left: 53%;" title="Corazón">
               2
             </button>
-            <button class="organ-hotspot" data-organ="liver" style="top: 38%; left: 38%;" title="Hígado y Grasa">
+            <button class="organ-hotspot" data-organ="liver" style="top: 38%; left: 40%;" title="Hígado">
               3
             </button>
-            <button class="organ-hotspot" data-organ="pancreas" style="top: 44%; left: 51%;" title="Páncreas e Insulina">
+            <button class="organ-hotspot" data-organ="pancreas" style="top: 46%; left: 53%;" title="Páncreas">
               4
             </button>
-            <button class="organ-hotspot" data-organ="waist" style="top: 53%; left: 47%;" title="Cintura y Grasa Visceral">
+            <button class="organ-hotspot" data-organ="waist" style="top: 53%; left: 50%; transform: translateX(-50%);" title="Cintura">
               5
             </button>
-            <button class="organ-hotspot" data-organ="muscle" style="top: 75%; left: 55%;" title="Músculos y Glucosa">
+            <button class="organ-hotspot" data-organ="muscle" style="top: 78%; left: 55%;" title="Músculos">
               6
             </button>
           </div>
@@ -470,57 +462,107 @@
         <div class="cellular-diagram-grid">
           <!-- Gráfico SVG Biológico de la Célula y Mitocondria -->
           <div class="cell-canvas-wrap">
-            <svg id="cellSvg" viewBox="0 0 380 280" style="width: 100%; height: auto; display: block;">
-              <!-- Membrana celular plasmática -->
-              <rect x="15" y="15" width="350" height="250" rx="28" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2.5"/>
-              <text x="35" y="38" font-size="10" font-family="sans-serif" font-weight="700" fill="#64748b">MEMBRANA CELULAR</text>
+            <svg id="cellSvg" viewBox="0 0 420 300" style="width: 100%; height: auto; display: block;">
+              <defs>
+                <linearGradient id="cellMembraneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f8fafc"/>
+                  <stop offset="100%" stop-color="#f1f5f9"/>
+                </linearGradient>
+                <linearGradient id="mitoGradSyndrome" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fff7ed"/>
+                  <stop offset="100%" stop-color="#ffedd5"/>
+                </linearGradient>
+                <linearGradient id="mitoGradHealthy" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f0fdfa"/>
+                  <stop offset="100%" stop-color="#ccfbf1"/>
+                </linearGradient>
+              </defs>
 
-              <!-- Compuerta de Glucosa GLUT4 -->
-              <g id="glut4Group" transform="translate(15, 90)">
-                <rect id="glut4Gate" x="0" y="0" width="10" height="40" rx="3" fill="#ea580c"/>
-                <text id="glut4Text" x="18" y="24" font-size="9" font-family="sans-serif" font-weight="bold" fill="#ea580c">GLUT4 (Bloqueado)</text>
+              <!-- Membrana celular doble (bicapa lipídica) -->
+              <rect x="12" y="12" width="396" height="276" rx="24" fill="none" stroke="#94a3b8" stroke-width="1" opacity="0.4"/>
+              <rect x="16" y="16" width="388" height="268" rx="22" fill="url(#cellMembraneGrad)" stroke="#cbd5e1" stroke-width="2"/>
+
+              <!-- Etiqueta Membrana -->
+              <rect x="28" y="24" width="130" height="20" rx="4" fill="#e2e8f0" opacity="0.7"/>
+              <text x="93" y="38" font-size="9" font-family="sans-serif" font-weight="700" text-anchor="middle" fill="#475569">MEMBRANA CELULAR</text>
+
+              <!-- Citoplasma granulado (ribosomas) -->
+              <circle cx="80" cy="80" r="2" fill="#cbd5e1" opacity="0.5"/>
+              <circle cx="95" cy="110" r="1.5" fill="#cbd5e1" opacity="0.4"/>
+              <circle cx="370" cy="90" r="2" fill="#cbd5e1" opacity="0.5"/>
+              <circle cx="355" cy="250" r="1.5" fill="#cbd5e1" opacity="0.4"/>
+              <circle cx="60" cy="250" r="2" fill="#cbd5e1" opacity="0.3"/>
+
+              <!-- Núcleo celular (esquemático) -->
+              <ellipse cx="80" cy="150" rx="40" ry="35" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+              <ellipse cx="80" cy="150" rx="28" ry="22" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2,3"/>
+              <text x="80" y="153" font-size="8" font-family="sans-serif" font-weight="600" text-anchor="middle" fill="#64748b">Núcleo</text>
+
+              <!-- Canal de Glucosa GLUT4 -->
+              <g id="glut4Group">
+                <rect x="16" y="90" width="6" height="14" rx="2" fill="#cbd5e1"/>
+                <rect id="glut4Gate" x="16" y="108" width="6" height="18" rx="2" fill="#ea580c"/>
+                <rect x="16" y="130" width="6" height="14" rx="2" fill="#cbd5e1"/>
+                <!-- Flecha de glucosa -->
+                <line x1="6" y1="117" x2="22" y2="117" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowGlucose)"/>
+                <text id="glut4Text" x="30" y="121" font-size="8.5" font-family="sans-serif" font-weight="700" fill="#ea580c">GLUT4 Bloqueado</text>
               </g>
 
-              <!-- Flujo de Glucosa externa -->
+              <!-- Glucosa externa -->
               <g id="glucoseFlow">
-                <circle cx="5" cy="100" r="4" fill="#f59e0b"/>
-                <circle cx="5" cy="115" r="4" fill="#f59e0b"/>
-                <circle cx="5" cy="128" r="4" fill="#f59e0b"/>
+                <circle cx="6" cy="102" r="3.5" fill="#fbbf24" stroke="#f59e0b" stroke-width="1"/>
+                <circle cx="6" cy="117" r="3.5" fill="#fbbf24" stroke="#f59e0b" stroke-width="1"/>
+                <circle cx="6" cy="132" r="3.5" fill="#fbbf24" stroke="#f59e0b" stroke-width="1"/>
+                <text x="6" y="148" font-size="7" font-family="sans-serif" font-weight="600" text-anchor="middle" fill="#92400e">Glucosa</text>
               </g>
 
               <!-- Sensor AMPK -->
-              <g id="ampkGroup" transform="translate(100, 50)">
-                <circle id="ampkCircle" cx="20" cy="20" r="18" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
-                <text id="ampkText" x="20" y="23" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle" fill="#c2410c">AMPK OFF</text>
+              <g id="ampkGroup" transform="translate(140, 55)">
+                <rect x="0" y="0" width="60" height="32" rx="8" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5"/>
+                <circle id="ampkCircle" cx="17" cy="16" r="10" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+                <text id="ampkText" x="17" y="19" font-size="7" font-family="sans-serif" font-weight="800" text-anchor="middle" fill="#c2410c">OFF</text>
+                <text x="42" y="14" font-size="7.5" font-family="sans-serif" font-weight="700" text-anchor="middle" fill="#c2410c">AMPK</text>
+                <text x="42" y="24" font-size="7" font-family="sans-serif" font-weight="600" text-anchor="middle" fill="#94a3b8">Sensor</text>
               </g>
 
-              <!-- Mitocondria (El motor de la célula) -->
-              <g transform="translate(160, 60)">
-                <!-- Membrana externa mitocondrial -->
-                <ellipse id="mitoOuter" cx="90" cy="85" rx="85" ry="55" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
-                <!-- Crestas mitocondriales internas -->
-                <path id="mitoCrestas" d="M35,85 Q50,65 65,85 Q80,105 95,85 Q110,65 125,85 Q140,105 155,85" fill="none" stroke="#f97316" stroke-width="2.5" stroke-linecap="round"/>
-                <text id="mitoTitle" x="90" y="55" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle" fill="#ea580c">MITOCONDRIA (Estrés)</text>
+              <!-- Mitocondria (Motor celular, detallada) -->
+              <g transform="translate(215, 55)">
+                <!-- Membrana externa -->
+                <ellipse id="mitoOuter" cx="80" cy="75" rx="75" ry="50" fill="url(#mitoGradSyndrome)" stroke="#ea580c" stroke-width="2.5"/>
+                <!-- Membrana interna -->
+                <ellipse cx="80" cy="75" rx="60" ry="38" fill="none" stroke="#f97316" stroke-width="1" opacity="0.5"/>
+                <!-- Crestas mitocondriales -->
+                <path id="mitoCrestas" d="M30,75 Q42,55 55,75 Q68,95 80,75 Q92,55 105,75 Q118,95 130,75" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+                <!-- Etiqueta mitocondria -->
+                <text id="mitoTitle" x="80" y="42" font-size="9" font-family="sans-serif" font-weight="700" text-anchor="middle" fill="#ea580c">MITOCONDRIA</text>
+                <text x="80" y="53" font-size="7.5" font-family="sans-serif" font-weight="600" text-anchor="middle" fill="#c2410c">(Estrés Oxidativo)</text>
                 
-                <!-- Ciclo de Krebs / Quema de Ácidos Grasos -->
-                <g id="mitochondrialCore" transform="translate(90, 85)">
-                  <circle id="krebsCircle" cx="0" cy="0" r="22" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3,3"/>
-                  <text id="krebsText" x="0" y="4" font-size="8" font-family="sans-serif" font-weight="bold" text-anchor="middle" fill="#c2410c">Quema Reducida</text>
+                <!-- Ciclo de Krebs -->
+                <g id="mitochondrialCore" transform="translate(80, 78)">
+                  <circle id="krebsCircle" cx="0" cy="0" r="18" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3,3"/>
+                  <text id="krebsText" x="0" y="3" font-size="7" font-family="sans-serif" font-weight="700" text-anchor="middle" fill="#c2410c">Quema</text>
+                  <text x="0" y="12" font-size="6.5" font-family="sans-serif" font-weight="600" text-anchor="middle" fill="#c2410c">Reducida</text>
                 </g>
               </g>
 
-              <!-- Salida de Energía: Moléculas de ATP -->
-              <g id="atpGroup" transform="translate(290, 190)">
-                <polygon id="atpSpark" points="30,5 38,18 52,18 41,27 45,41 33,32 21,41 25,27 14,18 28,18" fill="#fef08a" stroke="#eab308" stroke-width="1.5"/>
-                <text id="atpText" x="33" y="27" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle" fill="#854d0e">ATP</text>
-                <text id="atpOutputLabel" x="33" y="52" font-size="9" font-family="sans-serif" text-anchor="middle" fill="#64748b">Baja Energía</text>
+              <!-- Gotas Lipídicas / Grasa Intracelular -->
+              <g id="lipidDropletGroup" transform="translate(135, 200)">
+                <ellipse id="lipidDroplet" cx="28" cy="22" rx="22" ry="17" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="2,2"/>
+                <ellipse cx="28" cy="22" rx="12" ry="9" fill="#ffedd5" opacity="0.7"/>
+                <text id="lipidLabel" x="28" y="25" font-size="7" font-family="sans-serif" font-weight="700" text-anchor="middle" fill="#c2410c">Grasa</text>
               </g>
 
-              <!-- Acumulación de Grasa Intracelular / Gotas Lipídicas -->
-              <g id="lipidDropletGroup" transform="translate(50, 170)">
-                <ellipse id="lipidDroplet" cx="30" cy="30" rx="25" ry="20" fill="#fff7ed" stroke="#ea580c" stroke-width="2" stroke-dasharray="2,2"/>
-                <text id="lipidLabel" x="30" y="33" font-size="8" font-family="sans-serif" font-weight="bold" text-anchor="middle" fill="#c2410c">Grasa Bloqueada</text>
+              <!-- Salida de Energía: ATP -->
+              <g id="atpGroup" transform="translate(325, 200)">
+                <circle cx="28" cy="22" r="20" fill="#fef9c3" stroke="#eab308" stroke-width="1.5"/>
+                <polygon id="atpSpark" points="28,6 32,18 42,18 34,24 37,34 28,28 19,34 22,24 14,18 24,18" fill="#fef08a" stroke="#eab308" stroke-width="1"/>
+                <text id="atpText" x="28" y="25" font-size="9" font-family="sans-serif" font-weight="800" text-anchor="middle" fill="#854d0e">ATP</text>
+                <text id="atpOutputLabel" x="28" y="54" font-size="7.5" font-family="sans-serif" font-weight="600" text-anchor="middle" fill="#64748b">Baja Energía</text>
               </g>
+
+              <!-- Flechas de conexión metabólica -->
+              <line x1="200" y1="72" x2="215" y2="90" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="3,3"/>
+              <line x1="370" y1="130" x2="360" y2="200" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="3,3"/>
             </svg>
           </div>
 
