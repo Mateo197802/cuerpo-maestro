@@ -1,19 +1,18 @@
 /**
- * APLICACIÓN INTERACTIVA: PROTOCOLO CLÍNICO "CUERPO MAESTRO"
+ * APLICACIÓN INTERACTIVA: PROGRAMA CLÍNICO "CUERPO MAESTRO"
+ * Portal de Información e Inscripción de Pacientes
  * Universidad Yachay Tech / UTPL / ALFA Hospital
- * PII26-12 (2026-2027)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initArmComparator();
   initAtpCalculator();
-  initVariablesTable();
-  initGanttFilter();
+  initEnrollmentForm();
 });
 
 /* ==========================================================================
-   1. NAVEGACIÓN Y SCROLL SPY
+   1. NAVEGACIÓN SUAVE Y SCROLL SPY
    ========================================================================== */
 function initNavigation() {
   const header = document.querySelector('.site-header');
@@ -28,7 +27,7 @@ function initNavigation() {
     }
 
     let current = '';
-    const scrollPosition = window.scrollY + 120;
+    const scrollPosition = window.scrollY + 140;
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
@@ -48,76 +47,72 @@ function initNavigation() {
 }
 
 /* ==========================================================================
-   2. COMPARADOR DE LOS 4 BRAZOS DE INTERVENCIÓN
+   2. COMPARADOR DE LOS 4 PLANES DE ALIMENTACIÓN (ORIENTADO AL PACIENTE)
    ========================================================================== */
 const ARM_DATA = {
   g1: {
-    code: 'Grupo 1 (Intervención Activa)',
-    title: 'Cuerpo Maestro + Restricción Calórica (-20%)',
-    n: '20 Participantes',
-    window: 'Ad libitum con déficit cuantitativo (~20% bajo el gasto energético total)',
-    caloricStatus: 'Déficit calórico continuo moderado (-20%)',
+    code: 'Plan 1 (Grupo Activo)',
+    title: 'Plan de Déficit Saludable Moderado (-20%)',
+    caloricStatus: 'Reducción ligera del 20% sobre tu consumo calórico diario',
+    window: 'Horarios convencionales de desayuno, almuerzo y cena según tu rutina',
     macros: { protein: 20, carb: 55, fat: 25 },
-    macroText: 'Distribución equilibrada tradicional con déficit calórico del 20%',
+    macroText: 'Alimentación balanceada clásica pero en porciones controladas para perder grasa',
     mechanisms: [
-      'Activación de sensores energéticos AMPK y elevación en relación NAD+/NADH.',
-      'Estimulación de desacetilasas SIRT1 y SIRT3 favoreciendo la biogénesis mitocondrial.',
-      'Lipólisis sostenida y movilización de triglicéridos ectópicos intrahepáticos.',
-      'Riesgo monitorizado: posible adaptación metabólica y compensación del gasto basal a largo plazo.'
+      'Facilita la movilización y quema de la grasa acumulada en el abdomen.',
+      'Mejora la sensibilidad del cuerpo a la insulina, disminuyendo el azúcar en sangre.',
+      'Reduce la presión en el sistema circulatorio y alivia el hígado graso.',
+      'Acompañado de ejercicio para proteger y tonificar tu masa muscular.'
     ],
     transversalActive: true,
-    accentBadge: 'Déficit Energético Cuantitativo'
+    accentBadge: 'Déficit Controlado'
   },
   g2: {
-    code: 'Grupo 2 (Intervención Activa)',
-    title: 'Cuerpo Maestro + Modulación Macronutricional (30/40/30)',
-    n: '20 Participantes',
-    window: 'Dieta isocalórica estandarizada (sin restricción calórica deliberada)',
-    caloricStatus: 'Isocalórica normoenergética',
+    code: 'Plan 2 (Grupo Activo)',
+    title: 'Plan Optimizado en Proteínas y Grasas Buenas (30/40/30)',
+    caloricStatus: 'Calorías completas normales (sin pasar hambre)',
+    window: 'Comidas distribuidas a lo largo del día priorizando saciedad',
     macros: { protein: 30, carb: 40, fat: 30 },
-    macroText: '30% Proteínas de alto valor, 40% Carbohidratos complejos / bajo índice glicémico, 30% Grasas mono/poliinsaturadas',
+    macroText: '30% Proteínas (pollo, pescado, huevos), 40% Carbohidratos integrales, 30% Grasas saludables (aguacate, aceite de oliva)',
     mechanisms: [
-      'Atenuación de excursiones de glucemia e insulinemia postprandial mediante carbohidratos complejos y fibra.',
-      'Preservación superior de masa magra y mayor efecto térmico de los alimentos por ingesta proteica optimizada (30%).',
-      'Modulación del perfil lipídico aterogénico mediante sustitución de grasas saturadas por monoinsaturadas (omega-9) y poliinsaturadas (omega-3).',
-      'Optimización de la saciedad mediada por péptidos gastrointestinales (PYY y GLP-1).'
+      'Aumenta la saciedad por más horas, eliminando la ansiedad de picar entre comidas.',
+      'Evita los picos bruscos de glucosa e insulina después de comer.',
+      'Protege y fortalece el músculo gracias a un aporte proteico óptimo.',
+      'Mejora los niveles de colesterol bueno (HDL) y disminuye los triglicéridos.'
     ],
     transversalActive: true,
-    accentBadge: 'Modulación Cualitativa Isocalórica'
+    accentBadge: 'Proteínas & Grasas Buenas'
   },
   g3: {
-    code: 'Grupo 3 (Intervención Activa)',
-    title: 'Cuerpo Maestro + TRF 16:8 (Alimentación Restringida en Tiempo)',
-    n: '20 Participantes',
-    window: 'Ventana de ingesta de 8 horas / Ayuno circadiano de 16 horas diarias',
-    caloricStatus: 'Normocalórica o restricción espontánea temporal',
+    code: 'Plan 3 (Grupo Activo)',
+    title: 'Plan de Horario Estratégico (Ayuno Intermitente 16:8)',
+    caloricStatus: 'Calorías normales organizadas en un bloque de 8 horas',
+    window: 'Ventana de alimentación de 8 horas (ej. 10:00 am a 6:00 pm) y 16 h de descanso digestivo',
     macros: { protein: 25, carb: 45, fat: 30 },
-    macroText: 'Distribución habitual estructurada dentro del horario diurno estricto',
+    macroText: 'Comidas nutritivas dentro de tu ventana diurna elegida',
     mechanisms: [
-      'Alineación con los ritmos circadianos centrales y periféricos (genes reloj CLOCK, BMAL1).',
-      'Inducción de autofagia celular y aclaramiento de organelos dañados durante la ventana de 16 h.',
-      'Mejora notable en la sensibilidad a la insulina hepática y muscular por vaciamiento del glucógeno.',
-      'Disminución de la presión arterial sistólica/diastólica y reducción de estrés oxidativo vascular.'
+      'Sincroniza tu metabolismo con tus ritmos naturales de día y noche.',
+      'Favorece la limpieza y renovación celular durante las horas de descanso nocturno.',
+      'Mejora notablemente la digestión, la agilidad mental y los niveles de energía matutina.',
+      'Excelente regulador de la presión arterial y la resistencia a la insulina.'
     ],
     transversalActive: true,
-    accentBadge: 'Crononutrición y Ritmo Circadiano'
+    accentBadge: 'Crono-Alimentación 16:8'
   },
   g4: {
-    code: 'Grupo 4 (Control Paralelo)',
-    title: 'Control: Hábitos Habituales + Educación Básica',
-    n: '20 Participantes',
-    window: 'Horarios habituales sin supervisión ni crono-restricción',
-    caloricStatus: 'Sin modificación voluntaria prescrita',
+    code: 'Plan 4 (Grupo de Comparación)',
+    title: 'Plan de Guía Nutricional Habitual',
+    caloricStatus: 'Alimentación regular con recomendaciones estándar de salud',
+    window: 'Tus horarios habituales de alimentación',
     macros: { protein: 15, carb: 60, fat: 25 },
-    macroText: 'Patrón dietético libre espontáneo de la población de Imbabura',
+    macroText: 'Dieta cotidiana con pautas generales de alimentación saludable',
     mechanisms: [
-      'Mantenimiento de la línea de base individual sin intervención estructurada.',
-      'Recibe consejería nutricional general estándar (ética institucional no restrictiva).',
-      'Sin acompañamiento conductual ni prescripción estructurada de ejercicio físico de "Cuerpo Maestro".',
-      'Permite aislar y contrastar la eficacia neta de las 3 estrategias combinadas frente a la historia natural.'
+      'Recibes información y educación general sobre alimentación saludable.',
+      'Permite al equipo comparar científicamente las mejoras frente a los hábitos cotidianos.',
+      'Acceso total a todos tus análisis de laboratorio y bioimpedancia sin costo.',
+      'Al finalizar el estudio, recibirás todas las recomendaciones de los planes más efectivos.'
     ],
     transversalActive: false,
-    accentBadge: 'Brazo de Control No Activo'
+    accentBadge: 'Guía Saludable General'
   }
 };
 
@@ -138,6 +133,8 @@ function initArmComparator() {
   const armMechanismsList = document.getElementById('armMechanismsList');
   const transversalStatusEl = document.getElementById('transversalStatus');
 
+  if (!tabButtons.length || !armTitleEl) return;
+
   tabButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       tabButtons.forEach(b => b.classList.remove('active'));
@@ -147,7 +144,6 @@ function initArmComparator() {
       const data = ARM_DATA[armKey];
       if (!data) return;
 
-      // Actualizar información con transiciones fluidas
       armCodeEl.textContent = data.code;
       armTitleEl.textContent = data.title;
       armBadgeEl.textContent = data.accentBadge;
@@ -155,32 +151,29 @@ function initArmComparator() {
       armWindowEl.textContent = data.window;
       armMacrosTextEl.textContent = data.macroText;
 
-      // Barras de nutrientes
       barProtein.style.width = `${data.macros.protein}%`;
       barCarb.style.width = `${data.macros.carb}%`;
       barFat.style.width = `${data.macros.fat}%`;
 
       textProtein.textContent = `${data.macros.protein}% Proteína`;
       textCarb.textContent = `${data.macros.carb}% Carbohidratos`;
-      textFat.textContent = `${data.macros.fat}% Grasas`;
+      textFat.textContent = `${data.macros.fat}% Grasas Saludables`;
 
-      // Mecanismos fisiológicos
       armMechanismsList.innerHTML = data.mechanisms
         .map(item => `<li>${item}</li>`)
         .join('');
 
-      // Estado transversal Cuerpo Maestro
       if (data.transversalActive) {
         transversalStatusEl.className = 'callout-box';
         transversalStatusEl.innerHTML = `
-          <h5>Pilar Transversal "Cuerpo Maestro" Activo</h5>
-          <p>Este grupo recibe de forma protocolizada los 3 componentes comunes: <strong>Educación Nutricional</strong> continua, <strong>Acompañamiento Conductual</strong> (modelo transteórico) y <strong>Actividad Física Supervisada</strong> (prescripción de fuerza + aeróbica).</p>
+          <h5>Acompañamiento "Cuerpo Maestro" Incluido</h5>
+          <p>Este grupo cuenta con el apoyo de un <strong>nutricionista clínico</strong>, talleres educativos y <strong>ejercicio físico supervisado</strong> por un preparador especializado.</p>
         `;
       } else {
         transversalStatusEl.className = 'callout-box callout-warm';
         transversalStatusEl.innerHTML = `
-          <h5>Sin Intervención "Cuerpo Maestro" (Control)</h5>
-          <p>Este grupo no recibe educación conductual intensiva ni entrenamiento físico supervisado; mantiene su rutina habitual y sólo recibe información informativa estándar en salud general.</p>
+          <h5>Grupo de Control y Comparación</h5>
+          <p>Mantiene sus actividades habituales mientras recibe material educativo básico y evaluaciones médicas completas periódicas.</p>
         `;
       }
     });
@@ -188,10 +181,10 @@ function initArmComparator() {
 }
 
 /* ==========================================================================
-   3. EVALUADOR CLÍNICO ATP III & CONSENSO LANCET 2025
+   3. AUTO-EVALUADOR DE SALUD PARA EL PACIENTE
    ========================================================================== */
 function initAtpCalculator() {
-  let currentSex = 'male'; // 'male' | 'female'
+  let currentSex = 'male';
 
   const sexBtns = document.querySelectorAll('.sex-btn');
   const inputWaist = document.getElementById('inputWaist');
@@ -209,11 +202,9 @@ function initAtpCalculator() {
   const inputFatPct = document.getElementById('inputFatPct');
   const sliderFatPct = document.getElementById('sliderFatPct');
 
-  // Labels dinámicos según sexo
   const waistThresholdLabel = document.getElementById('waistThresholdLabel');
   const hdlThresholdLabel = document.getElementById('hdlThresholdLabel');
 
-  // Indicadores y checklist
   const criteriaCounter = document.getElementById('criteriaCounter');
   const criteriaCountText = document.getElementById('criteriaCountText');
   const eligibilityVerdict = document.getElementById('eligibilityVerdict');
@@ -226,8 +217,10 @@ function initAtpCalculator() {
   const checkGlucose = document.getElementById('checkGlucose');
   const lancetStagingBadge = document.getElementById('lancetStagingBadge');
 
-  // Sincronización input <-> slider
+  if (!inputWaist || !criteriaCounter) return;
+
   function linkInputSlider(inputEl, sliderEl) {
+    if (!inputEl || !sliderEl) return;
     inputEl.addEventListener('input', () => {
       sliderEl.value = inputEl.value;
       calculateDiagnosis();
@@ -246,7 +239,6 @@ function initAtpCalculator() {
   linkInputSlider(inputGlucose, sliderGlucose);
   linkInputSlider(inputFatPct, sliderFatPct);
 
-  // Cambio de Sexo
   sexBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       sexBtns.forEach(b => b.classList.remove('active'));
@@ -254,11 +246,11 @@ function initAtpCalculator() {
       currentSex = btn.getAttribute('data-sex');
 
       if (currentSex === 'male') {
-        waistThresholdLabel.textContent = 'Umbral ATP III: ≥ 102 cm';
-        hdlThresholdLabel.textContent = 'Umbral ATP III: < 40 mg/dL';
+        waistThresholdLabel.textContent = 'Umbral: ≥ 102 cm (Hombres)';
+        hdlThresholdLabel.textContent = 'Umbral: < 40 mg/dL (Bajo)';
       } else {
-        waistThresholdLabel.textContent = 'Umbral ATP III: ≥ 88 cm';
-        hdlThresholdLabel.textContent = 'Umbral ATP III: < 50 mg/dL';
+        waistThresholdLabel.textContent = 'Umbral: ≥ 88 cm (Mujeres)';
+        hdlThresholdLabel.textContent = 'Umbral: < 50 mg/dL (Bajo)';
       }
       calculateDiagnosis();
     });
@@ -273,7 +265,6 @@ function initAtpCalculator() {
     const glucose = parseFloat(inputGlucose.value) || 0;
     const fatPct = parseFloat(inputFatPct.value) || 0;
 
-    // Criterios ATP III
     const waistMet = (currentSex === 'male' && waist >= 102) || (currentSex === 'female' && waist >= 88);
     const tgMet = tg >= 150;
     const hdlMet = (currentSex === 'male' && hdl < 40) || (currentSex === 'female' && hdl < 50);
@@ -287,7 +278,6 @@ function initAtpCalculator() {
     if (bpMet) metCount++;
     if (glucoseMet) metCount++;
 
-    // Actualizar Checklist UI
     updateCheckItem(checkWaist, waistMet);
     updateCheckItem(checkTG, tgMet);
     updateCheckItem(checkHDL, hdlMet);
@@ -298,33 +288,33 @@ function initAtpCalculator() {
 
     if (metCount >= 3) {
       criteriaCounter.className = 'counter-number alert';
-      criteriaCountText.textContent = 'Criterios diagnósticos confirmados (≥ 3)';
+      criteriaCountText.textContent = 'Signos metabólicos detectados (≥ 3)';
       eligibilityVerdict.className = 'badge badge-accent';
-      eligibilityVerdict.textContent = 'Cumple criterios de inclusión';
-      verdictDetail.innerHTML = `<strong>Apto para el protocolo:</strong> El sujeto califica con diagnóstico clínico positivo para Síndrome Metabólico de acuerdo a NCEP-ATP III armonizado [2,3]. Puede ingresar a uno de los 4 brazos de estudio en T0.`;
+      eligibilityVerdict.textContent = '¡Calificas para ingresar al estudio!';
+      verdictDetail.innerHTML = `<strong>Perfil Apto:</strong> Cumples con al menos 3 signos de salud metabólica que el programa busca mejorar. Completa el formulario a continuación para postular tu cupo gratuito.`;
     } else {
       criteriaCounter.className = 'counter-number';
-      criteriaCountText.textContent = 'Criterios insuficientes (< 3)';
+      criteriaCountText.textContent = 'Indicadores leves (< 3)';
       eligibilityVerdict.className = 'badge badge-neutral';
-      eligibilityVerdict.textContent = 'No elegible para intervención';
-      verdictDetail.innerHTML = `<strong>Exclusión del estudio:</strong> Se requieren al menos 3 de 5 componentes ATP III para cumplir el criterio de inclusión. Actualmente presenta ${metCount} parámetro(s) alterado(s).`;
+      eligibilityVerdict.textContent = 'Condición metabólica estable';
+      verdictDetail.innerHTML = `<strong>Información:</strong> Presentas ${metCount} parámetro(s) alterado(s). Para el estudio clínico se prioriza a personas con 3 o más componentes. De todas formas, puedes postularte si sospechas de otros factores de riesgo.`;
     }
 
-    // Estadificación contemporánea The Lancet 2025 & ADA 2026
     const fatCutoff = currentSex === 'male' ? 25 : 32;
     if (fatPct >= fatCutoff && waistMet) {
       lancetStagingBadge.className = 'badge badge-accent';
-      lancetStagingBadge.textContent = 'Lancet 2025: Obesidad Clínica Confirmada';
+      lancetStagingBadge.textContent = 'Prioridad: Grasa Visceral Elevada';
     } else if (fatPct >= fatCutoff || waistMet) {
       lancetStagingBadge.className = 'badge badge-navy';
-      lancetStagingBadge.textContent = 'Lancet 2025: Obesidad Preclínica / Grasa Aumentada';
+      lancetStagingBadge.textContent = 'Moderado: Grasa en Aumento';
     } else {
       lancetStagingBadge.className = 'badge badge-neutral';
-      lancetStagingBadge.textContent = 'Lancet 2025: Grasa Corporal en Rango Normal';
+      lancetStagingBadge.textContent = 'Composición en Rango Saludable';
     }
   }
 
   function updateCheckItem(element, isMet) {
+    if (!element) return;
     if (isMet) {
       element.className = 'check-indicator met';
       element.textContent = '✓';
@@ -334,113 +324,46 @@ function initAtpCalculator() {
     }
   }
 
-  // Ejecutar primera evaluación
   calculateDiagnosis();
 }
 
 /* ==========================================================================
-   4. TABLA DE OPERACIONALIZACIÓN DE VARIABLES (ANEXO C)
+   4. FORMULARIO DE INSCRIPCIÓN DE PACIENTES
    ========================================================================== */
-const VARIABLES_DATA = [
-  { name: 'Grupo de intervención', cat: 'Intervención', def: 'Estrategia asignada a cada participante', ind: 'RC / MM / TRF / Control', scale: 'Nominal', type: 'Independiente' },
-  { name: 'Tiempo de evaluación', cat: 'Temporal', def: 'Momento de medición pre y post intervención', ind: 'T0 (Basal) / T1 (6 meses)', scale: 'Nominal dicotómica', type: 'Independiente intra-sujeto' },
-  { name: 'Porcentaje de Grasa Corporal', cat: 'Antropometría', def: 'Estimación de masa adiposa mediante bioimpedancia eléctrica de grado clínico (Desenlace Primario)', ind: '% grasa corporal total', scale: 'Continua', type: 'Dependiente (PRIMARIO)' },
-  { name: 'Masa magra / Muscular', cat: 'Antropometría', def: 'Estimación de masa libre de grasa preservada', ind: 'kg masa magra', scale: 'Continua', type: 'Dependiente' },
-  { name: 'Peso corporal', cat: 'Antropometría', def: 'Masa corporal total en ayunas', ind: 'kg', scale: 'Continua de razón', type: 'Dependiente' },
-  { name: 'Índice de Masa Corporal (IMC)', cat: 'Antropometría', def: 'Cociente masa / talla al cuadrado', ind: 'kg/m²', scale: 'Continua de razón', type: 'Dependiente' },
-  { name: 'Circunferencia abdominal', cat: 'Antropometría', def: 'Perímetro abdominal estandarizado en punto medio', ind: 'cm', scale: 'Continua de razón', type: 'Dependiente' },
-  { name: 'Presión arterial', cat: 'Cardiovascular', def: 'Presión sistólica y diastólica estandarizada', ind: 'mmHg', scale: 'Continua de razón', type: 'Dependiente' },
-  { name: 'Glucosa en ayunas', cat: 'Metabolismo', def: 'Concentración sérica de glucosa tras 8-12 h de ayuno', ind: 'mg/dL', scale: 'Continua de razón', type: 'Dependiente' },
-  { name: 'Hemoglobina Glicosilada (HbA1c)', cat: 'Metabolismo', def: 'Control glucémico trimestral estandarizado en T0 y T1', ind: '%', scale: 'Continua de razón', type: 'Dependiente' },
-  { name: 'Perfil lipídico sérico', cat: 'Metabolismo', def: 'Colesterol Total, LDL-C, HDL-C y Triglicéridos', ind: 'mg/dL', scale: 'Continua de razón', type: 'Dependiente' },
-  { name: 'Función hepática', cat: 'Seguridad', def: 'Enzimas hepáticas séricas de seguridad metabólica', ind: 'U/L (Transaminasas AST/ALT, GGT)', scale: 'Continua', type: 'Dependiente' },
-  { name: 'Función renal', cat: 'Seguridad', def: 'Seguridad metabólica y filtración renal', ind: 'Urea y Creatinina (mg/dL)', scale: 'Continua de razón', type: 'Dependiente' },
-  { name: 'Adherencia al protocolo', cat: 'Conductual', def: 'Días de cumplimiento efectivo / días totales × 100', ind: '% cumplimiento (0 - 100)', scale: 'Continua', type: 'Moduladora' },
-  { name: 'Calidad de vida (SF-36)', cat: 'Conductual', def: 'Cuestionario de salud auto-percibida SF-36', ind: 'Puntuación por dominios (0-100)', scale: 'Continua', type: 'Dependiente secundaria' },
-  { name: 'Edad y sexo biológico', cat: 'Covariables', def: 'Características sociodemográficas moduladoras', ind: 'Años cumplidos / Femenino-Masculino', scale: 'Mixta', type: 'Covariable confusora' }
-];
+function initEnrollmentForm() {
+  const form = document.getElementById('patientEnrollmentForm');
+  const successBox = document.getElementById('enrollmentSuccess');
 
-function initVariablesTable() {
-  const tableBody = document.getElementById('variablesTableBody');
-  const filterPills = document.querySelectorAll('.filter-pill');
-  const searchInput = document.getElementById('variableSearch');
+  if (!form || !successBox) return;
 
-  let currentFilter = 'all';
-  let searchTerm = '';
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-  function renderRows() {
-    const filtered = VARIABLES_DATA.filter(item => {
-      const matchesFilter = (currentFilter === 'all') || (item.cat.toLowerCase() === currentFilter.toLowerCase());
-      const matchesSearch = item.name.toLowerCase().includes(searchTerm) ||
-                            item.def.toLowerCase().includes(searchTerm) ||
-                            item.ind.toLowerCase().includes(searchTerm) ||
-                            item.type.toLowerCase().includes(searchTerm);
-      return matchesFilter && matchesSearch;
-    });
+    const name = document.getElementById('patientName').value.trim();
+    const phone = document.getElementById('patientPhone').value.trim();
 
-    if (filtered.length === 0) {
-      tableBody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding: 2rem; color: var(--text-muted);">No se encontraron variables con los criterios seleccionados.</td></tr>`;
-      return;
+    // Guardar registro localmente para el equipo investigador
+    const patientData = {
+      name: name,
+      age: document.getElementById('patientAge').value,
+      sex: document.getElementById('patientSex').value,
+      canton: document.getElementById('patientCanton').value,
+      phone: phone,
+      email: document.getElementById('patientEmail').value,
+      date: new Date().toISOString()
+    };
+
+    try {
+      const existing = JSON.parse(localStorage.getItem('cuerpo_maestro_inscritos') || '[]');
+      existing.push(patientData);
+      localStorage.setItem('cuerpo_maestro_inscritos', JSON.stringify(existing));
+    } catch (err) {
+      console.log('Almacenamiento local:', err);
     }
 
-    tableBody.innerHTML = filtered.map(v => {
-      const isPrimary = v.type.includes('PRIMARIO');
-      return `
-        <tr class="${isPrimary ? 'row-primary-outcome' : ''}">
-          <td class="variable-highlight">
-            ${v.name}
-            ${isPrimary ? '<span class="badge badge-accent" style="margin-left:0.5rem; font-size:0.65rem;">Desenlace Primario</span>' : ''}
-          </td>
-          <td>${v.def}</td>
-          <td><code>${v.ind}</code></td>
-          <td>${v.scale}</td>
-          <td><span class="badge ${isPrimary ? 'badge-accent' : 'badge-neutral'}">${v.type}</span></td>
-        </tr>
-      `;
-    }).join('');
-  }
-
-  filterPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      filterPills.forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      currentFilter = pill.getAttribute('data-filter');
-      renderRows();
-    });
-  });
-
-  searchInput.addEventListener('input', (e) => {
-    searchTerm = e.target.value.trim().toLowerCase();
-    renderRows();
-  });
-
-  renderRows();
-}
-
-/* ==========================================================================
-   5. FILTRO CRONOGRAMA GANTT
-   ========================================================================== */
-function initGanttFilter() {
-  const filterBtns = document.querySelectorAll('.gantt-filter-btn');
-  const rows = document.querySelectorAll('.gantt-activity-row');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const targetOe = btn.getAttribute('data-oe');
-
-      rows.forEach(row => {
-        const rowOe = row.getAttribute('data-oe');
-        if (targetOe === 'all' || rowOe === targetOe) {
-          row.style.display = 'grid';
-        } else {
-          row.style.display = 'none';
-        }
-      });
-    });
+    // Ocultar formulario y mostrar mensaje de éxito
+    form.style.display = 'none';
+    successBox.classList.add('show');
+    successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 }
-
-
