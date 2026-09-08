@@ -6,8 +6,13 @@
   <title>Programa Clínico Cuerpo Maestro | Convocatoria para Pacientes - Yachay Tech</title>
   <meta name="description" content="Inscripción al programa clínico y nutricional gratuito 'Cuerpo Maestro' para adultos de 18 a 60 años con síndrome metabólico en Urcuquí e Ibarra, Imbabura. Evaluaciones médicas, bioimpedancia y acompañamiento durante 6 meses.">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Capa de Grano Editorial MIT -->
+  <div class="grain-overlay" aria-hidden="true"></div>
 
   <!-- ==========================================================================
        BARRA INSTITUCIONAL SUPERIOR
@@ -71,46 +76,61 @@
        HERO: CONVOCATORIA PARA PACIENTES CON MODELO ANATÓMICO INTERACTIVO
        ========================================================================== -->
   <section id="hero" class="hero-section">
+    <!-- Arcos arquitectónicos de fondo -->
+    <div class="hero-arches-bg" aria-hidden="true">
+      <div class="hero-arch-1"></div>
+      <div class="hero-arch-2"></div>
+    </div>
+
     <div class="container">
       <div class="hero-grid-split">
         <div>
-          <div class="hero-meta-bar">
-            <span class="badge badge-brand">Programa Clínico y Nutricional Gratuito</span>
-            <span class="badge badge-neutral">Cupos Limitados (80 Plazas)</span>
-            <span class="badge badge-accent">Adultos de 18 a 60 Años</span>
+          <!-- Regla y Eyebrow estilo MIT -->
+          <div class="mit-eyebrow">
+            <span class="mit-eyebrow-line"></span>
+            <span class="mit-eyebrow-text">Estudio Cl&iacute;nico PII26-12 &bull; Yachay Tech &bull; Imbabura</span>
           </div>
 
-          <h1 class="hero-title">
-            Transforma tu salud metabólica con el programa integral <span class="hero-highlight">"Cuerpo Maestro"</span>
+          <h1 class="hero-editorial-title">
+            <span style="display: block; font-family: var(--font-sans); color: #fff7ea;">Protocolo Cl&iacute;nico</span>
+            <span class="serif-italic-gold" style="display: block; padding-left: 0.5rem;">Cuerpo Maestro</span>
+            <span class="serif-italic-celadon" style="display: block; font-size: clamp(2.2rem, 4.4vw, 3.8rem); margin-top: 0.25rem;">Imbabura.</span>
           </h1>
 
           <p class="hero-subtitle">
-            Si vives en Urcuquí o Ibarra y tienes sobrepeso, presión arterial elevada, glucosa alterada o colesterol alto, te invitamos a participar en un estudio clínico de vanguardia avalado por la Universidad Yachay Tech. Recibe 6 meses de acompañamiento médico, nutricional y físico personalizado, con exámenes de sangre completos y bioimpedancia avanzada <strong>100% gratuitos</strong>.
+            Reversi&oacute;n integral del s&iacute;ndrome metab&oacute;lico en adultos de 18 a 60 a&ntilde;os mediante nutrici&oacute;n de precisi&oacute;n, ejercicio supervisado y evaluaci&oacute;n continua en Urcuqu&iacute; e Ibarra. Un estudio respaldado por la Universidad Yachay Tech, UTPL y Hospital ALFA.
           </p>
 
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-            <a href="#inscripcion" class="btn btn-primary">
-              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
-              Postularme al Programa
-            </a>
-            <a href="#evaluador" class="btn btn-outline">
-              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-              Comprobar si Califico (Test Rápido)
-            </a>
+          <!-- Fichas de metadatos en vidrio esmerilado (MIT Frame Chips) -->
+          <div class="metadata-chips-grid">
+            <div class="metadata-chip">
+              <div class="metadata-chip-label">Duraci&oacute;n</div>
+              <div class="metadata-chip-value">6 Meses (24 Semanas)</div>
+            </div>
+            <div class="metadata-chip">
+              <div class="metadata-chip-label">Sede Cl&iacute;nica</div>
+              <div class="metadata-chip-value">Urcuqu&iacute; e Ibarra</div>
+            </div>
+            <div class="metadata-chip">
+              <div class="metadata-chip-label">Disponibilidad</div>
+              <div class="metadata-chip-value">80 Cupos Gratuitos</div>
+            </div>
+            <div class="metadata-chip">
+              <div class="metadata-chip-label">Inversi&oacute;n Paciente</div>
+              <div class="metadata-chip-value">100% Sin Costo</div>
+            </div>
           </div>
 
-          <!-- Métricas directas para el paciente -->
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <div style="background: var(--bg-subtle); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--color-brand);">
-              <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--color-brand);">Costo al Paciente</div>
-              <div style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary);">100% Gratuito</div>
-              <div style="font-size: 0.78rem; color: var(--text-muted);">Exámenes y consultas cubiertos</div>
-            </div>
-            <div style="background: var(--bg-subtle); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--color-accent);">
-              <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--color-accent);">Disponibilidad</div>
-              <div style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary);">80 Cupos</div>
-              <div style="font-size: 0.78rem; color: var(--text-muted);">Urcuquí e Ibarra (18-60 años)</div>
-            </div>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+            <a href="#inscripcion" class="btn btn-primary" style="gap: 0.6rem;">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+              Postularme al Programa
+              <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="#evaluador" class="btn btn-outline" style="gap: 0.6rem;">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              Comprobar si Califico
+            </a>
           </div>
         </div>
 
@@ -217,74 +237,143 @@
   <!-- ==========================================================================
        BENEFICIOS: QUÉ RECIBE EL PACIENTE SIN COSTO
        ========================================================================== -->
-  <section id="beneficios">
+  <section id="beneficios" class="section-dark-graphite">
+    <div class="mit-divider"></div>
     <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">Beneficios Exclusivos para Participantes</span>
-        <h2>¿Qué recibirás al inscribirte en el estudio?</h2>
-        <p class="section-description">
-          Todo el protocolo está diseñado para mejorar tu salud cardiovascular, tu energía diaria y tu composición corporal, guiado por profesionales de la salud sin costo económico alguno.
+      <!-- Módulo El Desafío Metabólico (Inspirado en 'The Challenge' de MIT Roma) -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: start; margin-bottom: 4rem;">
+        <div>
+          <div class="mit-eyebrow">
+            <span class="mit-eyebrow-line"></span>
+            <span class="mit-eyebrow-text">I &bull; El Desaf&iacute;o Metab&oacute;lico</span>
+          </div>
+          
+          <div style="display: flex; align-items: baseline; margin-top: 1.5rem; margin-bottom: 1rem;">
+            <span class="challenge-stat-huge" style="font-family: var(--font-serif); font-size: clamp(5rem, 8vw, 7.5rem); font-weight: 700; font-style: italic; color: var(--mit-terracotta-bright); line-height: 0.9;">38%</span>
+            <span style="font-family: var(--font-serif); font-size: 1.75rem; font-style: italic; color: var(--mit-gold); margin-left: 0.75rem;">prevalencia</span>
+          </div>
+          <p style="font-family: var(--font-serif); font-size: 1.35rem; font-style: italic; color: rgba(236, 215, 179, 0.82); line-height: 1.4; max-width: 380px;">
+            De adultos en la regi&oacute;n andina presentan componentes del s&iacute;ndrome metab&oacute;lico sin diagn&oacute;stico oportuno.
+          </p>
+        </div>
+
+        <div>
+          <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 3rem); color: #fff7ea; line-height: 1.15;">
+            Alta afectaci&oacute;n. <span class="serif-italic-gold">Menor acompa&ntilde;amiento guiado.</span>
+          </h2>
+          <p style="color: rgba(236, 215, 179, 0.85); font-size: 1.05rem; line-height: 1.7; margin-top: 1.25rem;">
+            El s&iacute;ndrome metab&oacute;lico agrupa hipertensi&oacute;n arterial, glucosa alterada en ayunas, triglic&eacute;ridos altos y grasa visceral acumulada. Sin un protocolo cient&iacute;fico multidisciplinario, el riesgo de diabetes tipo 2 y complicaciones cardiovasculares se multiplica. "Cuerpo Maestro" sit&uacute;a al paciente en el centro de la soluci&oacute;n con seguimiento continuo.
+          </p>
+
+          <!-- Barras de Comparación Biomédica MIT -->
+          <div class="challenge-box">
+            <div class="challenge-bar-row">
+              <div class="challenge-bar-header">
+                <span>Poblaci&oacute;n con s&iacute;ndrome metab&oacute;lico sin tratar</span>
+                <span class="challenge-bar-val">Glucosa &gt; 100 mg/dL</span>
+              </div>
+              <div class="challenge-progress-track">
+                <div class="challenge-progress-fill-red" style="width: 85%;"></div>
+              </div>
+            </div>
+
+            <div class="challenge-bar-row">
+              <div class="challenge-bar-header">
+                <span>Triglic&eacute;ridos y grasa visceral cr&oacute;nica</span>
+                <span class="challenge-bar-val">&gt; 150 mg/dL</span>
+              </div>
+              <div class="challenge-progress-track">
+                <div class="challenge-progress-fill-gold" style="width: 70%;"></div>
+              </div>
+            </div>
+
+            <div class="challenge-bar-row">
+              <div class="challenge-bar-header">
+                <span>Meta Protocolo "Cuerpo Maestro" (24 semanas)</span>
+                <span class="challenge-bar-val" style="color: var(--mit-celadon);">-25% Grasa Visceral</span>
+              </div>
+              <div class="challenge-progress-track">
+                <div class="challenge-progress-fill-celadon" style="width: 32%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <p style="border-left: 2px solid var(--mit-terracotta-bright); padding-left: 1.25rem; font-style: italic; color: rgba(236, 215, 179, 0.75); font-size: 0.95rem; line-height: 1.6;">
+            "El s&iacute;ndrome metab&oacute;lico no es un destino inevitable. Con precisi&oacute;n celular y nutrici&oacute;n cl&iacute;nica, el cuerpo reactiva sus v&iacute;as de autorregulaci&oacute;n."
+          </p>
+        </div>
+      </div>
+
+      <!-- Cuadrícula de Beneficios Gratuitos para el Paciente -->
+      <div class="section-header" style="margin-top: 4rem; margin-bottom: 2.5rem;">
+        <div class="mit-eyebrow">
+          <span class="mit-eyebrow-line"></span>
+          <span class="mit-eyebrow-text">&iquest;Qu&eacute; Recibe Cada Paciente?</span>
+        </div>
+        <h2 style="color: #fff7ea;">Acompa&ntilde;amiento Integral <span class="serif-italic-gold">100% Gratuito</span></h2>
+        <p class="section-description" style="color: rgba(236, 215, 179, 0.85);">
+          Todo el protocolo est&aacute; financiado y respaldado por la Universidad Yachay Tech para los 80 participantes seleccionados:
         </p>
       </div>
 
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-icon-badge">
+      <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+        <div class="benefit-card" style="background: rgba(255, 247, 234, 0.06); border: 1px solid rgba(236, 215, 179, 0.16); border-radius: var(--radius-lg); padding: 1.75rem; backdrop-filter: blur(8px);">
+          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.15); color: var(--mit-gold); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
             <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
-          <h4>Exámenes de Sangre Completos</h4>
-          <p>
-            Análisis de laboratorio en dos momentos (inicio y a los 6 meses): glucosa, hemoglobina glicosilada (HbA1c), colesterol total, HDL, LDL, triglicéridos, y chequeo de función del hígado y riñones.
+          <h4 style="color: #fff7ea; font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.5rem;">Ex&aacute;menes de Sangre Completos</h4>
+          <p style="color: rgba(236, 215, 179, 0.78); font-size: 0.88rem; line-height: 1.6;">
+            Perfil lip&iacute;dico, glucosa en ayunas, hemoglobina glicosilada (HbA1c) y perfil hep&aacute;tico/renal al inicio y al final de los 6 meses sin costo.
           </p>
         </div>
 
-        <div class="benefit-card">
-          <div class="benefit-icon-badge">
+        <div class="benefit-card" style="background: rgba(255, 247, 234, 0.06); border: 1px solid rgba(236, 215, 179, 0.16); border-radius: var(--radius-lg); padding: 1.75rem; backdrop-filter: blur(8px);">
+          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.15); color: var(--mit-gold); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
             <svg class="icon icon-lg" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </div>
-          <h4>Estudio de Bioimpedancia Gratuito</h4>
-          <p>
-            Medición de alta precisión con tecnología clínica para conocer exactamente tu porcentaje real de grasa corporal, masa muscular y grasa visceral, yendo más allá del simple peso en balanza.
+          <h4 style="color: #fff7ea; font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.5rem;">Bioimpedancia Tetrapolar Cl&iacute;nica</h4>
+          <p style="color: rgba(236, 215, 179, 0.78); font-size: 0.88rem; line-height: 1.6;">
+            Medici&oacute;n de vanguardia para cuantificar masa muscular esquel&eacute;tica, porcentaje graso subcut&aacute;neo y niveles de grasa visceral profunda.
           </p>
         </div>
 
-        <div class="benefit-card">
-          <div class="benefit-icon-badge">
+        <div class="benefit-card" style="background: rgba(255, 247, 234, 0.06); border: 1px solid rgba(236, 215, 179, 0.16); border-radius: var(--radius-lg); padding: 1.75rem; backdrop-filter: blur(8px);">
+          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.15); color: var(--mit-gold); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
             <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
           </div>
-          <h4>Plan Nutricional Personalizado</h4>
-          <p>
-            Un nutricionista clínico diseñará y ajustará tus pautas de alimentación según el protocolo asignado, con recetas sencillas, alimentos locales accesibles y sin pasar hambre extrema.
+          <h4 style="color: #fff7ea; font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.5rem;">Plan Nutricional de Precisi&oacute;n</h4>
+          <p style="color: rgba(236, 215, 179, 0.78); font-size: 0.88rem; line-height: 1.6;">
+            Pautas alimentarias personalizadas basadas en ingredientes locales ecuatorianos accesibles, adaptadas a tu grupo asignado sin pasar hambre extrema.
           </p>
         </div>
 
-        <div class="benefit-card">
-          <div class="benefit-icon-badge">
+        <div class="benefit-card" style="background: rgba(255, 247, 234, 0.06); border: 1px solid rgba(236, 215, 179, 0.16); border-radius: var(--radius-lg); padding: 1.75rem; backdrop-filter: blur(8px);">
+          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.15); color: var(--mit-gold); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
             <svg class="icon icon-lg" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
           </div>
-          <h4>Ejercicio Físico Guiado y Seguro</h4>
-          <p>
-            Rutinas supervisadas por un preparador físico profesional, adaptadas a tu nivel actual de condición física, cuidando tus articulaciones y enfocadas en reactivar tu metabolismo.
+          <h4 style="color: #fff7ea; font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.5rem;">Ejercicio Guiado y Progresivo</h4>
+          <p style="color: rgba(236, 215, 179, 0.78); font-size: 0.88rem; line-height: 1.6;">
+            Sesiones de entrenamiento supervisadas, protegiendo tus articulaciones y enfocadas en la activaci&oacute;n de transportadores GLUT4 musculares.
           </p>
         </div>
 
-        <div class="benefit-card">
-          <div class="benefit-icon-badge">
+        <div class="benefit-card" style="background: rgba(255, 247, 234, 0.06); border: 1px solid rgba(236, 215, 179, 0.16); border-radius: var(--radius-lg); padding: 1.75rem; backdrop-filter: blur(8px);">
+          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.15); color: var(--mit-gold); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
             <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h4>Educación y Apoyo en Hábitos</h4>
-          <p>
-            Acompañamiento conductual continuo para aprender a controlar el estrés, mejorar la calidad del sueño y sostener tus hábitos saludables en el tiempo sin efecto rebote.
+          <h4 style="color: #fff7ea; font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.5rem;">Acompa&ntilde;amiento en H&aacute;bitos</h4>
+          <p style="color: rgba(236, 215, 179, 0.78); font-size: 0.88rem; line-height: 1.6;">
+            Soporte continuo para higiene del sue&ntilde;o, manejo de estr&eacute;s y adopci&oacute;n de rutinas sostenibles para evitar el temido efecto rebote.
           </p>
         </div>
 
-        <div class="benefit-card">
-          <div class="benefit-icon-badge">
+        <div class="benefit-card" style="background: rgba(255, 247, 234, 0.06); border: 1px solid rgba(236, 215, 179, 0.16); border-radius: var(--radius-lg); padding: 1.75rem; backdrop-filter: blur(8px);">
+          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.15); color: var(--mit-gold); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
             <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           </div>
-          <h4>Informe Médico Individual Final</h4>
-          <p>
-            Al culminar los 6 meses, te entregamos un reporte clínico detallado con la evolución comparativa de tu salud, tu composición corporal y tus análisis de sangre para tu control médico personal.
+          <h4 style="color: #fff7ea; font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.5rem;">Informe M&eacute;dico Individual</h4>
+          <p style="color: rgba(236, 215, 179, 0.78); font-size: 0.88rem; line-height: 1.6;">
+            Reporte formal con toda la evoluci&oacute;n comparativa de tus biomarcadores cl&iacute;nicos y bioimpedancia para tu archivo de salud personal.
           </p>
         </div>
       </div>
@@ -294,31 +383,38 @@
   <!-- ==========================================================================
        MAPA DE LOS 6 ÓRGANOS CLAVE DEL METABOLISMO
        ========================================================================== -->
-  <section id="organos">
+  <!-- ==========================================================================
+       MAPA DE LOS 6 ÓRGANOS CLAVE DEL METABOLISMO (PARCHMENT MIT)
+       ========================================================================== -->
+  <section id="organos" class="section-warm-parchment">
+    <div class="mit-divider-terracotta"></div>
     <div class="container">
       <div class="section-header">
-        <span class="section-eyebrow">Fisiología Humana Integrada</span>
-        <h2>Los 6 Órganos Clave que Transforma el Protocolo</h2>
+        <div class="mit-eyebrow">
+          <span class="mit-eyebrow-line line-terracotta"></span>
+          <span class="mit-eyebrow-text text-terracotta">II &bull; Fisiolog&iacute;a Humana Integrada</span>
+        </div>
+        <h2>Los 6 &Oacute;rganos Clave. <span class="serif-italic-terracotta">Un Solo Sistema Coordinado.</span></h2>
         <p class="section-description">
-          El síndrome metabólico no es un problema aislado de peso: es una alteración coordinada en los principales sistemas del cuerpo humano. "Cuerpo Maestro" actúa de forma simultánea en cada uno de ellos:
+          El s&iacute;ndrome metab&oacute;lico no es un problema aislado de peso: es una alteraci&oacute;n coordinada en los principales sistemas del cuerpo humano. "Cuerpo Maestro" act&uacute;a de forma simult&aacute;nea en cada uno de ellos:
         </p>
       </div>
 
       <div class="organ-gallery-grid">
         <!-- 1. Cerebro -->
-        <div class="organ-gallery-card">
+        <div class="organ-gallery-card" data-index="01">
           <span class="organ-badge-tag">Sistema Neuroendocrino</span>
           <div class="organ-card-top">
             <div>
-              <h3>1. Cerebro e Hipotálamo</h3>
-              <div style="font-size: 0.85rem; color: var(--text-muted);">Control central del apetito y ritmos biológicos</div>
+              <h3>1. Cerebro e Hipot&aacute;lamo</h3>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Control central del apetito y ritmos biol&oacute;gicos</div>
             </div>
             <div class="organ-icon-art">
               <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"/></svg>
             </div>
           </div>
           <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
-            Regula las hormonas del hambre (grelina) y de saciedad (leptina), junto con el cortisol (hormona del estrés). El protocolo sincroniza tus ritmos circadianos para eliminar los impulsos ansiosos por comer de noche.
+            Regula las hormonas del hambre (grelina) y de saciedad (leptina), junto con el cortisol (hormona del estr&eacute;s). El protocolo sincroniza tus ritmos circadianos para eliminar los impulsos ansiosos por comer de noche.
           </p>
           <div class="organ-metric-badge">
             <svg class="icon icon-xs" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
@@ -327,107 +423,107 @@
         </div>
 
         <!-- 2. Corazón y Arterias -->
-        <div class="organ-gallery-card">
+        <div class="organ-gallery-card" data-index="02">
           <span class="organ-badge-tag">Sistema Cardiovascular</span>
           <div class="organ-card-top">
             <div>
-              <h3>2. Corazón y Vasos Sanguíneos</h3>
-              <div style="font-size: 0.85rem; color: var(--text-muted);">Presión arterial y elasticidad vascular</div>
+              <h3>2. Coraz&oacute;n y Vasos Sangu&iacute;neos</h3>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Presi&oacute;n arterial y elasticidad vascular</div>
             </div>
             <div class="organ-icon-art" style="background: #ffe4e6; color: #e11d48;">
               <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 7.65l.77.78L12 21.23l7.65-8.22.77-.78a5.4 5.4 0 0 0 0-7.65z"/></svg>
             </div>
           </div>
           <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
-            La rigidez arterial provocada por la hiperglucemia se combate estimulando el óxido nítrico endotelial con ejercicio dosificado, reduciendo progresivamente la presión sistólica y diastólica.
+            La rigidez arterial provocada por la hiperglucemia se combate estimulando el &oacute;xido n&iacute;trico endotelial con ejercicio dosificado, reduciendo progresivamente la presi&oacute;n sist&oacute;lica y diast&oacute;lica.
           </p>
           <div class="organ-metric-badge">
             <svg class="icon icon-xs" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Beneficio: Arterias más flexibles y presión normalizada
+            Beneficio: Arterias m&aacute;s flexibles y presi&oacute;n normalizada
           </div>
         </div>
 
         <!-- 3. Hígado -->
-        <div class="organ-gallery-card">
-          <span class="organ-badge-tag">Centro Metabólico Principal</span>
+        <div class="organ-gallery-card" data-index="03">
+          <span class="organ-badge-tag">Centro Metab&oacute;lico Principal</span>
           <div class="organ-card-top">
             <div>
-              <h3>3. Hígado Metabólico</h3>
-              <div style="font-size: 0.85rem; color: var(--text-muted);">Depuración de triglicéridos y glucosa</div>
+              <h3>3. H&iacute;gado Metab&oacute;lico</h3>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Depuraci&oacute;n de triglic&eacute;ridos y glucosa</div>
             </div>
             <div class="organ-icon-art" style="background: #fef3c7; color: #d97706;">
               <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M4 14c0 4 3 6 8 6s8-2 8-6-4-10-8-10-8 6-8 10z"/><circle cx="12" cy="13" r="2"/></svg>
             </div>
           </div>
           <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
-            El exceso de azúcares se almacena en el hígado como grasa (esteatosis hepática). Con pautas dietéticas específicas, el hígado vacía sus depósitos grasos y disminuye la producción descontrolada de triglicéridos.
+            El exceso de az&uacute;cares se almacena en el h&iacute;gado como grasa (esteatosis hep&aacute;tica). Con pautas diet&eacute;ticas espec&iacute;ficas, el h&iacute;gado vac&iacute;a sus dep&oacute;sitos grasos y disminuye la producci&oacute;n descontrolada de triglic&eacute;ridos.
           </p>
           <div class="organ-metric-badge">
             <svg class="icon icon-xs" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Beneficio: Descongestión del hígado graso y enzimas ALT/AST
+            Beneficio: Descongesti&oacute;n del h&iacute;gado graso y enzimas ALT/AST
           </div>
         </div>
 
         <!-- 4. Páncreas -->
-        <div class="organ-gallery-card">
-          <span class="organ-badge-tag">Glándula Endocrina</span>
+        <div class="organ-gallery-card" data-index="04">
+          <span class="organ-badge-tag">Gl&aacute;ndula Endocrina</span>
           <div class="organ-card-top">
             <div>
-              <h3>4. Páncreas Endocrino</h3>
-              <div style="font-size: 0.85rem; color: var(--text-muted);">Reserva y secreción saludable de insulina</div>
+              <h3>4. P&aacute;ncreas Endocrino</h3>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Reserva y secreci&oacute;n saludable de insulina</div>
             </div>
             <div class="organ-icon-art" style="background: #fef9c3; color: #ca8a04;">
               <svg class="icon icon-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
             </div>
           </div>
           <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
-            En el síndrome metabólico, el páncreas produce insulina sin parar para compensar la resistencia celular hasta agotarse. Nuestro protocolo alivia esta carga, preservando la vitalidad de las células beta.
+            En el s&iacute;ndrome metab&oacute;lico, el p&aacute;ncreas produce insulina sin parar para compensar la resistencia celular hasta agotarse. Nuestro protocolo alivia esta carga, preservando la vitalidad de las c&eacute;lulas beta.
           </p>
           <div class="organ-metric-badge">
             <svg class="icon icon-xs" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Beneficio: Protección contra la diabetes tipo 2
+            Beneficio: Protecci&oacute;n contra la diabetes tipo 2
           </div>
         </div>
 
         <!-- 5. Tejido Adiposo Visceral -->
-        <div class="organ-gallery-card">
+        <div class="organ-gallery-card" data-index="05">
           <span class="organ-badge-tag">Tejido Graso Profundo</span>
           <div class="organ-card-top">
             <div>
               <h3>5. Grasa Visceral Abdominal</h3>
-              <div style="font-size: 0.85rem; color: var(--text-muted);">Reducción de inflamación sistémica</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Reducci&oacute;n de inflamaci&oacute;n sist&eacute;mica</div>
             </div>
             <div class="organ-icon-art" style="background: #ffedd5; color: #ea580c;">
               <svg class="icon icon-lg" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="6"/><circle cx="12" cy="12" r="3"/></svg>
             </div>
           </div>
           <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
-            A diferencia de la grasa bajo la piel, la grasa visceral que rodea tus intestinos secreta toxinas e inflamación constante (TNF-alfa e IL-6). El programa acelera su reducción comprobada por bioimpedancia.
+            A diferencia de la grasa bajo la piel, la grasa visceral que rodea tus intestinos secreta toxinas e inflamaci&oacute;n constante (TNF-alfa e IL-6). El programa acelera su reducci&oacute;n comprobada por bioimpedancia.
           </p>
           <div class="organ-metric-badge">
             <svg class="icon icon-xs" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Beneficio: Disminución de centímetros de cintura
+            Beneficio: Disminuci&oacute;n de cent&iacute;metros de cintura
           </div>
         </div>
 
         <!-- 6. Músculo Esquelético -->
-        <div class="organ-gallery-card">
-          <span class="organ-badge-tag">Motor Metabólico Activo</span>
+        <div class="organ-gallery-card" data-index="06">
+          <span class="organ-badge-tag">Motor Metab&oacute;lico Activo</span>
           <div class="organ-card-top">
             <div>
-              <h3>6. Músculo Esquelético</h3>
-              <div style="font-size: 0.85rem; color: var(--text-muted);">Captación de glucosa y quema calórica</div>
+              <h3>6. M&uacute;sculo Esquel&eacute;tico</h3>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Captaci&oacute;n de glucosa y quema cal&oacute;rica</div>
             </div>
             <div class="organ-icon-art" style="background: #ccfbf1; color: #0f766e;">
               <svg class="icon icon-lg" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
           </div>
           <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
-            Tus músculos son el mayor consumidor de glucosa del cuerpo. Con las sesiones guiadas, abrimos las compuertas celulares (GLUT4) para que el músculo use el azúcar como combustible sin acumularlo como grasa.
+            Tus m&uacute;sculos son el mayor consumidor de glucosa del cuerpo. Con las sesiones guiadas, abrimos las compuertas celulares (GLUT4) para que el m&uacute;sculo use el az&uacute;car como combustible sin acumularlo como grasa.
           </p>
           <div class="organ-metric-badge">
             <svg class="icon icon-xs" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Beneficio: Mayor energía diaria y tono muscular
+            Beneficio: Mayor energ&iacute;a diaria y tono muscular
           </div>
         </div>
       </div>
@@ -435,15 +531,19 @@
   </section>
 
   <!-- ==========================================================================
-       VIAJE AL INTERIOR DE LA CÉLULA: MITOCONDRIAS, AMPK Y ENERGÍA ATP
+       VIAJE AL INTERIOR DE LA CÉLULA: MITOCONDRIAS, AMPK Y ENERGÍA ATP (PINO MIT)
        ========================================================================== -->
   <section id="celula" class="cellular-section">
+    <div class="mit-divider"></div>
     <div class="container">
       <div class="section-header">
-        <span class="section-eyebrow">Biología Celular Interactiva</span>
-        <h2>Viaje al Interior de la Célula: Mitocondrias, AMPK y Energía</h2>
-        <p class="section-description">
-          Observa cómo se comporta una célula de tu cuerpo antes y después del protocolo. Alterna entre ambos estados para ver cómo se reactiva el motor celular:
+        <div class="mit-eyebrow">
+          <span class="mit-eyebrow-line"></span>
+          <span class="mit-eyebrow-text">III &bull; Biolog&iacute;a Celular Interactiva</span>
+        </div>
+        <h2 style="color: #fff7ea;">Mitocondrias, AMPK y ATP. <span class="serif-italic-gold">El Motor Energ&eacute;tico.</span></h2>
+        <p class="section-description" style="color: rgba(247, 239, 224, 0.85);">
+          Observa c&oacute;mo se comporta una c&eacute;lula de tu cuerpo antes y despu&eacute;s del protocolo. Alterna entre ambos estados para ver c&oacute;mo se reactiva el motor celular:
         </p>
       </div>
 
@@ -604,13 +704,17 @@
   <!-- ==========================================================================
        SIMULADOR DE TRANSFORMACIÓN METABÓLICA (ANTES VS DESPUÉS EN 6 MESES)
        ========================================================================== -->
-  <section id="transformacion" class="transformation-section">
+  <section id="transformacion" class="section-clinical-sage">
+    <div class="mit-divider-terracotta"></div>
     <div class="container">
       <div class="section-header">
-        <span class="section-eyebrow">Biología y Bienestar</span>
-        <h2>¿Qué ocurre dentro de tu cuerpo durante los 6 meses?</h2>
+        <div class="mit-eyebrow">
+          <span class="mit-eyebrow-line line-terracotta"></span>
+          <span class="mit-eyebrow-text text-terracotta">IV &bull; Trayectoria Cl&iacute;nica (24 Semanas)</span>
+        </div>
+        <h2>Antes y Despu&eacute;s. <span class="serif-italic-terracotta">La Evidencia en tu Cuerpo.</span></h2>
         <p class="section-description">
-          Compara el estado del metabolismo cuando existe síndrome metabólico frente a los cambios fisiológicos positivos que se logran tras 6 meses de intervención estructurada:
+          Compara el estado del metabolismo cuando existe s&iacute;ndrome metab&oacute;lico frente a los cambios fisiol&oacute;gicos positivos que se logran tras 6 meses de intervenci&oacute;n estructurada:
         </p>
       </div>
 
@@ -735,13 +839,17 @@
   <!-- ==========================================================================
        COMPOSICIÓN CORPORAL Y BIOIMPEDANCIA CLÍNICA
        ========================================================================== -->
-  <section id="bioimpedancia" class="bioimpedance-section">
+  <section id="bioimpedancia" class="section-warm-parchment">
+    <div class="mit-divider-terracotta"></div>
     <div class="container">
       <div class="section-header">
-        <span class="section-eyebrow">Diagnóstico de Alta Precisión</span>
-        <h2>Más Allá del Peso: Modelo de los 4 Compartimentos Corporales</h2>
+        <div class="mit-eyebrow">
+          <span class="mit-eyebrow-line line-terracotta"></span>
+          <span class="mit-eyebrow-text text-terracotta">V &bull; Diagn&oacute;stico de Alta Precisi&oacute;n</span>
+        </div>
+        <h2>Bioimpedancia Tetrapolar. <span class="serif-italic-terracotta">M&aacute;s All&aacute; de la B&aacute;scula.</span></h2>
         <p class="section-description">
-          En el estudio no nos limitamos al peso tradicional en balanza. Utilizamos bioimpedancia médica multifrecuencia para evaluar con exactitud cómo se redistribuyen tus tejidos durante los 6 meses de tratamiento:
+          En el estudio no nos limitamos al peso tradicional en balanza. Utilizamos bioimpedancia m&eacute;dica multifrecuencia para evaluar con exactitud c&oacute;mo se redistribuyen tus tejidos durante los 6 meses de tratamiento:
         </p>
       </div>
 
@@ -808,13 +916,17 @@
   <!-- ==========================================================================
        LOS 4 PLANES NUTRICIONALES CON VÍAS BIOQUÍMICAS VISUALES
        ========================================================================== -->
-  <section id="planes">
+  <section id="planes" class="section-dark-pine">
+    <div class="mit-divider"></div>
     <div class="container">
       <div class="section-header">
-        <span class="section-eyebrow">Metodología del Estudio</span>
-        <h2>Los 4 Planes de Alimentación del Estudio</h2>
-        <p class="section-description">
-          Al ingresar al estudio, se te asignará a uno de los siguientes grupos. Todos los grupos activos reciben el acompañamiento transversal de <strong>"Cuerpo Maestro"</strong> (ejercicio guiado y educación en hábitos).
+        <div class="mit-eyebrow">
+          <span class="mit-eyebrow-line"></span>
+          <span class="mit-eyebrow-text">VI &bull; Protocolos Nutricionales</span>
+        </div>
+        <h2 style="color: #fff7ea;">Cuatro Protocolos Cl&iacute;nicos. <span class="serif-italic-gold">Un Mismo Rigor.</span></h2>
+        <p class="section-description" style="color: rgba(247, 239, 224, 0.85);">
+          Al ingresar al estudio, se te asignar&aacute; a uno de los siguientes grupos. Todos los grupos activos reciben el acompa&ntilde;amiento transversal de <strong>"Cuerpo Maestro"</strong> (ejercicio guiado y educaci&oacute;n en h&aacute;bitos).
         </p>
       </div>
 
@@ -960,13 +1072,17 @@
   <!-- ==========================================================================
        EVALUADOR CLÍNICO INTERACTIVO: COMPRUEBA SI CALIFICAS
        ========================================================================== -->
-  <section id="evaluador">
+  <section id="evaluador" class="section-clinical-sage">
+    <div class="mit-divider-terracotta"></div>
     <div class="container">
       <div class="section-header">
-        <span class="section-eyebrow">Auto-Evaluación Interactiva</span>
-        <h2>¿Cumples con el perfil para participar en el estudio?</h2>
+        <div class="mit-eyebrow">
+          <span class="mit-eyebrow-line line-terracotta"></span>
+          <span class="mit-eyebrow-text text-terracotta">VII &bull; Auto-Evaluaci&oacute;n Cl&iacute;nica</span>
+        </div>
+        <h2>&iquest;Calificas para el Estudio? <span class="serif-italic-terracotta">Comprobaci&oacute;n en 2 Minutos.</span></h2>
         <p class="section-description">
-          El estudio está dirigido a adultos de 18 a 60 años con al menos 3 de los siguientes 5 signos de salud metabólica. Ajusta los valores con lo que recuerdes de tus últimos chequeos médicos o medidas corporales:
+          El estudio est&aacute; dirigido a adultos de 18 a 60 a&ntilde;os con al menos 3 de los siguientes 5 signos de salud metab&oacute;lica. Ajusta los valores con lo que recuerdes de tus &uacute;ltimos chequeos m&eacute;dicos o medidas corporales:
         </p>
       </div>
 
@@ -1145,36 +1261,40 @@
   <!-- ==========================================================================
        FORMULARIO DE INSCRIPCIÓN PARA PACIENTES (SECCIÓN PRINCIPAL)
        ========================================================================== -->
-  <section id="inscripcion" class="enrollment-section">
+  <section id="inscripcion" class="section-dark-espresso">
+    <div class="mit-divider"></div>
     <div class="container">
-      <div class="section-header" style="text-align: center; margin: 0 auto 2.5rem; max-width: 700px;">
-        <span class="section-eyebrow">Convocatoria Oficial 2026-2027</span>
-        <h2>Formulario de Inscripción de Participantes</h2>
-        <p class="section-description">
-          Diligencia tus datos para solicitar tu cupo en el estudio "Cuerpo Maestro". Nuestro equipo médico y de investigación se pondrá en contacto contigo para agendar tu cita de valoración inicial sin ningún costo.
+      <div class="section-header" style="text-align: center; margin: 0 auto 3rem; max-width: 750px;">
+        <div class="mit-eyebrow">
+          <span class="mit-eyebrow-line"></span>
+          <span class="mit-eyebrow-text">VIII &bull; Convocatoria Oficial 2026-2027</span>
+        </div>
+        <h2 style="color: #fff7ea;">Formulario de Inscripci&oacute;n. <span class="serif-italic-gold">Postulaci&oacute;n al Estudio.</span></h2>
+        <p class="section-description" style="color: rgba(236, 215, 179, 0.85);">
+          Diligencia tus datos para solicitar tu cupo en el estudio "Cuerpo Maestro". Nuestro equipo m&eacute;dico y de investigaci&oacute;n se pondr&aacute; en contacto contigo para agendar tu cita de valoraci&oacute;n inicial sin ning&uacute;n costo.
         </p>
       </div>
 
-      <div class="forms-embed-container">
-        <div class="forms-header-action">
+      <div class="forms-embed-container" style="background: rgba(28, 22, 19, 0.85); border: 1px solid rgba(232, 183, 94, 0.3); backdrop-filter: blur(12px);">
+        <div class="forms-header-action" style="border-bottom: 1px solid rgba(236, 215, 179, 0.15);">
           <div>
-            <span class="badge badge-brand">Formulario Institucional</span>
-            <h3 style="font-size: 1.35rem; margin-top: 0.25rem; color: var(--text-primary);">
+            <span class="badge badge-brand" style="background: rgba(232, 183, 94, 0.15); color: var(--mit-gold); border-color: rgba(232, 183, 94, 0.3);">Formulario Institucional</span>
+            <h3 style="font-size: 1.35rem; margin-top: 0.35rem; color: #fff7ea; font-family: var(--font-serif);">
               Registro Oficial de Participantes
             </h3>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">
-              Las postulaciones se procesan de forma segura mediante el formulario oficial del equipo de investigación.
+            <p style="font-size: 0.85rem; color: rgba(236, 215, 179, 0.7); margin-top: 0.2rem;">
+              Las postulaciones se procesan de forma segura mediante el formulario oficial del equipo de investigaci&oacute;n.
             </p>
           </div>
 
           <a id="directFormsLink" href="https://docs.google.com/forms" target="_blank" rel="noopener" class="btn btn-primary">
             <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Abrir Formulario en Pantalla Completa
+            Abrir Formulario Completo
           </a>
         </div>
 
-        <!-- Contenedor Embebido para Google Forms / Microsoft Forms -->
-        <div class="forms-iframe-wrap">
+        <!-- Contenedor Embebido para Google Forms -->
+        <div class="forms-iframe-wrap" style="background: #ffffff; border: 1px solid rgba(236, 215, 179, 0.3);">
           <iframe id="officialFormsIframe" 
                   src="https://docs.google.com/forms/d/e/1FAIpQLSc7v7t197802_cuerpomaestro/viewform?embedded=true" 
                   width="100%" 
@@ -1187,12 +1307,12 @@
         </div>
 
         <!-- Barra de Configuración Rápida para Vincular el Enlace de Google Forms -->
-        <div class="forms-url-config-bar">
-          <label for="inputGoogleFormsUrl">
-            <svg class="icon icon-sm" style="color: var(--color-brand); vertical-align: -2px;" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-            ¿Tienes el enlace de tu Google Forms o Microsoft Forms? Pégalo aquí para conectarlo:
+        <div class="forms-url-config-bar" style="background: rgba(255, 247, 234, 0.05); border: 1px dashed rgba(236, 215, 179, 0.25);">
+          <label for="inputGoogleFormsUrl" style="color: #fff7ea;">
+            <svg class="icon icon-sm" style="color: var(--mit-gold); vertical-align: -2px;" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            &iquest;Tienes el enlace de tu Google Forms o Microsoft Forms? P&eacute;galo aqu&iacute; para conectarlo:
           </label>
-          <input type="url" id="inputGoogleFormsUrl" class="forms-url-input" placeholder="https://docs.google.com/forms/d/e/.../viewform">
+          <input type="url" id="inputGoogleFormsUrl" class="forms-url-input" placeholder="https://docs.google.com/forms/d/e/.../viewform" style="background: rgba(18, 15, 13, 0.8); color: #fff7ea; border: 1px solid rgba(236, 215, 179, 0.3);">
           <button id="btnUpdateFormsUrl" class="btn btn-outline btn-sm">
             Vincular Formulario
           </button>
@@ -1204,13 +1324,17 @@
   <!-- ==========================================================================
        PASOS PARA EL PACIENTE (CÓMO FUNCIONA EL PROCESO)
        ========================================================================== -->
-  <section id="pasos">
+  <section id="pasos" class="section-warm-parchment">
+    <div class="mit-divider-terracotta"></div>
     <div class="container">
       <div class="section-header">
-        <span class="section-eyebrow">Ruta del Participante</span>
-        <h2>¿Cómo es el proceso una vez que te inscribes?</h2>
+        <div class="mit-eyebrow">
+          <span class="mit-eyebrow-line line-terracotta"></span>
+          <span class="mit-eyebrow-text text-terracotta">IX &bull; Ruta del Participante</span>
+        </div>
+        <h2>El Proceso Paso a Paso. <span class="serif-italic-terracotta">Acompa&ntilde;amiento Cercano.</span></h2>
         <p class="section-description">
-          Un camino sencillo, guiado paso a paso por profesionales, sin trámites complicados y cuidando siempre tu salud y tu tiempo.
+          Un camino sencillo, guiado paso a paso por profesionales, sin tr&aacute;mites complicados y cuidando siempre tu salud y tu tiempo.
         </p>
       </div>
 
@@ -1253,13 +1377,17 @@
   <!-- ==========================================================================
        EQUIPO DE SALUD E INVESTIGACIÓN
        ========================================================================== -->
-  <section id="equipo">
+  <section id="equipo" class="section-dark-pine">
+    <div class="mit-divider"></div>
     <div class="container">
       <div class="section-header">
-        <span class="section-eyebrow">Profesionales a tu Cuidado</span>
-        <h2>Equipo Médico, Nutricional y Científico</h2>
-        <p class="section-description">
-          El estudio cuenta con médicos, nutricionistas clínicos, biólogos y preparadores físicos dedicados a garantizar la máxima seguridad y calidad de tu atención.
+        <div class="mit-eyebrow">
+          <span class="mit-eyebrow-line"></span>
+          <span class="mit-eyebrow-text">X &bull; Equipo M&eacute;dico y Cient&iacute;fico</span>
+        </div>
+        <h2 style="color: #fff7ea;">Investigadores y Estudiantes. <span class="serif-italic-gold">Compromiso con Imbabura.</span></h2>
+        <p class="section-description" style="color: rgba(247, 239, 224, 0.85);">
+          El estudio cuenta con m&eacute;dicos, nutricionistas cl&iacute;nicos, bi&oacute;logos y preparadores f&iacute;sicos dedicados a garantizar la m&aacute;xima seguridad y calidad de tu atenci&oacute;n.
         </p>
       </div>
 
@@ -1396,11 +1524,15 @@
   <!-- ==========================================================================
        PREGUNTAS FRECUENTES (FAQ)
        ========================================================================== -->
-  <section id="faq">
+  <section id="faq" class="section-warm-parchment">
+    <div class="mit-divider-terracotta"></div>
     <div class="container">
       <div class="section-header">
-        <span class="section-eyebrow">Dudas Comunes</span>
-        <h2>Preguntas Frecuentes de los Pacientes</h2>
+        <div class="mit-eyebrow">
+          <span class="mit-eyebrow-line line-terracotta"></span>
+          <span class="mit-eyebrow-text text-terracotta">XI &bull; Preguntas Frecuentes</span>
+        </div>
+        <h2>Respuestas Claras. <span class="serif-italic-terracotta">Para tu Tranquilidad.</span></h2>
         <p class="section-description">
           Todo lo que necesitas saber antes de participar en el estudio "Cuerpo Maestro".
         </p>
