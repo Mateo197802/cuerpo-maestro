@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initArmComparator();
   initAtpCalculator();
   initEnrollmentForm();
+  initInteractiveBackground();
 });
 
 /* ==========================================================================
@@ -681,3 +682,252 @@ function initEnrollmentForm() {
     });
   }
 }
+
+/* ==========================================================================
+   6. MALLA INTERACTIVA DE FONDO (CANVAS MIT CRITICAL DATA - ROMA)
+   ========================================================================== */
+function initInteractiveBackground() {
+  const canvas = document.getElementById('mitInteractiveCanvas');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  // Paleta de partículas inspirada en MIT Roma
+  const COLOR_PALETTE = [
+    { r: 232, g: 183, b: 94 },  // MIT Gold
+    { r: 157, g: 208, b: 211 }, // MIT Celadon
+    { r: 228, g: 86,  b: 42 },  // MIT Terracotta
+    { r: 255, g: 247, b: 234 }  // MIT Ivory
+  ];
+
+  let width = 0;
+  let height = 0;
+  let dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let particles = [];
+  let shockwaves = [];
+  let animId = null;
+
+  const mouse = {
+    x: -9999,
+    y: -9999,
+    active: false,
+    radius: 175
+  };
+
+  function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+
+    ctx.scale(dpr, dpr);
+    initParticles();
+  }
+
+  function initParticles() {
+    const isMobile = width < 768;
+    const count = isMobile ? 36 : Math.min(75, Math.floor((width * height) / 16000));
+    particles = [];
+
+    for (let i = 0; i < count; i++) {
+      const col = COLOR_PALETTE[Math.floor(Math.random() * COLOR_PALETTE.length)];
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        baseRadius: Math.random() * 1.5 + 1.2,
+        color: col,
+        pulsePhase: Math.random() * Math.PI * 2,
+        pulseSpeed: 0.02 + Math.random() * 0.02
+      });
+    }
+  }
+
+  // Interacción del ratón y táctil
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    mouse.active = true;
+  });
+
+  window.addEventListener('mouseleave', () => {
+    mouse.active = false;
+  });
+
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 0) {
+      mouse.x = e.touches[0].clientX;
+      mouse.y = e.touches[0].clientY;
+      mouse.active = true;
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchend', () => {
+    setTimeout(() => { mouse.active = false; }, 1500);
+  });
+
+  // Efecto de impulso/onda al hacer clic o tap
+  window.addEventListener('click', (e) => {
+    const clickX = e.clientX;
+    const clickY = e.clientY;
+    shockwaves.push({
+      x: clickX,
+      y: clickY,
+      radius: 0,
+      maxRadius: 140,
+      alpha: 0.55
+    });
+
+    // Impulso radial a partículas cercanas
+    particles.forEach(p => {
+      const dx = p.x - clickX;
+      const dy = p.y - clickY;
+      const dist = Math.hypot(dx, dy);
+      if (dist < 180 && dist > 0.1) {
+        const force = (1 - dist / 180) * 2.2;
+        p.vx += (dx / dist) * force;
+        p.vy += (dy / dist) * force;
+      }
+    });
+  });
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function render() {
+    ctx.clearRect(0, 0, width, height);
+
+    // Actualizar y renderizar ondas de clic
+    for (let s = shockwaves.length - 1; s >= 0; s--) {
+      const sw = shockwaves[s];
+      sw.radius += 3.5;
+      sw.alpha *= 0.94;
+
+      ctx.beginPath();
+      ctx.arc(sw.x, sw.y, sw.radius, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(232, 183, 94, ${sw.alpha})`;
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+
+      if (sw.radius > sw.maxRadius || sw.alpha < 0.02) {
+        shockwaves.splice(s, 1);
+      }
+    }
+
+    const maxLinkDist = width < 768 ? 105 : 125;
+
+    // Actualizar partículas
+    const pLen = particles.length;
+    for (let i = 0; i < pLen; i++) {
+      const p = particles[i];
+
+      if (!prefersReduced) {
+        // Interacción suave con el cursor (atracción tenue)
+        if (mouse.active) {
+          const mdx = mouse.x - p.x;
+          const mdy = mouse.y - p.y;
+          const mDist = Math.hypot(mdx, mdy);
+          if (mDist < mouse.radius && mDist > 15) {
+            const pull = (1 - mDist / mouse.radius) * 0.035;
+            p.vx += (mdx / mDist) * pull;
+            p.vy += (mdy / mDist) * pull;
+          }
+        }
+
+        // Fricción suave para evitar hipervelocidad
+        p.vx *= 0.985;
+        p.vy *= 0.985;
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Rebote suave en bordes
+        if (p.x < 0) { p.x = 0; p.vx *= -1; }
+        else if (p.x > width) { p.x = width; p.vx *= -1; }
+        if (p.y < 0) { p.y = 0; p.vy *= -1; }
+        else if (p.y > height) { p.y = height; p.vy *= -1; }
+
+        p.pulsePhase += p.pulseSpeed;
+      }
+
+      // Dibujar filamentos entre partículas cercanas
+      for (let j = i + 1; j < pLen; j++) {
+        const p2 = particles[j];
+        const dx = p2.x - p.x;
+        const dy = p2.y - p.y;
+        const dist = Math.hypot(dx, dy);
+
+        if (dist < maxLinkDist) {
+          const alpha = (1 - dist / maxLinkDist) * 0.38;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${alpha})`;
+          ctx.lineWidth = 0.85;
+          ctx.stroke();
+        }
+      }
+
+      // Conexión del cursor a la partícula si está cerca
+      if (mouse.active) {
+        const cdx = mouse.x - p.x;
+        const cdy = mouse.y - p.y;
+        const cDist = Math.hypot(cdx, cdy);
+        if (cDist < mouse.radius) {
+          const cAlpha = (1 - cDist / mouse.radius) * 0.5;
+          ctx.beginPath();
+          ctx.moveTo(mouse.x, mouse.y);
+          ctx.lineTo(p.x, p.y);
+          ctx.strokeStyle = `rgba(232, 183, 94, ${cAlpha})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+
+      // Dibujar nodo partícula
+      const currentRadius = p.baseRadius + Math.sin(p.pulsePhase) * 0.4;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, Math.max(0.5, currentRadius), 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, 0.85)`;
+      ctx.fill();
+
+      // Halo sutil para partículas destacadas
+      if (p.baseRadius > 2.2) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, currentRadius * 2.2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, 0.12)`;
+        ctx.fill();
+      }
+    }
+
+    if (!prefersReduced) {
+      animId = requestAnimationFrame(render);
+    }
+  }
+
+  // Manejo de pausa cuando la pestaña está oculta
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      if (animId) cancelAnimationFrame(animId);
+    } else {
+      if (!prefersReduced) animId = requestAnimationFrame(render);
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    resize();
+  });
+
+  resize();
+  if (prefersReduced) {
+    render();
+  } else {
+    animId = requestAnimationFrame(render);
+  }
+}
+

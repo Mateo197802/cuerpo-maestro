@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Programa Clínico Cuerpo Maestro | Convocatoria para Pacientes - Yachay Tech</title>
   <meta name="description" content="Inscripción al programa clínico y nutricional gratuito 'Cuerpo Maestro' para adultos de 18 a 60 años con síndrome metabólico en Urcuquí e Ibarra, Imbabura. Evaluaciones médicas, bioimpedancia y acompañamiento durante 6 meses.">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=5.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,6 +13,9 @@
 <body>
   <!-- Capa de Grano Editorial MIT -->
   <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Malla Interactiva de Fondo Inspirada en MIT Critical Data Roma -->
+  <canvas id="mitInteractiveCanvas" class="mit-interactive-canvas" aria-hidden="true"></canvas>
 
   <!-- ==========================================================================
        BARRA INSTITUCIONAL SUPERIOR
@@ -75,7 +78,7 @@
   <!-- ==========================================================================
        HERO: CONVOCATORIA PARA PACIENTES CON MODELO ANATÓMICO INTERACTIVO
        ========================================================================== -->
-  <section id="hero" class="hero-section">
+  <section id="hero" class="hero-section" style="background-color: #120f0d !important; color: #fff7ea !important;">
     <!-- Arcos arquitectónicos de fondo -->
     <div class="hero-arches-bg" aria-hidden="true">
       <div class="hero-arch-1"></div>
@@ -92,12 +95,12 @@
           </div>
 
           <h1 class="hero-editorial-title">
-            <span style="display: block; font-family: var(--font-sans); color: #fff7ea;">Protocolo Cl&iacute;nico</span>
-            <span class="serif-italic-gold" style="display: block; padding-left: 0.5rem;">Cuerpo Maestro</span>
+            <span style="display: block; font-family: var(--font-sans); color: #ffffff !important;">Protocolo Cl&iacute;nico</span>
+            <span class="serif-italic-gold" style="display: block; padding-left: 0.5rem; color: #f2c76d !important;">Cuerpo Maestro</span>
             <span class="serif-italic-celadon" style="display: block; font-size: clamp(2.2rem, 4.4vw, 3.8rem); margin-top: 0.25rem;">Imbabura.</span>
           </h1>
 
-          <p class="hero-subtitle">
+          <p class="hero-subtitle" style="color: #ecd7b3 !important; font-size: 1.15rem; line-height: 1.75;">
             Reversi&oacute;n integral del s&iacute;ndrome metab&oacute;lico en adultos de 18 a 60 a&ntilde;os mediante nutrici&oacute;n de precisi&oacute;n, ejercicio supervisado y evaluaci&oacute;n continua en Urcuqu&iacute; e Ibarra. Un estudio respaldado por la Universidad Yachay Tech, UTPL y Hospital ALFA.
           </p>
 
@@ -237,7 +240,7 @@
   <!-- ==========================================================================
        BENEFICIOS: QUÉ RECIBE EL PACIENTE SIN COSTO
        ========================================================================== -->
-  <section id="beneficios" class="section-dark-graphite">
+  <section id="beneficios" class="section-dark-graphite" style="background-color: #19130f !important; color: #fff7ea !important;">
     <div class="mit-divider"></div>
     <div class="container">
       <!-- Módulo El Desafío Metabólico (Inspirado en 'The Challenge' de MIT Roma) -->
@@ -249,19 +252,19 @@
           </div>
           
           <div style="display: flex; align-items: baseline; margin-top: 1.5rem; margin-bottom: 1rem;">
-            <span class="challenge-stat-huge" style="font-family: var(--font-serif); font-size: clamp(5rem, 8vw, 7.5rem); font-weight: 700; font-style: italic; color: var(--mit-terracotta-bright); line-height: 0.9;">38%</span>
-            <span style="font-family: var(--font-serif); font-size: 1.75rem; font-style: italic; color: var(--mit-gold); margin-left: 0.75rem;">prevalencia</span>
+            <span class="challenge-stat-huge" style="font-family: var(--font-serif); font-size: clamp(5rem, 8vw, 7.5rem); font-weight: 700; font-style: italic; color: #ff5722 !important; line-height: 0.9;">38%</span>
+            <span style="font-family: var(--font-serif); font-size: 1.75rem; font-style: italic; color: #f2c76d !important; margin-left: 0.75rem;">prevalencia</span>
           </div>
-          <p style="font-family: var(--font-serif); font-size: 1.35rem; font-style: italic; color: rgba(236, 215, 179, 0.82); line-height: 1.4; max-width: 380px;">
+          <p style="font-family: var(--font-serif); font-size: 1.35rem; font-style: italic; color: #f0e6d2 !important; line-height: 1.4; max-width: 380px;">
             De adultos en la regi&oacute;n andina presentan componentes del s&iacute;ndrome metab&oacute;lico sin diagn&oacute;stico oportuno.
           </p>
         </div>
 
         <div>
-          <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 3rem); color: #fff7ea; line-height: 1.15;">
-            Alta afectaci&oacute;n. <span class="serif-italic-gold">Menor acompa&ntilde;amiento guiado.</span>
+          <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 3rem); color: #ffffff !important; line-height: 1.15;">
+            Alta afectaci&oacute;n. <span class="serif-italic-gold" style="color: #f2c76d !important;">Menor acompa&ntilde;amiento guiado.</span>
           </h2>
-          <p style="color: rgba(236, 215, 179, 0.85); font-size: 1.05rem; line-height: 1.7; margin-top: 1.25rem;">
+          <p style="color: #f0e6d2 !important; font-size: 1.05rem; line-height: 1.7; margin-top: 1.25rem;">
             El s&iacute;ndrome metab&oacute;lico agrupa hipertensi&oacute;n arterial, glucosa alterada en ayunas, triglic&eacute;ridos altos y grasa visceral acumulada. Sin un protocolo cient&iacute;fico multidisciplinario, el riesgo de diabetes tipo 2 y complicaciones cardiovasculares se multiplica. "Cuerpo Maestro" sit&uacute;a al paciente en el centro de la soluci&oacute;n con seguimiento continuo.
           </p>
 
@@ -269,7 +272,7 @@
           <div class="challenge-box">
             <div class="challenge-bar-row">
               <div class="challenge-bar-header">
-                <span>Poblaci&oacute;n con s&iacute;ndrome metab&oacute;lico sin tratar</span>
+                <span style="color: #f0e6d2 !important;">Poblaci&oacute;n con s&iacute;ndrome metab&oacute;lico sin tratar</span>
                 <span class="challenge-bar-val">Glucosa &gt; 100 mg/dL</span>
               </div>
               <div class="challenge-progress-track">
@@ -279,7 +282,7 @@
 
             <div class="challenge-bar-row">
               <div class="challenge-bar-header">
-                <span>Triglic&eacute;ridos y grasa visceral cr&oacute;nica</span>
+                <span style="color: #f0e6d2 !important;">Triglic&eacute;ridos y grasa visceral cr&oacute;nica</span>
                 <span class="challenge-bar-val">&gt; 150 mg/dL</span>
               </div>
               <div class="challenge-progress-track">
@@ -289,7 +292,7 @@
 
             <div class="challenge-bar-row">
               <div class="challenge-bar-header">
-                <span>Meta Protocolo "Cuerpo Maestro" (24 semanas)</span>
+                <span style="color: #f0e6d2 !important;">Meta Protocolo "Cuerpo Maestro" (24 semanas)</span>
                 <span class="challenge-bar-val" style="color: var(--mit-celadon);">-25% Grasa Visceral</span>
               </div>
               <div class="challenge-progress-track">
@@ -298,7 +301,7 @@
             </div>
           </div>
 
-          <p style="border-left: 2px solid var(--mit-terracotta-bright); padding-left: 1.25rem; font-style: italic; color: rgba(236, 215, 179, 0.75); font-size: 0.95rem; line-height: 1.6;">
+          <p style="border-left: 2px solid var(--mit-terracotta-bright); padding-left: 1.25rem; font-style: italic; color: #f0e6d2 !important; font-size: 0.95rem; line-height: 1.6;">
             "El s&iacute;ndrome metab&oacute;lico no es un destino inevitable. Con precisi&oacute;n celular y nutrici&oacute;n cl&iacute;nica, el cuerpo reactiva sus v&iacute;as de autorregulaci&oacute;n."
           </p>
         </div>
@@ -310,69 +313,69 @@
           <span class="mit-eyebrow-line"></span>
           <span class="mit-eyebrow-text">&iquest;Qu&eacute; Recibe Cada Paciente?</span>
         </div>
-        <h2 style="color: #fff7ea;">Acompa&ntilde;amiento Integral <span class="serif-italic-gold">100% Gratuito</span></h2>
-        <p class="section-description" style="color: rgba(236, 215, 179, 0.85);">
+        <h2 style="color: #ffffff !important;">Acompa&ntilde;amiento Integral <span class="serif-italic-gold" style="color: #f2c76d !important;">100% Gratuito</span></h2>
+        <p class="section-description" style="color: #f0e6d2 !important; font-size: 1.1rem;">
           Todo el protocolo est&aacute; financiado y respaldado por la Universidad Yachay Tech para los 80 participantes seleccionados:
         </p>
       </div>
 
       <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-        <div class="benefit-card" style="background: rgba(255, 247, 234, 0.06); border: 1px solid rgba(236, 215, 179, 0.16); border-radius: var(--radius-lg); padding: 1.75rem; backdrop-filter: blur(8px);">
-          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.15); color: var(--mit-gold); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+        <div class="benefit-card" style="background-color: #241c17 !important; border: 1px solid rgba(232, 183, 94, 0.28) !important; border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);">
+          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.2) !important; color: #f2c76d !important; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
             <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
-          <h4 style="color: #fff7ea; font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.5rem;">Ex&aacute;menes de Sangre Completos</h4>
-          <p style="color: rgba(236, 215, 179, 0.78); font-size: 0.88rem; line-height: 1.6;">
+          <h4 style="color: #ffffff !important; font-family: var(--font-serif); font-size: 1.18rem; margin-bottom: 0.5rem; font-weight: 700;">Ex&aacute;menes de Sangre Completos</h4>
+          <p style="color: #f0e6d2 !important; font-size: 0.92rem; line-height: 1.65;">
             Perfil lip&iacute;dico, glucosa en ayunas, hemoglobina glicosilada (HbA1c) y perfil hep&aacute;tico/renal al inicio y al final de los 6 meses sin costo.
           </p>
         </div>
 
-        <div class="benefit-card" style="background: rgba(255, 247, 234, 0.06); border: 1px solid rgba(236, 215, 179, 0.16); border-radius: var(--radius-lg); padding: 1.75rem; backdrop-filter: blur(8px);">
-          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.15); color: var(--mit-gold); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+        <div class="benefit-card" style="background-color: #241c17 !important; border: 1px solid rgba(232, 183, 94, 0.28) !important; border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);">
+          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.2) !important; color: #f2c76d !important; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
             <svg class="icon icon-lg" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </div>
-          <h4 style="color: #fff7ea; font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.5rem;">Bioimpedancia Tetrapolar Cl&iacute;nica</h4>
-          <p style="color: rgba(236, 215, 179, 0.78); font-size: 0.88rem; line-height: 1.6;">
+          <h4 style="color: #ffffff !important; font-family: var(--font-serif); font-size: 1.18rem; margin-bottom: 0.5rem; font-weight: 700;">Bioimpedancia Tetrapolar Cl&iacute;nica</h4>
+          <p style="color: #f0e6d2 !important; font-size: 0.92rem; line-height: 1.65;">
             Medici&oacute;n de vanguardia para cuantificar masa muscular esquel&eacute;tica, porcentaje graso subcut&aacute;neo y niveles de grasa visceral profunda.
           </p>
         </div>
 
-        <div class="benefit-card" style="background: rgba(255, 247, 234, 0.06); border: 1px solid rgba(236, 215, 179, 0.16); border-radius: var(--radius-lg); padding: 1.75rem; backdrop-filter: blur(8px);">
-          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.15); color: var(--mit-gold); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+        <div class="benefit-card" style="background-color: #241c17 !important; border: 1px solid rgba(232, 183, 94, 0.28) !important; border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);">
+          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.2) !important; color: #f2c76d !important; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
             <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
           </div>
-          <h4 style="color: #fff7ea; font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.5rem;">Plan Nutricional de Precisi&oacute;n</h4>
-          <p style="color: rgba(236, 215, 179, 0.78); font-size: 0.88rem; line-height: 1.6;">
+          <h4 style="color: #ffffff !important; font-family: var(--font-serif); font-size: 1.18rem; margin-bottom: 0.5rem; font-weight: 700;">Plan Nutricional de Precisi&oacute;n</h4>
+          <p style="color: #f0e6d2 !important; font-size: 0.92rem; line-height: 1.65;">
             Pautas alimentarias personalizadas basadas en ingredientes locales ecuatorianos accesibles, adaptadas a tu grupo asignado sin pasar hambre extrema.
           </p>
         </div>
 
-        <div class="benefit-card" style="background: rgba(255, 247, 234, 0.06); border: 1px solid rgba(236, 215, 179, 0.16); border-radius: var(--radius-lg); padding: 1.75rem; backdrop-filter: blur(8px);">
-          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.15); color: var(--mit-gold); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+        <div class="benefit-card" style="background-color: #241c17 !important; border: 1px solid rgba(232, 183, 94, 0.28) !important; border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);">
+          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.2) !important; color: #f2c76d !important; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
             <svg class="icon icon-lg" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
           </div>
-          <h4 style="color: #fff7ea; font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.5rem;">Ejercicio Guiado y Progresivo</h4>
-          <p style="color: rgba(236, 215, 179, 0.78); font-size: 0.88rem; line-height: 1.6;">
+          <h4 style="color: #ffffff !important; font-family: var(--font-serif); font-size: 1.18rem; margin-bottom: 0.5rem; font-weight: 700;">Ejercicio Guiado y Progresivo</h4>
+          <p style="color: #f0e6d2 !important; font-size: 0.92rem; line-height: 1.65;">
             Sesiones de entrenamiento supervisadas, protegiendo tus articulaciones y enfocadas en la activaci&oacute;n de transportadores GLUT4 musculares.
           </p>
         </div>
 
-        <div class="benefit-card" style="background: rgba(255, 247, 234, 0.06); border: 1px solid rgba(236, 215, 179, 0.16); border-radius: var(--radius-lg); padding: 1.75rem; backdrop-filter: blur(8px);">
-          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.15); color: var(--mit-gold); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+        <div class="benefit-card" style="background-color: #241c17 !important; border: 1px solid rgba(232, 183, 94, 0.28) !important; border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);">
+          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.2) !important; color: #f2c76d !important; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
             <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h4 style="color: #fff7ea; font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.5rem;">Acompa&ntilde;amiento en H&aacute;bitos</h4>
-          <p style="color: rgba(236, 215, 179, 0.78); font-size: 0.88rem; line-height: 1.6;">
+          <h4 style="color: #ffffff !important; font-family: var(--font-serif); font-size: 1.18rem; margin-bottom: 0.5rem; font-weight: 700;">Acompa&ntilde;amiento en H&aacute;bitos</h4>
+          <p style="color: #f0e6d2 !important; font-size: 0.92rem; line-height: 1.65;">
             Soporte continuo para higiene del sue&ntilde;o, manejo de estr&eacute;s y adopci&oacute;n de rutinas sostenibles para evitar el temido efecto rebote.
           </p>
         </div>
 
-        <div class="benefit-card" style="background: rgba(255, 247, 234, 0.06); border: 1px solid rgba(236, 215, 179, 0.16); border-radius: var(--radius-lg); padding: 1.75rem; backdrop-filter: blur(8px);">
-          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.15); color: var(--mit-gold); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+        <div class="benefit-card" style="background-color: #241c17 !important; border: 1px solid rgba(232, 183, 94, 0.28) !important; border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);">
+          <div class="benefit-icon-badge" style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(232, 183, 94, 0.2) !important; color: #f2c76d !important; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
             <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           </div>
-          <h4 style="color: #fff7ea; font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.5rem;">Informe M&eacute;dico Individual</h4>
-          <p style="color: rgba(236, 215, 179, 0.78); font-size: 0.88rem; line-height: 1.6;">
+          <h4 style="color: #ffffff !important; font-family: var(--font-serif); font-size: 1.18rem; margin-bottom: 0.5rem; font-weight: 700;">Informe M&eacute;dico Individual</h4>
+          <p style="color: #f0e6d2 !important; font-size: 0.92rem; line-height: 1.65;">
             Reporte formal con toda la evoluci&oacute;n comparativa de tus biomarcadores cl&iacute;nicos y bioimpedancia para tu archivo de salud personal.
           </p>
         </div>
@@ -386,7 +389,7 @@
   <!-- ==========================================================================
        MAPA DE LOS 6 ÓRGANOS CLAVE DEL METABOLISMO (PARCHMENT MIT)
        ========================================================================== -->
-  <section id="organos" class="section-warm-parchment">
+  <section id="organos" class="section-warm-parchment" style="background-color: #f4ead8 !important; color: #19130f !important;">
     <div class="mit-divider-terracotta"></div>
     <div class="container">
       <div class="section-header">
@@ -394,8 +397,8 @@
           <span class="mit-eyebrow-line line-terracotta"></span>
           <span class="mit-eyebrow-text text-terracotta">II &bull; Fisiolog&iacute;a Humana Integrada</span>
         </div>
-        <h2>Los 6 &Oacute;rganos Clave. <span class="serif-italic-terracotta">Un Solo Sistema Coordinado.</span></h2>
-        <p class="section-description">
+        <h2 style="color: #120f0d !important;">Los 6 &Oacute;rganos Clave. <span class="serif-italic-terracotta" style="color: #b54824 !important;">Un Solo Sistema Coordinado.</span></h2>
+        <p class="section-description" style="color: #2b221a !important;">
           El s&iacute;ndrome metab&oacute;lico no es un problema aislado de peso: es una alteraci&oacute;n coordinada en los principales sistemas del cuerpo humano. "Cuerpo Maestro" act&uacute;a de forma simult&aacute;nea en cada uno de ellos:
         </p>
       </div>
@@ -533,7 +536,7 @@
   <!-- ==========================================================================
        VIAJE AL INTERIOR DE LA CÉLULA: MITOCONDRIAS, AMPK Y ENERGÍA ATP (PINO MIT)
        ========================================================================== -->
-  <section id="celula" class="cellular-section">
+  <section id="celula" class="cellular-section" style="background-color: #102326 !important; color: #f7efe0 !important;">
     <div class="mit-divider"></div>
     <div class="container">
       <div class="section-header">
@@ -541,8 +544,8 @@
           <span class="mit-eyebrow-line"></span>
           <span class="mit-eyebrow-text">III &bull; Biolog&iacute;a Celular Interactiva</span>
         </div>
-        <h2 style="color: #fff7ea;">Mitocondrias, AMPK y ATP. <span class="serif-italic-gold">El Motor Energ&eacute;tico.</span></h2>
-        <p class="section-description" style="color: rgba(247, 239, 224, 0.85);">
+        <h2 style="color: #ffffff !important;">Mitocondrias, AMPK y ATP. <span class="serif-italic-gold" style="color: #f2c76d !important;">El Motor Energ&eacute;tico.</span></h2>
+        <p class="section-description" style="color: #f0e6d2 !important;">
           Observa c&oacute;mo se comporta una c&eacute;lula de tu cuerpo antes y despu&eacute;s del protocolo. Alterna entre ambos estados para ver c&oacute;mo se reactiva el motor celular:
         </p>
       </div>
@@ -671,10 +674,10 @@
             <div id="cellStateIndicatorBadge" class="badge badge-accent" style="margin-bottom: 0.75rem;">
               Estado 1: Sobrecarga Celular y Resistencia
             </div>
-            <h3 id="cellStateTitle" style="font-size: 1.35rem; margin-bottom: 0.75rem;">
+            <h3 id="cellStateTitle" style="font-size: 1.35rem; margin-bottom: 0.75rem; color: #ffffff !important;">
               Célula con Síndrome Metabólico
             </h3>
-            <p id="cellStateDesc" style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+            <p id="cellStateDesc" style="font-size: 0.95rem; color: #f0e6d2 !important; line-height: 1.65;">
               Cuando consumimos calorías en exceso o carbohidratos refinados continuamente, las compuertas de glucosa (GLUT4) se vuelven insensibles a la insulina. El azúcar no entra eficientemente al músculo, se desvía para formar grasa abdominal y las mitocondrias sufren estrés oxidativo, provocando cansancio crónico y picos de glucosa.
             </p>
 
@@ -686,13 +689,13 @@
             </div>
 
             <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
-              <div style="background: #ffffff; border: 1px solid var(--border-subtle); padding: 0.75rem 1rem; border-radius: var(--radius-md); flex: 1; min-width: 140px;">
-                <small style="color: var(--text-muted); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Actividad AMPK</small>
-                <div id="metricAmpk" style="font-size: 1.1rem; font-weight: 800; color: #ea580c;">Inactiva / Baja</div>
+              <div style="background: #173b3e !important; border: 1px solid rgba(157, 208, 211, 0.3) !important; padding: 0.75rem 1rem; border-radius: var(--radius-md); flex: 1; min-width: 140px;">
+                <small style="color: #9dd0d3 !important; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Actividad AMPK</small>
+                <div id="metricAmpk" style="font-size: 1.1rem; font-weight: 800; color: #f2c76d !important;">Inactiva / Baja</div>
               </div>
-              <div style="background: #ffffff; border: 1px solid var(--border-subtle); padding: 0.75rem 1rem; border-radius: var(--radius-md); flex: 1; min-width: 140px;">
-                <small style="color: var(--text-muted); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Eficiencia Mitocondrial</small>
-                <div id="metricMito" style="font-size: 1.1rem; font-weight: 800; color: #ea580c;">Estrés Oxidativo</div>
+              <div style="background: #173b3e !important; border: 1px solid rgba(157, 208, 211, 0.3) !important; padding: 0.75rem 1rem; border-radius: var(--radius-md); flex: 1; min-width: 140px;">
+                <small style="color: #9dd0d3 !important; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Eficiencia Mitocondrial</small>
+                <div id="metricMito" style="font-size: 1.1rem; font-weight: 800; color: #ff7043 !important;">Estrés Oxidativo</div>
               </div>
             </div>
           </div>
@@ -916,7 +919,7 @@
   <!-- ==========================================================================
        LOS 4 PLANES NUTRICIONALES CON VÍAS BIOQUÍMICAS VISUALES
        ========================================================================== -->
-  <section id="planes" class="section-dark-pine">
+  <section id="planes" class="section-dark-pine" style="background-color: #102326 !important; color: #f7efe0 !important;">
     <div class="mit-divider"></div>
     <div class="container">
       <div class="section-header">
@@ -924,8 +927,8 @@
           <span class="mit-eyebrow-line"></span>
           <span class="mit-eyebrow-text">VI &bull; Protocolos Nutricionales</span>
         </div>
-        <h2 style="color: #fff7ea;">Cuatro Protocolos Cl&iacute;nicos. <span class="serif-italic-gold">Un Mismo Rigor.</span></h2>
-        <p class="section-description" style="color: rgba(247, 239, 224, 0.85);">
+        <h2 style="color: #ffffff !important;">Cuatro Protocolos Cl&iacute;nicos. <span class="serif-italic-gold" style="color: #f2c76d !important;">Un Mismo Rigor.</span></h2>
+        <p class="section-description" style="color: #f0e6d2 !important;">
           Al ingresar al estudio, se te asignar&aacute; a uno de los siguientes grupos. Todos los grupos activos reciben el acompa&ntilde;amiento transversal de <strong>"Cuerpo Maestro"</strong> (ejercicio guiado y educaci&oacute;n en h&aacute;bitos).
         </p>
       </div>
@@ -935,7 +938,7 @@
         <div class="transversal-banner">
           <div>
             <span class="transversal-badge">Pilar Central Compartido</span>
-            <span style="font-weight: 700; margin-left: 0.75rem; font-size: 1rem;">Beneficios que reciben todos los grupos activos:</span>
+            <span style="font-weight: 700; margin-left: 0.75rem; font-size: 1rem; color: #ffffff !important;">Beneficios que reciben todos los grupos activos:</span>
           </div>
           <div class="transversal-pillars">
             <div class="pillar-item">
@@ -974,7 +977,7 @@
         </div>
 
         <!-- Panel de Despliegue de Datos del Brazo -->
-        <div class="arm-display-panel">
+        <div class="arm-display-panel" style="background-color: #152e32 !important; border: 1px solid rgba(157, 208, 211, 0.28) !important; color: #f7efe0 !important;">
           <div class="arm-details-grid">
             <div>
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
@@ -982,7 +985,7 @@
                 <span id="armBadge" class="badge badge-accent">Déficit Energético Cuantitativo</span>
               </div>
 
-              <h3 id="armTitle" style="font-size: 1.45rem; margin-bottom: 1rem;">Cuerpo Maestro + Restricción Calórica (-20%)</h3>
+              <h3 id="armTitle" style="font-size: 1.45rem; margin-bottom: 1rem; color: #ffffff !important;">Cuerpo Maestro + Restricción Calórica (-20%)</h3>
 
               <!-- Cadena visual de cascada metabólica -->
               <div class="pathway-flow">
@@ -996,11 +999,11 @@
               </div>
 
               <div id="transversalStatus" class="callout-box">
-                <h5>Acompañamiento "Cuerpo Maestro" Incluido</h5>
-                <p>Este grupo recibe asesoría nutricional continua, talleres de hábitos saludables y sesiones de ejercicio físico planificado con preparador profesional.</p>
+                <h5 style="color: #ffffff !important;">Acompañamiento "Cuerpo Maestro" Incluido</h5>
+                <p style="color: #f0e6d2 !important;">Este grupo recibe asesoría nutricional continua, talleres de hábitos saludables y sesiones de ejercicio físico planificado con preparador profesional.</p>
               </div>
 
-              <h4 style="font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.5rem;">Cómo beneficia tu salud este plan:</h4>
+              <h4 style="font-size: 1.05rem; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #ffffff !important;">Cómo beneficia tu salud este plan:</h4>
               <ul id="armMechanismsList" class="mechanisms-list">
                 <li>Moviliza la grasa acumulada en el abdomen y alrededor del hígado.</li>
                 <li>Activa sensores de juventud celular (AMPK y sirtuinas) para mejorar el metabolismo.</li>
@@ -1010,24 +1013,24 @@
             </div>
 
             <!-- Ficha Paramétrica y Distribución -->
-            <div class="arm-protocol-card">
-              <h4 style="font-size: 1rem; border-bottom: 1px solid var(--border-medium); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+            <div class="arm-protocol-card" style="background-color: #0c1c1e !important; border: 1px solid rgba(157, 208, 211, 0.35) !important; color: #ffffff !important;">
+              <h4 style="font-size: 1rem; border-bottom: 1px solid rgba(157, 208, 211, 0.3); padding-bottom: 0.5rem; margin-bottom: 1rem; color: #ffffff !important;">
                 Detalles del Plan de Alimentación
               </h4>
 
               <div style="margin-bottom: 1rem;">
-                <small style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; font-weight: 700;">Enfoque Calórico</small>
-                <div id="armCaloric" style="font-weight: 700; color: var(--text-primary); font-size: 0.95rem;">Déficit calórico continuo moderado (-20%)</div>
+                <small style="color: #9dd0d3 !important; font-size: 0.75rem; text-transform: uppercase; font-weight: 700;">Enfoque Calórico</small>
+                <div id="armCaloric" style="font-weight: 700; color: #ffffff !important; font-size: 0.95rem;">Déficit calórico continuo moderado (-20%)</div>
               </div>
 
               <div style="margin-bottom: 1.25rem;">
-                <small style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; font-weight: 700;">Horarios de Comida</small>
-                <div id="armWindow" style="font-weight: 600; color: var(--text-primary); font-size: 0.9rem;">Horarios convencionales según tu ritmo de vida diario</div>
+                <small style="color: #9dd0d3 !important; font-size: 0.75rem; text-transform: uppercase; font-weight: 700;">Horarios de Comida</small>
+                <div id="armWindow" style="font-weight: 600; color: #ffffff !important; font-size: 0.9rem;">Horarios convencionales según tu ritmo de vida diario</div>
               </div>
 
               <div style="margin-bottom: 1rem;">
-                <small style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; font-weight: 700;">Distribución de los Alimentos</small>
-                <div id="armMacrosText" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                <small style="color: #9dd0d3 !important; font-size: 0.75rem; text-transform: uppercase; font-weight: 700;">Distribución de los Alimentos</small>
+                <div id="armMacrosText" style="font-size: 0.85rem; color: #f0e6d2 !important; margin-top: 0.2rem;">
                   Alimentación equilibrada tradicional con reducción calórica controlada
                 </div>
               </div>
@@ -1072,7 +1075,7 @@
   <!-- ==========================================================================
        EVALUADOR CLÍNICO INTERACTIVO: COMPRUEBA SI CALIFICAS
        ========================================================================== -->
-  <section id="evaluador" class="section-clinical-sage">
+  <section id="evaluador" class="section-clinical-sage" style="background-color: #eaf1e9 !important; color: #17201d !important;">
     <div class="mit-divider-terracotta"></div>
     <div class="container">
       <div class="section-header">
@@ -1080,8 +1083,8 @@
           <span class="mit-eyebrow-line line-terracotta"></span>
           <span class="mit-eyebrow-text text-terracotta">VII &bull; Auto-Evaluaci&oacute;n Cl&iacute;nica</span>
         </div>
-        <h2>&iquest;Calificas para el Estudio? <span class="serif-italic-terracotta">Comprobaci&oacute;n en 2 Minutos.</span></h2>
-        <p class="section-description">
+        <h2 style="color: #120f0d !important;">&iquest;Calificas para el Estudio? <span class="serif-italic-terracotta" style="color: #b54824 !important;">Comprobaci&oacute;n en 2 Minutos.</span></h2>
+        <p class="section-description" style="color: #2b221a !important;">
           El estudio est&aacute; dirigido a adultos de 18 a 60 a&ntilde;os con al menos 3 de los siguientes 5 signos de salud metab&oacute;lica. Ajusta los valores con lo que recuerdes de tus &uacute;ltimos chequeos m&eacute;dicos o medidas corporales:
         </p>
       </div>
@@ -1246,7 +1249,7 @@
             ¡Calificas para ingresar al estudio!
           </div>
 
-          <div id="verdictDetail" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; background: var(--bg-subtle); padding: 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); margin-bottom: 1.25rem;">
+          <div id="verdictDetail" style="font-size: 0.85rem; color: #2b221a !important; line-height: 1.5; background: #ffffff; padding: 0.85rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); margin-bottom: 1.25rem;">
             <strong>Perfil Apto:</strong> Cumples con al menos 3 signos de salud metabólica que el programa busca mejorar. Completa el formulario a continuación para postular tu cupo gratuito.
           </div>
 
@@ -1261,7 +1264,7 @@
   <!-- ==========================================================================
        FORMULARIO DE INSCRIPCIÓN PARA PACIENTES (SECCIÓN PRINCIPAL)
        ========================================================================== -->
-  <section id="inscripcion" class="section-dark-espresso">
+  <section id="inscripcion" class="section-dark-espresso" style="background-color: #120f0d !important; color: #fff7ea !important;">
     <div class="mit-divider"></div>
     <div class="container">
       <div class="section-header" style="text-align: center; margin: 0 auto 3rem; max-width: 750px;">
@@ -1269,20 +1272,20 @@
           <span class="mit-eyebrow-line"></span>
           <span class="mit-eyebrow-text">VIII &bull; Convocatoria Oficial 2026-2027</span>
         </div>
-        <h2 style="color: #fff7ea;">Formulario de Inscripci&oacute;n. <span class="serif-italic-gold">Postulaci&oacute;n al Estudio.</span></h2>
-        <p class="section-description" style="color: rgba(236, 215, 179, 0.85);">
+        <h2 style="color: #ffffff !important;">Formulario de Inscripci&oacute;n. <span class="serif-italic-gold" style="color: #f2c76d !important;">Postulaci&oacute;n al Estudio.</span></h2>
+        <p class="section-description" style="color: #f0e6d2 !important;">
           Diligencia tus datos para solicitar tu cupo en el estudio "Cuerpo Maestro". Nuestro equipo m&eacute;dico y de investigaci&oacute;n se pondr&aacute; en contacto contigo para agendar tu cita de valoraci&oacute;n inicial sin ning&uacute;n costo.
         </p>
       </div>
 
-      <div class="forms-embed-container" style="background: rgba(28, 22, 19, 0.85); border: 1px solid rgba(232, 183, 94, 0.3); backdrop-filter: blur(12px);">
+      <div class="forms-embed-container" style="background-color: #1a1512 !important; border: 1px solid rgba(232, 183, 94, 0.35) !important;">
         <div class="forms-header-action" style="border-bottom: 1px solid rgba(236, 215, 179, 0.15);">
           <div>
-            <span class="badge badge-brand" style="background: rgba(232, 183, 94, 0.15); color: var(--mit-gold); border-color: rgba(232, 183, 94, 0.3);">Formulario Institucional</span>
-            <h3 style="font-size: 1.35rem; margin-top: 0.35rem; color: #fff7ea; font-family: var(--font-serif);">
+            <span class="badge badge-brand" style="background: rgba(232, 183, 94, 0.2); color: #f2c76d !important; border-color: rgba(232, 183, 94, 0.4);">Formulario Institucional</span>
+            <h3 style="font-size: 1.35rem; margin-top: 0.35rem; color: #ffffff !important; font-family: var(--font-serif);">
               Registro Oficial de Participantes
             </h3>
-            <p style="font-size: 0.85rem; color: rgba(236, 215, 179, 0.7); margin-top: 0.2rem;">
+            <p style="font-size: 0.88rem; color: #f0e6d2 !important; margin-top: 0.2rem;">
               Las postulaciones se procesan de forma segura mediante el formulario oficial del equipo de investigaci&oacute;n.
             </p>
           </div>
@@ -1307,12 +1310,12 @@
         </div>
 
         <!-- Barra de Configuración Rápida para Vincular el Enlace de Google Forms -->
-        <div class="forms-url-config-bar" style="background: rgba(255, 247, 234, 0.05); border: 1px dashed rgba(236, 215, 179, 0.25);">
-          <label for="inputGoogleFormsUrl" style="color: #fff7ea;">
-            <svg class="icon icon-sm" style="color: var(--mit-gold); vertical-align: -2px;" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <div class="forms-url-config-bar" style="background-color: #120f0d !important; border: 1px dashed rgba(232, 183, 94, 0.35);">
+          <label for="inputGoogleFormsUrl" style="color: #ffffff !important;">
+            <svg class="icon icon-sm" style="color: #f2c76d; vertical-align: -2px;" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
             &iquest;Tienes el enlace de tu Google Forms o Microsoft Forms? P&eacute;galo aqu&iacute; para conectarlo:
           </label>
-          <input type="url" id="inputGoogleFormsUrl" class="forms-url-input" placeholder="https://docs.google.com/forms/d/e/.../viewform" style="background: rgba(18, 15, 13, 0.8); color: #fff7ea; border: 1px solid rgba(236, 215, 179, 0.3);">
+          <input type="url" id="inputGoogleFormsUrl" class="forms-url-input" placeholder="https://docs.google.com/forms/d/e/.../viewform" style="background: #0d0b0a !important; color: #ffffff !important; border: 1px solid rgba(232, 183, 94, 0.4);">
           <button id="btnUpdateFormsUrl" class="btn btn-outline btn-sm">
             Vincular Formulario
           </button>
@@ -1451,70 +1454,70 @@
 
       <!-- Estudiantes y Asistentes de Investigación de Pregrado -->
       <div style="margin-top: 3rem; margin-bottom: 1.25rem;">
-        <span class="section-eyebrow">Apoyo Científico y Acompañamiento</span>
-        <h3 style="font-size: 1.35rem;">Estudiantes y Asistentes de Investigación</h3>
-        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.25rem;">
+        <span class="section-eyebrow" style="color: #f2c76d !important;">Apoyo Científico y Acompañamiento</span>
+        <h3 style="font-size: 1.35rem; color: #ffffff !important;">Estudiantes y Asistentes de Investigación</h3>
+        <p style="font-size: 0.95rem; color: #f0e6d2 !important; margin-top: 0.25rem;">
           Estudiantes de la Escuela de Ciencias Biológicas e Ingeniería de Yachay Tech encargados de reclutamiento, seguimiento, registro de datos y atención a los participantes:
         </p>
       </div>
 
       <div class="team-grid">
-        <div class="team-card">
-          <div class="team-avatar" style="background: var(--color-brand-subtle); color: var(--color-brand);">IG</div>
-          <span class="team-role">Asistente de Investigación</span>
-          <div class="team-name">Isaac Mateo Gavilanes Chávez</div>
-          <div class="team-inst">Escuela de Ciencias Biológicas e Ingeniería, Yachay Tech</div>
+        <div class="team-card" style="background: #153438 !important; border: 1px solid rgba(157, 208, 211, 0.3) !important;">
+          <div class="team-avatar" style="background: rgba(232, 183, 94, 0.2); color: #f2c76d; border: 1px solid rgba(232, 183, 94, 0.4);">IG</div>
+          <span class="team-role" style="color: #f2c76d !important;">Asistente de Investigación</span>
+          <div class="team-name" style="color: #ffffff !important;">Isaac Mateo Gavilanes Chávez</div>
+          <div class="team-inst" style="color: #cde4e6 !important;">Escuela de Ciencias Biológicas e Ingeniería, Yachay Tech</div>
         </div>
 
-        <div class="team-card">
-          <div class="team-avatar" style="background: var(--color-brand-subtle); color: var(--color-brand);">AC</div>
-          <span class="team-role">Asistente de Investigación</span>
-          <div class="team-name">Arianna Rafaela Castillo Guevara</div>
-          <div class="team-inst">Escuela de Ciencias Biológicas e Ingeniería, Yachay Tech</div>
+        <div class="team-card" style="background: #153438 !important; border: 1px solid rgba(157, 208, 211, 0.3) !important;">
+          <div class="team-avatar" style="background: rgba(232, 183, 94, 0.2); color: #f2c76d; border: 1px solid rgba(232, 183, 94, 0.4);">AC</div>
+          <span class="team-role" style="color: #f2c76d !important;">Asistente de Investigación</span>
+          <div class="team-name" style="color: #ffffff !important;">Arianna Rafaela Castillo Guevara</div>
+          <div class="team-inst" style="color: #cde4e6 !important;">Escuela de Ciencias Biológicas e Ingeniería, Yachay Tech</div>
         </div>
 
-        <div class="team-card">
-          <div class="team-avatar" style="background: var(--color-brand-subtle); color: var(--color-brand);">EG</div>
-          <span class="team-role">Asistente de Investigación</span>
-          <div class="team-name">Ethan Aaron Guevara López</div>
-          <div class="team-inst">Escuela de Ciencias Biológicas e Ingeniería, Yachay Tech</div>
+        <div class="team-card" style="background: #153438 !important; border: 1px solid rgba(157, 208, 211, 0.3) !important;">
+          <div class="team-avatar" style="background: rgba(232, 183, 94, 0.2); color: #f2c76d; border: 1px solid rgba(232, 183, 94, 0.4);">EG</div>
+          <span class="team-role" style="color: #f2c76d !important;">Asistente de Investigación</span>
+          <div class="team-name" style="color: #ffffff !important;">Ethan Aaron Guevara López</div>
+          <div class="team-inst" style="color: #cde4e6 !important;">Escuela de Ciencias Biológicas e Ingeniería, Yachay Tech</div>
         </div>
 
-        <div class="team-card">
-          <div class="team-avatar" style="background: var(--color-brand-subtle); color: var(--color-brand);">YR</div>
-          <span class="team-role">Asistente de Investigación</span>
-          <div class="team-name">Yehudhah Kennedy Rodriguez Moran</div>
-          <div class="team-inst">Escuela de Ciencias Biológicas e Ingeniería, Yachay Tech</div>
+        <div class="team-card" style="background: #153438 !important; border: 1px solid rgba(157, 208, 211, 0.3) !important;">
+          <div class="team-avatar" style="background: rgba(232, 183, 94, 0.2); color: #f2c76d; border: 1px solid rgba(232, 183, 94, 0.4);">YR</div>
+          <span class="team-role" style="color: #f2c76d !important;">Asistente de Investigación</span>
+          <div class="team-name" style="color: #ffffff !important;">Yehudhah Kennedy Rodriguez Moran</div>
+          <div class="team-inst" style="color: #cde4e6 !important;">Escuela de Ciencias Biológicas e Ingeniería, Yachay Tech</div>
         </div>
       </div>
 
       <!-- Compromiso de Respeto y Trato Ético -->
-      <div class="ethics-banner">
-        <span class="badge badge-brand" style="margin-bottom: 0.75rem;">Trato Humano y Dignidad</span>
-        <h3 style="font-size: 1.4rem;">Compromiso con la Salud, la Privacidad y el No-Estigma</h3>
-        <p style="margin-top: 0.5rem; font-size: 0.95rem;">
-          Siguiendo las directrices internacionales más recientes (Declaración de Helsinki 2024, CIOMS 2023 y recomendaciones de <em>The Lancet</em> 2025), el programa ofrece un entorno cálido, libre de juicios sobre el peso y centrado exclusivamente en tu salud y bienestar:
+      <div class="ethics-banner" style="background: #0d1b1d !important; border: 1px solid rgba(157, 208, 211, 0.35) !important;">
+        <span class="badge" style="margin-bottom: 0.75rem; background: rgba(232, 183, 94, 0.2); color: #f2c76d; border: 1px solid rgba(232, 183, 94, 0.4);">Trato Humano y Dignidad</span>
+        <h3 style="font-size: 1.4rem; color: #ffffff !important;">Compromiso con la Salud, la Privacidad y el No-Estigma</h3>
+        <p style="margin-top: 0.5rem; font-size: 0.95rem; color: #f0e6d2 !important; line-height: 1.65;">
+          Siguiendo las directrices internacionales más recientes (Declaración de Helsinki 2024, CIOMS 2023 y recomendaciones de <em style="color: #f2c76d; font-style: italic;">The Lancet</em> 2025), el programa ofrece un entorno cálido, libre de juicios sobre el peso y centrado exclusivamente en tu salud y bienestar:
         </p>
 
         <div class="ethics-safeguards-grid">
-          <div class="safeguard-card">
-            <h4>Confidencialidad Absoluta</h4>
-            <p>Tus datos médicos se identifican con un código anónimo protegido. Nadie fuera del equipo médico tiene acceso a tu información personal.</p>
+          <div class="safeguard-card" style="background: #16363a !important; border: 1px solid rgba(157, 208, 211, 0.3) !important;">
+            <h4 style="color: #ffffff !important;">Confidencialidad Absoluta</h4>
+            <p style="color: #f0e6d2 !important;">Tus datos médicos se identifican con un código anónimo protegido. Nadie fuera del equipo médico tiene acceso a tu información personal.</p>
           </div>
 
-          <div class="safeguard-card">
-            <h4>Libertad y Voluntariedad</h4>
-            <p>Puedes retirarte del estudio en el momento que desees sin ninguna penalización ni costo alguno.</p>
+          <div class="safeguard-card" style="background: #16363a !important; border: 1px solid rgba(157, 208, 211, 0.3) !important;">
+            <h4 style="color: #ffffff !important;">Libertad y Voluntariedad</h4>
+            <p style="color: #f0e6d2 !important;">Puedes retirarte del estudio en el momento que desees sin ninguna penalización ni costo alguno.</p>
           </div>
 
-          <div class="safeguard-card">
-            <h4>Atención Respetuosa</h4>
-            <p>Evaluaciones antropométricas en espacios privados, con trato digno, empático y enfocado en hábitos sostenibles.</p>
+          <div class="safeguard-card" style="background: #16363a !important; border: 1px solid rgba(157, 208, 211, 0.3) !important;">
+            <h4 style="color: #ffffff !important;">Atención Respetuosa</h4>
+            <p style="color: #f0e6d2 !important;">Evaluaciones antropométricas en espacios privados, con trato digno, empático y enfocado en hábitos sostenibles.</p>
           </div>
 
-          <div class="safeguard-card">
-            <h4>Supervisión Médica</h4>
-            <p>Monitoreo constante de tolerancia dietética y física con derivación inmediata si se requiere atención médica adicional.</p>
+          <div class="safeguard-card" style="background: #16363a !important; border: 1px solid rgba(157, 208, 211, 0.3) !important;">
+            <h4 style="color: #ffffff !important;">Supervisión Médica</h4>
+            <p style="color: #f0e6d2 !important;">Monitoreo constante de tolerancia dietética y física con derivación inmediata si se requiere atención médica adicional.</p>
           </div>
         </div>
       </div>
@@ -1632,6 +1635,6 @@
     </div>
   </footer>
 
-  <script src="js/app.js"></script>
+  <script src="js/app.js?v=5.0"></script>
 </body>
 </html>

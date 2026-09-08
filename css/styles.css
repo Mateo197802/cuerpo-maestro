@@ -105,6 +105,19 @@
 }
 
 /* ==========================================================================
+   MALLA INTERACTIVA DE FONDO (CANVAS MIT CRITICAL DATA - ROMA)
+   ========================================================================== */
+.mit-interactive-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.75;
+}
+
+/* ==========================================================================
    RESETEO Y BASE
    ========================================================================== */
 *, *::before, *::after {
@@ -478,33 +491,85 @@ section {
 }
 
 .section-dark-espresso {
-  background-color: var(--mit-espresso);
-  color: #fff7ea;
+  background-color: var(--mit-espresso) !important;
+  color: #fff7ea !important;
   border-bottom: 1px solid rgba(232, 183, 94, 0.15);
 }
 
 .section-dark-graphite {
-  background-color: var(--mit-graphite);
-  color: #fff7ea;
+  background-color: var(--mit-graphite) !important;
+  color: #fff7ea !important;
   border-bottom: 1px solid rgba(232, 183, 94, 0.15);
 }
 
 .section-dark-pine {
-  background-color: var(--mit-pine);
-  color: #f7efe0;
+  background-color: var(--mit-pine) !important;
+  color: #f7efe0 !important;
   border-bottom: 1px solid rgba(157, 208, 211, 0.2);
 }
 
 .section-warm-parchment {
-  background-color: var(--mit-parchment);
-  color: #19130f;
+  background-color: var(--mit-parchment) !important;
+  color: #19130f !important;
   border-bottom: 1px solid rgba(210, 190, 160, 0.35);
 }
 
 .section-clinical-sage {
-  background-color: var(--mit-sage);
-  color: #17201d;
+  background-color: var(--mit-sage) !important;
+  color: #17201d !important;
   border-bottom: 1px solid rgba(99, 139, 134, 0.25);
+}
+
+/* Reglas Estrictas de Máximo Contraste para Secciones Oscuras (WCAG AAA) */
+.hero-section,
+.section-dark-espresso,
+.section-dark-graphite,
+.section-dark-pine,
+.cellular-section {
+  color: #fff7ea !important;
+}
+
+.hero-section h1, .hero-section h2, .hero-section h3, .hero-section h4,
+.section-dark-espresso h1, .section-dark-espresso h2, .section-dark-espresso h3, .section-dark-espresso h4,
+.section-dark-graphite h1, .section-dark-graphite h2, .section-dark-graphite h3, .section-dark-graphite h4,
+.section-dark-pine h1, .section-dark-pine h2, .section-dark-pine h3, .section-dark-pine h4,
+.cellular-section h1, .cellular-section h2, .cellular-section h3, .cellular-section h4 {
+  color: #ffffff !important;
+}
+
+.hero-section p, .hero-section .section-description,
+.section-dark-espresso p, .section-dark-espresso .section-description,
+.section-dark-graphite p, .section-dark-graphite .section-description,
+.section-dark-pine p, .section-dark-pine .section-description,
+.cellular-section p, .cellular-section .section-description {
+  color: #f0e6d2 !important;
+  opacity: 1 !important;
+}
+
+.hero-section .serif-italic-gold,
+.section-dark-espresso .serif-italic-gold,
+.section-dark-graphite .serif-italic-gold,
+.section-dark-pine .serif-italic-gold,
+.cellular-section .serif-italic-gold {
+  color: #f2c76d !important;
+  font-weight: 600;
+}
+
+/* Reglas Estrictas de Contraste para Secciones Claras (Pergamino y Salvia) */
+.section-warm-parchment h1, .section-warm-parchment h2, .section-warm-parchment h3, .section-warm-parchment h4,
+.section-clinical-sage h1, .section-clinical-sage h2, .section-clinical-sage h3, .section-clinical-sage h4 {
+  color: #120f0d !important;
+}
+
+.section-warm-parchment p, .section-warm-parchment .section-description,
+.section-clinical-sage p, .section-clinical-sage .section-description {
+  color: #2b221a !important;
+  opacity: 1 !important;
+}
+
+.section-warm-parchment .serif-italic-gold,
+.section-clinical-sage .serif-italic-gold {
+  color: #b54824 !important; /* En fondo claro transmuta a terracota de alto contraste */
 }
 
 /* Divisores de Gradiente MIT */
@@ -998,9 +1063,9 @@ section {
 }
 
 .hero-subtitle {
-  font-size: 1.125rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
+  font-size: 1.15rem;
+  color: #ecd7b3 !important;
+  line-height: 1.75;
   max-width: 960px;
   margin-bottom: 2.25rem;
 }
@@ -1311,15 +1376,16 @@ section {
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: 0.75rem;
-  font-size: 0.925rem;
-  color: var(--text-secondary);
+  font-size: 0.95rem;
+  color: #f7efe0 !important;
+  line-height: 1.6;
 }
 
 .mechanisms-list li::before {
   content: "—";
   position: absolute;
   left: 0;
-  color: var(--color-brand);
+  color: var(--mit-gold);
   font-weight: bold;
 }
 
@@ -1710,17 +1776,16 @@ input[type="range"] {
 }
 
 .team-card {
-  background: rgba(23, 59, 62, 0.5);
-  border: 1px solid rgba(157, 208, 211, 0.22);
+  background: #153438 !important;
+  border: 1px solid rgba(157, 208, 211, 0.28) !important;
   border-radius: var(--radius-lg);
   padding: 1.75rem 1.5rem;
   transition: all var(--transition-normal);
-  backdrop-filter: blur(8px);
 }
 
 .team-card:hover {
-  border-color: rgba(232, 183, 94, 0.45);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  border-color: rgba(232, 183, 94, 0.6);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
   transform: translateY(-3px);
 }
 
@@ -1728,9 +1793,9 @@ input[type="range"] {
   width: 3.25rem;
   height: 3.25rem;
   border-radius: 50%;
-  background: rgba(232, 183, 94, 0.15);
-  color: var(--mit-gold);
-  border: 1px solid rgba(232, 183, 94, 0.3);
+  background: rgba(232, 183, 94, 0.2);
+  color: #f2c76d;
+  border: 1px solid rgba(232, 183, 94, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1746,21 +1811,21 @@ input[type="range"] {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--mit-gold);
+  color: #f2c76d !important;
   margin-bottom: 0.25rem;
 }
 
 .team-name {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #fff7ea;
+  color: #ffffff !important;
   margin-bottom: 0.35rem;
   font-family: var(--font-serif);
 }
 
 .team-inst {
-  font-size: 0.8125rem;
-  color: rgba(247, 239, 224, 0.75);
+  font-size: 0.85rem;
+  color: #cde4e6 !important;
   line-height: 1.45;
 }
 
@@ -1774,6 +1839,19 @@ input[type="range"] {
   backdrop-filter: blur(10px);
 }
 
+.ethics-banner h3 {
+  color: #ffffff !important;
+}
+
+.ethics-banner p {
+  color: #f0e6d2 !important;
+  opacity: 1 !important;
+}
+
+.ethics-banner em {
+  color: #f2c76d !important;
+}
+
 .ethics-safeguards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1782,23 +1860,25 @@ input[type="range"] {
 }
 
 .safeguard-card {
-  background: rgba(255, 247, 234, 0.05);
-  border: 1px solid rgba(236, 215, 179, 0.15);
+  background: #16363a !important;
+  border: 1px solid rgba(157, 208, 211, 0.28) !important;
   border-radius: var(--radius-md);
   padding: 1.25rem;
 }
 
 .safeguard-card h4 {
-  color: #e8b75e;
+  color: #ffffff !important;
   font-family: var(--font-serif);
   font-size: 1.05rem;
+  font-weight: 700;
   margin-bottom: 0.4rem;
 }
 
 .safeguard-card p {
-  color: rgba(236, 215, 179, 0.75);
-  font-size: 0.825rem;
-  line-height: 1.55;
+  color: #f0e6d2 !important;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 1 !important;
 }
 
 /* ==========================================================================
@@ -1987,25 +2067,26 @@ input[type="range"] {
 }
 
 .benefit-card {
-  background: #ffffff;
-  border: 1px solid var(--border-subtle);
+  background: #241c17 !important;
+  border: 1px solid rgba(232, 183, 94, 0.28) !important;
   border-radius: var(--radius-lg);
   padding: 1.75rem;
   transition: all var(--transition-normal);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
 }
 
 .benefit-card:hover {
-  border-color: var(--color-brand);
-  box-shadow: var(--shadow-sm);
-  transform: translateY(-2px);
+  border-color: rgba(232, 183, 94, 0.65) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+  transform: translateY(-3px);
 }
 
 .benefit-icon-badge {
   width: 3rem;
   height: 3rem;
   border-radius: var(--radius-md);
-  background: var(--color-brand-subtle);
-  color: var(--color-brand);
+  background: rgba(232, 183, 94, 0.2) !important;
+  color: #f2c76d !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2013,16 +2094,18 @@ input[type="range"] {
 }
 
 .benefit-card h4 {
-  font-size: 1.1rem;
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 0.4rem;
+  color: #ffffff !important;
+  margin-bottom: 0.5rem;
 }
 
 .benefit-card p {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
+  font-size: 0.92rem;
+  color: #f0e6d2 !important;
+  line-height: 1.65;
+  opacity: 1 !important;
 }
 
 .faq-grid {
