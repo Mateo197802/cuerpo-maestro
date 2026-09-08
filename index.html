@@ -48,6 +48,7 @@
       <div class="main-nav">
         <a href="#hero" class="nav-link active">Inicio</a>
         <a href="#beneficios" class="nav-link">Qué Incluye</a>
+        <a href="#transformacion" class="nav-link">Tu Cuerpo en 6 Meses</a>
         <a href="#planes" class="nav-link">Planes Nutricionales</a>
         <a href="#evaluador" class="nav-link">¿Califico?</a>
         <a href="#pasos" class="nav-link">Cómo Participar</a>
@@ -65,11 +66,11 @@
   </nav>
 
   <!-- ==========================================================================
-       HERO: CONVOCATORIA PARA PACIENTES
+       HERO: CONVOCATORIA PARA PACIENTES CON MODELO ANATÓMICO INTERACTIVO
        ========================================================================== -->
   <section id="hero" class="hero-section">
     <div class="container">
-      <div class="hero-grid">
+      <div class="hero-grid-split">
         <div>
           <div class="hero-meta-bar">
             <span class="badge badge-brand">Programa Clínico y Nutricional Gratuito</span>
@@ -85,7 +86,7 @@
             Si vives en Urcuquí o Ibarra y tienes sobrepeso, presión arterial elevada, glucosa alterada o colesterol alto, te invitamos a participar en un estudio clínico de vanguardia avalado por la Universidad Yachay Tech. Recibe 6 meses de acompañamiento médico, nutricional y físico personalizado, con exámenes de sangre completos y bioimpedancia avanzada <strong>100% gratuitos</strong>.
           </p>
 
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
             <a href="#inscripcion" class="btn btn-primary">
               <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
               Postularme al Programa
@@ -95,44 +96,95 @@
               Comprobar si Califico (Test Rápido)
             </a>
           </div>
+
+          <!-- Métricas directas para el paciente -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div style="background: var(--bg-subtle); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--color-brand);">
+              <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--color-brand);">Costo al Paciente</div>
+              <div style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary);">100% Gratuito</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">Exámenes y consultas cubiertos</div>
+            </div>
+            <div style="background: var(--bg-subtle); padding: 1rem; border-radius: var(--radius-md); border-left: 3px solid var(--color-accent);">
+              <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--color-accent);">Disponibilidad</div>
+              <div style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary);">80 Cupos</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">Urcuquí e Ibarra (18-60 años)</div>
+            </div>
+          </div>
         </div>
 
-        <!-- Tarjetas de Información Clave para el Paciente -->
-        <div class="hero-metrics-strip">
-          <div class="metric-card">
-            <div class="metric-header">
-              <span class="metric-label">Costo para el Paciente</span>
-              <svg class="icon icon-sm" style="color: var(--color-brand);" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <!-- MODELO VISUAL INTERACTIVO DEL CUERPO Y METABOLISMO -->
+        <div class="body-interactive-card">
+          <div class="body-card-header">
+            <div>
+              <span class="badge badge-brand">Anatomía Metabólica</span>
+              <h4 style="font-size: 1.05rem; margin-top: 0.25rem;">Tu Cuerpo en el Programa</h4>
             </div>
-            <div class="metric-value">100% <small style="font-size: 1rem; font-weight: 600;">Gratis</small></div>
-            <div class="metric-desc">Consultas, exámenes de laboratorio y bioimpedancia totalmente cubiertos.</div>
+            <small style="color: var(--text-muted); font-size: 0.75rem;">Haz clic en los puntos</small>
           </div>
 
-          <div class="metric-card">
-            <div class="metric-header">
-              <span class="metric-label">Disponibilidad</span>
-              <svg class="icon icon-sm" style="color: var(--color-navy);" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <div class="metric-value">80 <small style="font-size: 1rem; font-weight: 600;">Cupos</small></div>
-            <div class="metric-desc">Atención médica cercana y personalizada en Urcuquí e Ibarra.</div>
+          <!-- Gráfico SVG del Cuerpo Humano y Órganos Metabólicos -->
+          <div class="body-canvas-wrap">
+            <svg viewBox="0 0 320 440" style="width: 100%; max-width: 300px; height: 380px;">
+              <!-- Silueta del Cuerpo Humano en tonos clínicos sutiles -->
+              <path d="M160,25 C145,25 138,40 138,55 C138,70 148,82 155,85 C140,92 120,105 110,135 C100,165 92,205 92,235 C92,245 98,250 105,248 C112,245 118,220 122,195 C125,230 128,275 130,310 C132,345 134,420 142,420 C150,420 152,350 155,305 C158,300 162,300 165,305 C168,350 170,420 178,420 C186,420 188,345 190,310 C192,275 195,230 198,195 C202,220 208,245 215,248 C222,250 228,245 228,235 C228,205 220,165 210,135 C200,105 180,92 165,85 C172,82 182,70 182,55 C182,40 175,25 160,25 Z"
+                    fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+
+              <!-- Líneas de flujo circulatorio y energético -->
+              <path d="M160,130 L160,220 L145,310 M160,220 L175,310"
+                    fill="none" stroke="#99f6e4" stroke-width="2.5" class="flow-line"/>
+
+              <!-- Órganos Representados Esquemáticamente -->
+              <!-- 1. Cerebro -->
+              <circle cx="160" cy="55" r="16" fill="#e0f2fe" stroke="#38bdf8" stroke-width="1.5"/>
+              <path d="M152,50 Q160,42 168,50 Q160,65 152,50" fill="none" stroke="#0284c7" stroke-width="1.5"/>
+
+              <!-- 2. Corazón y Arterias -->
+              <path d="M166,130 C166,120 180,120 180,132 C180,142 166,150 166,150 C166,150 152,142 152,132 C152,120 166,120 166,130 Z"
+                    fill="#ffe4e6" stroke="#f43f5e" stroke-width="1.5"/>
+
+              <!-- 3. Hígado Metabólico -->
+              <path d="M135,160 C145,155 162,158 165,165 C165,178 145,185 135,182 C128,180 128,165 135,160 Z"
+                    fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+
+              <!-- 4. Páncreas -->
+              <ellipse cx="162" cy="188" rx="14" ry="5" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
+
+              <!-- 5. Grasa Visceral y Cintura Abdominal -->
+              <ellipse cx="160" cy="225" rx="36" ry="18" fill="none" stroke="#c2410c" stroke-width="2" stroke-dasharray="4,4"/>
+              <path d="M132,225 Q160,240 188,225" fill="none" stroke="#ea580c" stroke-width="2"/>
+
+              <!-- 6. Músculo Esquelético Activo (Piernas/Muslos) -->
+              <rect x="136" y="325" width="12" height="45" rx="5" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.5"/>
+              <rect x="172" y="325" width="12" height="45" rx="5" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.5"/>
+            </svg>
+
+            <!-- Hotspots Interactivos Superpuestos -->
+            <button class="organ-hotspot active" data-organ="brain" style="top: 13%; left: 47%;" title="Cerebro y Sueño">
+              1
+            </button>
+            <button class="organ-hotspot" data-organ="heart" style="top: 30%; left: 52%;" title="Corazón y Presión">
+              2
+            </button>
+            <button class="organ-hotspot" data-organ="liver" style="top: 40%; left: 40%;" title="Hígado y Grasa">
+              3
+            </button>
+            <button class="organ-hotspot" data-organ="waist" style="top: 53%; left: 47%;" title="Cintura y Grasa Visceral">
+              4
+            </button>
+            <button class="organ-hotspot" data-organ="muscle" style="top: 75%; left: 55%;" title="Músculos y Glucosa">
+              5
+            </button>
           </div>
 
-          <div class="metric-card">
-            <div class="metric-header">
-              <span class="metric-label">Duración del Cuidado</span>
-              <svg class="icon icon-sm" style="color: var(--color-accent);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <!-- Cuadro de texto interactivo con el órgano seleccionado -->
+          <div id="organInfoDisplay" class="organ-info-display">
+            <div id="organTitle" class="organ-info-title">
+              <svg class="icon icon-sm" style="color: var(--color-brand);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              1. Cerebro: Ritmos Circadianos y Control de Estrés
             </div>
-            <div class="metric-value">6 <small style="font-size: 1rem; font-weight: 600;">Meses</small></div>
-            <div class="metric-desc">Seguimiento continuo con nutricionista y preparador físico calificado.</div>
-          </div>
-
-          <div class="metric-card">
-            <div class="metric-header">
-              <span class="metric-label">Informe Individual</span>
-              <svg class="icon icon-sm" style="color: var(--color-brand);" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-            </div>
-            <div class="metric-value" style="font-size: 1.35rem;">Resultados</div>
-            <div class="metric-desc">Recibirás todos tus resultados médicos impresos para tu control personal.</div>
+            <p id="organDesc" class="organ-info-desc">
+              El descanso adecuado y el horario de comidas regulan las hormonas del hambre (leptina y grelina), disminuyen el cortisol y reducen los antojos de azúcar.
+            </p>
           </div>
         </div>
       </div>
@@ -217,7 +269,138 @@
   </section>
 
   <!-- ==========================================================================
-       LOS 4 PLANES NUTRICIONALES (EXPLICACIÓN CLARA PARA EL PACIENTE)
+       SIMULADOR DE TRANSFORMACIÓN METABÓLICA (ANTES VS DESPUÉS EN 6 MESES)
+       ========================================================================== -->
+  <section id="transformacion" class="transformation-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Biología y Bienestar</span>
+        <h2>¿Qué ocurre dentro de tu cuerpo durante los 6 meses?</h2>
+        <p class="section-description">
+          Compara el estado del metabolismo cuando existe síndrome metabólico frente a los cambios fisiológicos positivos que se logran tras 6 meses de intervención estructurada:
+        </p>
+      </div>
+
+      <div class="compare-card-grid">
+        <!-- Estado Inicial T0 -->
+        <div class="state-card before-state">
+          <span class="state-indicator-badge state-badge-red">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Estado Inicial (Antes de Iniciar)
+          </span>
+          <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Alteración Cardiometabólica</h3>
+
+          <div class="state-item">
+            <div class="state-icon-wrap" style="background: var(--color-accent-subtle); color: var(--color-accent);">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/></svg>
+            </div>
+            <div>
+              <strong>Grasa Visceral Alrededor de Órganos:</strong>
+              <p style="font-size: 0.825rem; color: var(--text-secondary); margin-top: 0.15rem;">
+                El exceso de grasa en el abdomen secreta sustancias inflamatorias que sobrecargan el hígado y el corazón.
+              </p>
+            </div>
+          </div>
+
+          <div class="state-item">
+            <div class="state-icon-wrap" style="background: var(--color-accent-subtle); color: var(--color-accent);">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>
+            </div>
+            <div>
+              <strong>Resistencia a la Insulina:</strong>
+              <p style="font-size: 0.825rem; color: var(--text-secondary); margin-top: 0.15rem;">
+                Las células musculares tienen dificultad para captar la glucosa, provocando picos de azúcar y cansancio frecuente.
+              </p>
+            </div>
+          </div>
+
+          <div class="state-item">
+            <div class="state-icon-wrap" style="background: var(--color-accent-subtle); color: var(--color-accent);">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div>
+              <strong>Rigidez Arterial y Presión Alta:</strong>
+              <p style="font-size: 0.825rem; color: var(--text-secondary); margin-top: 0.15rem;">
+                Las arterias pierden elasticidad, aumentando el esfuerzo que realiza el corazón en cada latido.
+              </p>
+            </div>
+          </div>
+
+          <div class="state-item">
+            <div class="state-icon-wrap" style="background: var(--color-accent-subtle); color: var(--color-accent);">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div>
+              <strong>Inflexibilidad Metabólica:</strong>
+              <p style="font-size: 0.825rem; color: var(--text-secondary); margin-top: 0.15rem;">
+                Dificultad para alternar de forma eficiente entre quemar grasas e hidratos de carbono.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Estado Final T1 (6 Meses) -->
+        <div class="state-card after-state">
+          <span class="state-indicator-badge state-badge-green">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Tras 6 Meses en "Cuerpo Maestro"
+          </span>
+          <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-brand);">Homeostasis y Vitalidad Restaurada</h3>
+
+          <div class="state-item">
+            <div class="state-icon-wrap" style="background: var(--color-brand-subtle); color: var(--color-brand);">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong>Reducción Comprobada de Grasa Abdominal:</strong>
+              <p style="font-size: 0.825rem; color: var(--text-secondary); margin-top: 0.15rem;">
+                Disminución objetiva del porcentaje graso y del perímetro de cintura medida por bioimpedancia.
+              </p>
+            </div>
+          </div>
+
+          <div class="state-item">
+            <div class="state-icon-wrap" style="background: var(--color-brand-subtle); color: var(--color-brand);">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong>Sensibilidad a la Insulina Optimizada:</strong>
+              <p style="font-size: 0.825rem; color: var(--text-secondary); margin-top: 0.15rem;">
+                Los músculos captan eficientemente la glucosa como energía limpia, estabilizando los niveles en sangre.
+              </p>
+            </div>
+          </div>
+
+          <div class="state-item">
+            <div class="state-icon-wrap" style="background: var(--color-brand-subtle); color: var(--color-brand);">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong>Vasos Sanguíneos Flexibles y Presión Estable:</strong>
+              <p style="font-size: 0.825rem; color: var(--text-secondary); margin-top: 0.15rem;">
+                Mayor producción de óxido nítrico endotelial, disminuyendo la presión sistólica y diastólica.
+              </p>
+            </div>
+          </div>
+
+          <div class="state-item">
+            <div class="state-icon-wrap" style="background: var(--color-brand-subtle); color: var(--color-brand);">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong>Activación Mitocondrial y Energía Diaria:</strong>
+              <p style="font-size: 0.825rem; color: var(--text-secondary); margin-top: 0.15rem;">
+                Las células reactivan sus motores energéticos (vías AMPK y sirtuinas), brindándote mayor vitalidad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       LOS 4 PLANES NUTRICIONALES CON VÍAS BIOQUÍMICAS VISUALES
        ========================================================================== -->
   <section id="planes">
     <div class="container">
@@ -282,6 +465,17 @@
               </div>
 
               <h3 id="armTitle" style="font-size: 1.45rem; margin-bottom: 1rem;">Cuerpo Maestro + Restricción Calórica (-20%)</h3>
+
+              <!-- Cadena visual de cascada metabólica -->
+              <div class="pathway-flow">
+                <span class="pathway-node active-node">Déficit Leve (-20%)</span>
+                <span class="pathway-arrow">&rarr;</span>
+                <span class="pathway-node">Sensor Celular AMPK</span>
+                <span class="pathway-arrow">&rarr;</span>
+                <span class="pathway-node active-node">Quema Grasa Visceral</span>
+                <span class="pathway-arrow">&rarr;</span>
+                <span class="pathway-node">Salud Arterial</span>
+              </div>
 
               <div id="transversalStatus" class="callout-box">
                 <h5>Acompañamiento "Cuerpo Maestro" Incluido</h5>
@@ -463,6 +657,27 @@
               <input type="range" id="sliderFatPct" min="10" max="55" value="31">
               <input type="number" id="inputFatPct" class="input-number" min="10" max="55" value="31">
             </div>
+          </div>
+
+          <!-- Mini corte visual de grasa visceral -->
+          <div class="torso-visualizer-card">
+            <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.5rem;">
+              Distribución de Grasa Abdominal (Simulación)
+            </span>
+            <div class="torso-svg-container">
+              <svg viewBox="0 0 200 120" style="width: 100%; max-width: 180px; height: 110px;">
+                <!-- Silueta de la cintura dinámicamente animada -->
+                <ellipse id="outerWaistEllipse" cx="100" cy="60" rx="75" ry="42" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+                <!-- Capa profunda de grasa visceral -->
+                <ellipse id="visceralFatEllipse" cx="100" cy="60" rx="50" ry="28" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <!-- Núcleo muscular / órganos -->
+                <ellipse cx="100" cy="60" rx="30" ry="16" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.5"/>
+                <text x="100" y="63" font-size="8" font-family="sans-serif" text-anchor="middle" fill="#0f766e" font-weight="bold">Masa Magra</text>
+              </svg>
+            </div>
+            <small id="waistFeedbackNote" style="font-size: 0.78rem; color: var(--color-accent); font-weight: 600;">
+              Cintura de 105 cm: Exceso de tejido adiposo visceral
+            </small>
           </div>
         </div>
 
@@ -868,6 +1083,7 @@
           <ul class="footer-links">
             <li><a href="#hero">Inicio y Convocatoria</a></li>
             <li><a href="#beneficios">Beneficios Gratuitos</a></li>
+            <li><a href="#transformacion">Tu Cuerpo en 6 Meses</a></li>
             <li><a href="#planes">Planes de Alimentación</a></li>
             <li><a href="#evaluador">Auto-Test de Elegibilidad</a></li>
             <li><a href="#inscripcion">Formulario de Inscripción</a></li>

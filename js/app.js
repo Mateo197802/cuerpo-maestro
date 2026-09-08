@@ -6,6 +6,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
+  initOrganExplorer();
   initArmComparator();
   initAtpCalculator();
   initEnrollmentForm();
@@ -47,7 +48,68 @@ function initNavigation() {
 }
 
 /* ==========================================================================
-   2. COMPARADOR DE LOS 4 PLANES DE ALIMENTACIÓN (ORIENTADO AL PACIENTE)
+   2. EXPLORADOR ANATÓMICO Y METABÓLICO DEL HERO
+   ========================================================================== */
+const ORGAN_DATA = {
+  brain: {
+    num: '1',
+    name: 'Cerebro: Ritmos Circadianos y Control del Estrés',
+    desc: 'El descanso nocturno y el orden de las comidas regulan las hormonas leptina y grelina, reduciendo la ansiedad por dulces y estabilizando el cortisol.'
+  },
+  heart: {
+    num: '2',
+    name: 'Corazón y Vasos: Presión Arterial Estable',
+    desc: 'La reducción de sodio y la actividad física guiada estimulan el óxido nítrico en las arterias, relajando los vasos y reduciendo la presión arterial.'
+  },
+  liver: {
+    num: '3',
+    name: 'Hígado: Aclaramiento de Grasa y Lípidos',
+    desc: 'Al regular los carbohidratos refinados, el hígado reduce la síntesis de triglicéridos y descongestiona la grasa acumulada (hígado graso).'
+  },
+  waist: {
+    num: '4',
+    name: 'Cintura: Reducción de Grasa Visceral Profunda',
+    desc: 'La grasa abdominal es la más peligrosa metabólicamente. El programa prioriza su reducción sostenida, comprobada mediante bioimpedancia clínica.'
+  },
+  muscle: {
+    num: '5',
+    name: 'Músculos: Sensibilidad a la Insulina y Energía',
+    desc: 'El ejercicio estructurado activa los receptores GLUT4 en los músculos para absorber la glucosa como energía pura, evitando que se convierta en grasa.'
+  }
+};
+
+function initOrganExplorer() {
+  const hotspots = document.querySelectorAll('.organ-hotspot');
+  const titleEl = document.getElementById('organTitle');
+  const descEl = document.getElementById('organDesc');
+  const displayBox = document.getElementById('organInfoDisplay');
+
+  if (!hotspots.length || !titleEl || !descEl) return;
+
+  hotspots.forEach(pin => {
+    pin.addEventListener('click', () => {
+      hotspots.forEach(p => p.classList.remove('active'));
+      pin.classList.add('active');
+
+      const organKey = pin.getAttribute('data-organ');
+      const data = ORGAN_DATA[organKey];
+      if (!data) return;
+
+      displayBox.style.opacity = '0';
+      setTimeout(() => {
+        titleEl.innerHTML = `
+          <svg class="icon icon-sm" style="color: var(--color-brand);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          ${data.num}. ${data.name}
+        `;
+        descEl.textContent = data.desc;
+        displayBox.style.opacity = '1';
+      }, 150);
+    });
+  });
+}
+
+/* ==========================================================================
+   3. COMPARADOR DE LOS 4 PLANES DE ALIMENTACIÓN
    ========================================================================== */
 const ARM_DATA = {
   g1: {
@@ -57,6 +119,12 @@ const ARM_DATA = {
     window: 'Horarios convencionales de desayuno, almuerzo y cena según tu rutina',
     macros: { protein: 20, carb: 55, fat: 25 },
     macroText: 'Alimentación balanceada clásica pero en porciones controladas para perder grasa',
+    pathway: [
+      { text: 'Déficit Leve (-20%)', active: true },
+      { text: 'Sensor Celular AMPK', active: false },
+      { text: 'Quema Grasa Visceral', active: true },
+      { text: 'Salud Arterial', active: false }
+    ],
     mechanisms: [
       'Facilita la movilización y quema de la grasa acumulada en el abdomen.',
       'Mejora la sensibilidad del cuerpo a la insulina, disminuyendo el azúcar en sangre.',
@@ -73,6 +141,12 @@ const ARM_DATA = {
     window: 'Comidas distribuidas a lo largo del día priorizando saciedad',
     macros: { protein: 30, carb: 40, fat: 30 },
     macroText: '30% Proteínas (pollo, pescado, huevos), 40% Carbohidratos integrales, 30% Grasas saludables (aguacate, aceite de oliva)',
+    pathway: [
+      { text: 'Proteína Óptima (30%)', active: true },
+      { text: 'Protección Muscular', active: false },
+      { text: 'Glucosa Estable', active: true },
+      { text: 'Saciedad Continua', active: false }
+    ],
     mechanisms: [
       'Aumenta la saciedad por más horas, eliminando la ansiedad de picar entre comidas.',
       'Evita los picos bruscos de glucosa e insulina después de comer.',
@@ -89,6 +163,12 @@ const ARM_DATA = {
     window: 'Ventana de alimentación de 8 horas (ej. 10:00 am a 6:00 pm) y 16 h de descanso digestivo',
     macros: { protein: 25, carb: 45, fat: 30 },
     macroText: 'Comidas nutritivas dentro de tu ventana diurna elegida',
+    pathway: [
+      { text: 'Descanso Digestivo 16h', active: true },
+      { text: 'Sincronización Circadiana', active: false },
+      { text: 'Autofagia Celular', active: true },
+      { text: 'Sensibilidad a la Insulina', active: false }
+    ],
     mechanisms: [
       'Sincroniza tu metabolismo con tus ritmos naturales de día y noche.',
       'Favorece la limpieza y renovación celular durante las horas de descanso nocturno.',
@@ -105,6 +185,12 @@ const ARM_DATA = {
     window: 'Tus horarios habituales de alimentación',
     macros: { protein: 15, carb: 60, fat: 25 },
     macroText: 'Dieta cotidiana con pautas generales de alimentación saludable',
+    pathway: [
+      { text: 'Pautas Nutricionales', active: false },
+      { text: 'Educación Básica', active: true },
+      { text: 'Monitoreo de Salud', active: false },
+      { text: 'Exámenes Gratuitos', active: true }
+    ],
     mechanisms: [
       'Recibes información y educación general sobre alimentación saludable.',
       'Permite al equipo comparar científicamente las mejoras frente a los hábitos cotidianos.',
@@ -132,6 +218,7 @@ function initArmComparator() {
   const textFat = document.getElementById('textFat');
   const armMechanismsList = document.getElementById('armMechanismsList');
   const transversalStatusEl = document.getElementById('transversalStatus');
+  const pathwayFlow = document.querySelector('.pathway-flow');
 
   if (!tabButtons.length || !armTitleEl) return;
 
@@ -159,6 +246,14 @@ function initArmComparator() {
       textCarb.textContent = `${data.macros.carb}% Carbohidratos`;
       textFat.textContent = `${data.macros.fat}% Grasas Saludables`;
 
+      // Cascada de vías bioquímicas
+      if (pathwayFlow && data.pathway) {
+        pathwayFlow.innerHTML = data.pathway.map((p, idx) => `
+          <span class="pathway-node ${p.active ? 'active-node' : ''}">${p.text}</span>
+          ${idx < data.pathway.length - 1 ? '<span class="pathway-arrow">&rarr;</span>' : ''}
+        `).join('');
+      }
+
       armMechanismsList.innerHTML = data.mechanisms
         .map(item => `<li>${item}</li>`)
         .join('');
@@ -181,7 +276,7 @@ function initArmComparator() {
 }
 
 /* ==========================================================================
-   3. AUTO-EVALUADOR DE SALUD PARA EL PACIENTE
+   4. AUTO-EVALUADOR CON SIMULACIÓN DE GRASA ABDOMINAL
    ========================================================================== */
 function initAtpCalculator() {
   let currentSex = 'male';
@@ -216,6 +311,11 @@ function initAtpCalculator() {
   const checkBP = document.getElementById('checkBP');
   const checkGlucose = document.getElementById('checkGlucose');
   const lancetStagingBadge = document.getElementById('lancetStagingBadge');
+
+  // Elementos de la simulación de corte abdominal
+  const outerWaistEllipse = document.getElementById('outerWaistEllipse');
+  const visceralFatEllipse = document.getElementById('visceralFatEllipse');
+  const waistFeedbackNote = document.getElementById('waistFeedbackNote');
 
   if (!inputWaist || !criteriaCounter) return;
 
@@ -265,7 +365,8 @@ function initAtpCalculator() {
     const glucose = parseFloat(inputGlucose.value) || 0;
     const fatPct = parseFloat(inputFatPct.value) || 0;
 
-    const waistMet = (currentSex === 'male' && waist >= 102) || (currentSex === 'female' && waist >= 88);
+    const waistCutoff = currentSex === 'male' ? 102 : 88;
+    const waistMet = waist >= waistCutoff;
     const tgMet = tg >= 150;
     const hdlMet = (currentSex === 'male' && hdl < 40) || (currentSex === 'female' && hdl < 50);
     const bpMet = sys >= 130 || dia >= 85;
@@ -300,6 +401,35 @@ function initAtpCalculator() {
       verdictDetail.innerHTML = `<strong>Información:</strong> Presentas ${metCount} parámetro(s) alterado(s). Para el estudio clínico se prioriza a personas con 3 o más componentes. De todas formas, puedes postularte si sospechas de otros factores de riesgo.`;
     }
 
+    // Actualización dinámica del corte transversal abdominal
+    if (outerWaistEllipse && visceralFatEllipse) {
+      // Mapear perímetro de cintura (60cm - 150cm) a radio gráfico (50px - 90px)
+      const scaleWaist = 50 + ((waist - 60) / 90) * 40;
+      outerWaistEllipse.setAttribute('rx', Math.min(90, Math.max(50, scaleWaist)));
+      outerWaistEllipse.setAttribute('ry', Math.min(52, Math.max(28, scaleWaist * 0.58)));
+
+      // Mapear grasa visceral
+      const scaleVisceral = 35 + ((fatPct - 10) / 45) * 30;
+      visceralFatEllipse.setAttribute('rx', Math.min(65, Math.max(35, scaleVisceral)));
+      visceralFatEllipse.setAttribute('ry', Math.min(38, Math.max(20, scaleVisceral * 0.58)));
+
+      if (waistMet) {
+        outerWaistEllipse.setAttribute('stroke', '#c2410c');
+        outerWaistEllipse.setAttribute('fill', '#fff7ed');
+        visceralFatEllipse.setAttribute('stroke', '#ea580c');
+        visceralFatEllipse.setAttribute('fill', '#ffedd5');
+        waistFeedbackNote.textContent = `Cintura de ${waist} cm: Adiposidad visceral aumentada`;
+        waistFeedbackNote.style.color = '#c2410c';
+      } else {
+        outerWaistEllipse.setAttribute('stroke', '#0f766e');
+        outerWaistEllipse.setAttribute('fill', '#f0fdfa');
+        visceralFatEllipse.setAttribute('stroke', '#14b8a6');
+        visceralFatEllipse.setAttribute('fill', '#ccfbf1');
+        waistFeedbackNote.textContent = `Cintura de ${waist} cm: Perímetro en rango normal`;
+        waistFeedbackNote.style.color = '#0f766e';
+      }
+    }
+
     const fatCutoff = currentSex === 'male' ? 25 : 32;
     if (fatPct >= fatCutoff && waistMet) {
       lancetStagingBadge.className = 'badge badge-accent';
@@ -328,7 +458,7 @@ function initAtpCalculator() {
 }
 
 /* ==========================================================================
-   4. FORMULARIO DE INSCRIPCIÓN DE PACIENTES
+   5. FORMULARIO DE INSCRIPCIÓN DE PACIENTES
    ========================================================================== */
 function initEnrollmentForm() {
   const form = document.getElementById('patientEnrollmentForm');
@@ -342,7 +472,6 @@ function initEnrollmentForm() {
     const name = document.getElementById('patientName').value.trim();
     const phone = document.getElementById('patientPhone').value.trim();
 
-    // Guardar registro localmente para el equipo investigador
     const patientData = {
       name: name,
       age: document.getElementById('patientAge').value,
@@ -361,7 +490,6 @@ function initEnrollmentForm() {
       console.log('Almacenamiento local:', err);
     }
 
-    // Ocultar formulario y mostrar mensaje de éxito
     form.style.display = 'none';
     successBox.classList.add('show');
     successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
